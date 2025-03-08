@@ -1,0 +1,52 @@
+## Integrated Services Digital Network (ISDN)
+- Communication standards for simultaneous digital transmission
+  - Including voice, video, data, and other network services
+  - Over traditional circuits of the public switched telephone network
+  - It can integrate speech and data on the same lines, which was not available before
+- It is a circuit switched telephone network system
+  - But also provides access to packet switched networks for data
+    - In increments of 64 Kbit/s
+  - This allows digital transmission of voice and data
+  - This results in better voice or data quality than an analog phone
+- Costlier than other telephone system and requires specialized digital devices
+
+## Interfaces
+- Basic Rate Interface (BRI)
+  - There are two data bearing channels (B channels) and one signaling channel (D channel)
+    - B (Bearer) channels
+      - Operate at a max of 64 Kbps
+      - Carries user data like voice, video or computer data
+    - D (Data) channel
+      - Operates at a max of 16 Kbps
+      - Used for any combination of data, control, signaling
+  - Total speed = 64 * 2 + 16 = 144 Kbps
+    - 192 Kbps including 48 Kbps operating overhead of BRI service
+  - The two channels are independent of each other. For example:
+    - One channel is used as TCP/IP connection to a location
+    - Other channel is used to send fax to a remote location
+- Primary Rate Interface (PRI)
+  - Consists of one D channel and either 23 or 30 B channels depending on the country
+  - Both types of channel operate at 64 Kbps
+  - Total speed = 1.546 Mbps (23 B channels + 1 D channel)
+    - 1.544 Kbps includeing 9 Kbps overhead
+- Broadband-ISDN
+  - Narrowband ISDN designed to operate over the current communications infrastructure
+  - Heavily dependent on copper cable, but mainly relies on the evolution of fiber optics
+  - Capable of supporting rates greater than the primary rate
+
+### Services
+- Bearer Services
+  - Transfer of information (voice, data, video) between users
+    - Without the network manipulating the content
+  - No need for the network to process the information
+  - Belongs to the first three layers of the OSI model
+  - Provided using circuit switched, packet switched, frame switched, or cell switched networks
+- Tele Services
+  - Network may change or process the contents of the data
+  - Corresponds to layers four to seven of the OSI model
+  - Relies on the facilities of the bearer services
+  - Designed to accomodate complex user needs
+  - Includes telephony, teletex, telefax, videotex, telex, teleconferencing
+- Supplementary Service
+  - Provides additional functionality to the bearer services and the tele services
+  - Examples: Reverse charging, call waiting, message handling

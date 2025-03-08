@@ -1,0 +1,12 @@
+## Session Layer
+- Basic info
+  - Packet: Data
+  - Protocols: NetBIOS, PPTP, SSL, API
+  - Platforms: OS, Gateways, Firewalls
+- Features
+  - Establishment of connection
+  - Maintenance & termination of sessions
+  - Ensuring security and managing authentication
+- Allows a process to add checkpoints or synchronization points in the data
+  - Which help to identify errors and avoid data loss
+- Allows systems to start communication in half-duplex or full-duplex mode

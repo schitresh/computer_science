@@ -1,0 +1,52 @@
+## Access Control Lists (ACL)
+- Set of rules defined to control network traffic and reduce network attacks
+  - Once a rule matches, no further comparison takes place
+  - If no rule matches, then the packet is discarded
+- Direction
+  - Inbound access list is applied on inbound packets
+  - Outbound access list is applied on outbound packets
+- Only one list per interface per protocol per direction can be assigned
+
+### Types
+- Standard access list
+  - Uses only the source IP address
+  - Permit or deny the entire protocol suite
+  - Don't distinguish between the IP traffic like TCP, UDP, HTTPS, etc.
+- Extended access list
+  - Uses source IP & port and destination IP & port
+  - Can also mention which type of IP traffic should be allowed or denied
+- Reflexive access list
+  - Acts as a stateful firewall
+    - As it allows only the traffic that is initiated within the network & its replies
+    - And denies other packets coming from outside the network
+  - When a session is initiated
+    - It creates a temporary entry for the traffic which allows the replies from outside
+  - Should be nested inside the extended access list
+- Time-based access list
+  - Allows access based on particular time of the day or particular days of a week
+  - Can deny access to internet on working hours and allow access in lunch time
+  - Can work with absolute or periodic time range
+  - Best works with NTP (Network Time Protocol) synchronisation
+    - But can work with router clock
+
+## Control Based Access Control (CBAC)
+- Secures and protects the network from unauthorized access and malicious activity
+  - Enables granular control of network policies
+  - While maintiaing flexibility & functionality
+- Unlike traditional access control that rely on static rules & fixed conditions
+  - It analyses in real time by considering a wide range of contextual factors
+  - ACLs provide traffic filtering till transport layer
+    - While CBAC provides till application layer
+- With the help of CBAC coonfiguration, a router can act as a firewall
+- In addition to access lists
+  - Maintains a state table in which the sessions are maintained in memory
+    - The outbound traffic & its replies can pass the router using this state entry
+  - Maintains TCP/UDP info to perform deeper inspection in packet payload
+  - Examines the rate at which the connection has been established
+    - To detect attacks like DoS attack, TCP syn attack and drop malicious packets
+- Disadvantages
+  - Filters traffic passing through
+    - But not the traffic originating or terminating on the configured device
+  - Inspects only TCP & UDP traffic and not ICMP or any other traffic
+  - Only protects against traffic through firewall
+    - And not against attacks originating within the protected network

@@ -1,0 +1,72 @@
+## Dynamic Host Configuration Protocol (DHCP)
+- Helps enterprises to smoothly manage the allocation of IP addresses to the client devices
+- Maintains information on TCP/IP configuration
+- IP addresses are assigned using DORA messages
+  - Discover, Offer, Request, Acknowledgements
+- But if hosts have no IP address initially how they form IP packets to assign the address
+  - It uses two reserved IP addresses for this purpose
+  - 0.0.0.0
+    - Reserved to use as sender's address for hosts
+      - That doesn't have IP address assigned yet
+  - 255.255.255.255
+    - Local broadcast address
+    - Routers don't forward packet containing this address as destination addresss
+    - DNS broadcasts packages to the client host
+      - Switch takes care of the broadcasting
+
+## Working (DORA Process)
+- Discover message
+  - Client generates a DHCP discover message
+  - And broadcasts to all devices to find the DHCP server
+- Offer message
+  - Server responds to the client by specifying IP address
+    - And other TCP configuration information
+  - This offer message is broadcasted by the DHCP server and includes the server id
+  - If there are multiple DHCP servers in the network
+    - The client will accept the first DHCP offer message
+- Request message
+  - After receiving the offer message
+    - Client responds by broadcasting a DHCP request message
+  - It produces a gratuitous ARP
+    - To find if there is any other host in the network with the same IP address
+  - If there is no reply from another host
+    - The message is broadcasted to the server showing acceptance of the IP address
+  - A client id is also added to this message
+- Acknowledgement message
+  - In response to the request message received
+    - Server will make an entry with the specified client ID
+    - And bind the IP address offered with lease time
+
+## Other Messages
+- Negative acknowledgement message
+  - If the request for IP address is invalid according to the configured scopes
+    - It sends NAK message to the client
+    - For example, when there is no IP address left in the pool
+- Decline message
+  - If the offered confguration parameters are invalid
+    - The client sends a decline message to the server
+    - For example, when there is a reply to the gratuitous ARP by any host to the client
+- Release message
+  - Client sends a release packet to the server
+    - To release the IP address and cancel any remaining lease time
+- Inform message
+  - If the client has obtained the IP address manually
+    - Then it uses inform meessage
+    - To obtain other local configuration parameters like domain name
+  - In response to this, the server unicasts an ack message to the client with the info
+
+## Relay Agent
+- DHCP relay agent is any TCP/IP host
+  - Which is used to forward requests and replies between the DHCP server and client
+  - Listens for DHCP broadcast messages from client devices
+    - And forwards them to DHCP server encapsulating them in a unicast packet
+  - The discover and request messages are unicast to DHCP server by the relay agent
+- It is required when the server is present on a different network
+  - Commonly used in large enterprise networks that have different network segments
+- Adds a gateway address of the packet (giaddr) field to packets
+  - Used to indicate IP address of the relay agent interface
+    - On which the message was received
+  - To add additional info like interface or port number
+    - Relay agent information option 82 can be used
+- Can be implemented in dedicated hardware devices
+  - Or in software on routers or other devices

@@ -1,0 +1,14 @@
+## UDP (User Datagram Protocol)
+- Unreliable and connectionless protocol unlike TCP
+  - No need to establish connection before data transfer
+  - No congestion control, no flow control
+- TCP is the dominant transport layer protocol
+  - That provides delivery & reliability but costs additional overhead & latency
+- For real-time services like computer gaming, voice or video communication, live conferences
+  - High performance is required
+  - UDP permits packets to be dropped instead of processing delayed packets
+  - There is no error checking which also saves bandwidth
+  - Smaller packets than TCP
+- Also used by DNS, DHCP, VoIP (Voice over Internet Protocol)
+- Takes datagram from network layer
+  - Attaches its header and sends it to user, so it works fast

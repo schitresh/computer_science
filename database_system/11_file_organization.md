@@ -1,0 +1,76 @@
+## File Organization
+- Data is stored in the form of tables in the database
+  - But in physical memory it is stored in the form of files
+- File organization refers to logical relationships among various records that constitute the file
+  - Particularly with respect to identification and access to any specifi record
+
+## Types of File Organization
+- Sequential File Organization
+  - Pile File Method: Records are stored sequentially in the order of insertion in tables
+  - Sorted File Method: Records are inserted in a sorted sequence based on primary or any other key
+  - We canot jump on a particular record, but have to move in a sequential manner
+- Heap File Organization
+  - Records are inserted at the end as data blocks
+  - If a data block is full, the new record is stored in some other block in the memory
+  - It may leave unused memory blocks
+- B/B+ Tree File Organization
+- Cluster File Organization
+  - Related tables or records are stored within the same file known as clusters
+  - Indexed clusters group records based on the cluster key
+    - And hash clusters group on hash values of a key
+  - These tables can be combined easily using join operation in the cluster file
+  - Low performance in large databases
+- Indexed Sequential Access Method
+  - Data is stored sequentially but an index is maintained for faster access
+  - Not as efficient as fully indexed methods for random access
+  - Index maintainance can add overhead in insert & update operation
+
+## Hashing File Organization
+- For larger databases with thousands & millions of records, indeximng becomes inefficient
+  - Because searching a specific record consumes more time
+  - Hashing can directly reach the location of a record without searching through indices
+- Hash Table
+  - Its size is determined by the total volume of data records in database
+  - Each memory location in a hash table is called bucket
+  - Each bucket stores a disk block that contains multiple records
+- Hash Function
+  - Mathematical function that computes the index or location within hash table for a specified record
+  - It determines the speed of fetching data
+  - If the hash index is already occupied, it's called collision
+- Collision resolution techniques
+  - Chaining
+    - Records are stored as an array or linked list within an index
+    - May result in bucket skew
+      - If the hash function keeps generating the same index large number of times
+    - The remanining data buckets will store minimal data
+  - Open Addressing or Closed Hashing
+    - Store the data in the next available sloto
+    - Techniques like linear probing, quadratic probing, double hashing can be used to find it
+- Types of Hashing in DBMS
+  - Static Hashing
+    - Records are directly mapped to a bucket's address
+  - Dynamic Hashing
+    - Records are first mapped to a directory and then mapped to the buckets
+    - Data buckets can be added and removed on demand dynamically
+    - The buckets grow & shrink according the size of data records
+    - Example: If depth is 2, consider 2 LSB as the directory
+      - If hash index is 1100110, the directory will be 10
+
+## RAID (Redundant Arrays of Independent Disks)
+- Combination of multiple disks for increased performance and data redundancy
+- In case of disk failure, we can retrieve the data backed up on another disk
+- Key evaluation points for RAID system
+  - Reliability: How many disk faults can it tolerate
+  - Availability: What fraction of session time is the system in uptime mode
+  - Performance: How good is response time & throughput
+  - Capacity: How much useful capacity is available to user given a set of disks
+- To the host system, it appears as a single big disk of linear array of blocks
+  - This allows older technologies to be replaced by RAID
+- Levels
+  - 0: Stripping
+  - 1: Mirroring
+  - 2: Bit level stripping with dedicated parity
+  - 3: Byte level stripping with dedicated parity
+  - 4: Block level stripping with dedicated parity
+  - 5: Block level stripping with distributed parity
+  - 6: Block level stripping with two parity bits
