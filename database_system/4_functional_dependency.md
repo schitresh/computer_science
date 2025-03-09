@@ -67,16 +67,28 @@
   - Other attributes are called non-prime attributes
 
 ## Canonical Cover
+- Managing a large set of functional dependencies can result in
+  - Unnecessary computational overhead
+  - This is where the canonical cover becomes useful
 - A canonical cover of a set of FDs
-  - Is a simplified set that has the same closure as the original set
+  - Is a simplified version of FDs that retains the same closure as the original set
+  - Ensuring no redundancy
 - Extranious Attribute of FD
   - If it can be removed from LHS without changing the closure of the set of FDs
+- Advantages
+  - Essential for optimizing database management systems
+  - Simplifies and minimizes the dependencies while preserving their properties
+    - Reducing computational overhead, and improving efficiency
+  - By reducing, eliminating, and minimizing dependencies, canonical cover creates
+    - A minimal, unique, and accurate representation of the original set
+  - It helps to reduce data redundancy, improves query performance
+    - And makes database maintenance easier.
 - Application
   - Whenever a user updates the database
     - The system must check if any of the FDs are getting violated
   - If there are violations in the new database state, then the system must roll back
   - Working with a huge set of FD can cause unnecessarily added computational time
-- Useful to provide simplified set of FD to determine keys
+  - Useful to provide simplified set of FD to determine keys
 
 ### Finding Canonical Cover
 - Reduction

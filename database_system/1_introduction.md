@@ -1,18 +1,18 @@
 ## Introduction
 - Data: Collection of units of information
-- Database: Organized collection of data that can be easily manageed
+- Database: Organized collection of data that can be easily managed
 - Database Management System
   - Software system designed to enable users to store, organize & manage a database
   - Manages security and access control
   - Scalability: Handles large amounts of data
 
 ### Drawbacks of File System
-- Redundancy: If some data needs to be updated, it will take a lot of effort
+- Redundancy: If some data needs to be updated, it takes a lot of effort
 - Inconsistency
   - For the same information, there can be different data at different places
 - Data access
   - To access a particular info, user should already know the file
-    - That it's stored in and its location
+    - The file that the info is stored in and its location
 - Unauthorised access: Anyone can access and update the data in unauthorized way
 - No backup & recovery
 
@@ -25,14 +25,14 @@
   - Constraints on the values of data and access control to restrict users
 - Backup & recorvery
 - Multiple data views: Same data can be represented in different ways
-- Analysic & reporting
+- Analytics & reporting
 
 ## Types
 - Relational DBMS: SQL
   - The data is organized in the form of tables, and tables in rows & columns
   - The data is related to each other through primary & foreign keys
 - Non-Relational DBMS: NoSQL
-  - The data is organized in the form of key value pairs, documents, graphs, or columns
+  - The data is organized in the form of key-value pairs, documents, graphs, or columns
   - Designed to handle large scale, high performance scenarios
 
 ## Components
@@ -46,7 +46,7 @@
 
 ### Database Languages
 - Data Definition Language (DDL)
-  - Deals with schemas and descriptions of how the data should reside in the database
+  - Deals with schemas and descriptions about how the data should reside in the database
   - Create, Alter, Drop, Truncate (remove all records from table), Rename
 - Data Manipulation Language (DML)
   - Used to store, modify, retrieve, delete and update data
@@ -80,9 +80,9 @@
     - Modifying data structures used for storage or altering indexes
     - Using alternative file organization techniques
 - Conceptual data independence
-  - Adding or deleting attributes in a table should affect the user's view of table
+  - Adding or deleting attributes in a table should not affect the user's view of table
   - Other changes can be altering table structures or relationships
-  - Difficult to achieve compare to physical data independence
+  - Difficult to achieve compared to physical data independence
 
 ## Multimedia Database
 - Stores documents, graphics, images, animations, video, audio, etc
@@ -98,7 +98,7 @@
   - Keyword description related to the generation of data like date, time, place
 - Feature data
   - Content dependent data
-  - Like distribution of colors, kids of texture, different shapes present in data
+  - Like distribution of colors, kinds of texture, different shapes present in data
 
 ### Types based on data management
 - Repository applications
@@ -133,4 +133,4 @@
   - Multimedia database consumes a lot of processing time and bandwidth
 - Queries & retrieval
   - Accessing data for multimedia through query have many issues
-  - Query formulation, query execution and optimization to acc
+  - Query formulation, query execution and optimization needs to be worked upon

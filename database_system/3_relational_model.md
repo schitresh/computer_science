@@ -6,7 +6,7 @@
 - Relational Schema
   - Structure of a relation
   - The number of attributes in a relation is called its degree
-  - Example: Student (id, name, email)
+  - Example: Student (id, name, email) has a degree of 3
 - Relational Instance
   - Set of values present in a relationship
   - The number of these instances is called cardinality
@@ -16,8 +16,8 @@
 
 ## Codd's Rules
 - Checks whether DBMS has the quality to become RDBMS
-- It's rare to fulfill all the rules, generally 8-9 rules are followed
-- These 13 rules are popularly known as Codd's 12 rules (index 0 - 12)
+  - It's rare to fulfill all the rules, generally 8-9 rules are followed
+  - These 13 rules are popularly known as Codd's 12 rules (index 0 - 12)
 - Rule 0: Foundation
   - Must be able to manage databases entirely through its relational capabilities
 - Rule 1: Information
@@ -52,28 +52,30 @@
 
 ## Relation Keys
 - Keys are used to identify a row in a table uniquely
-- It also helps in setting relationship between various columns & tables
-- Super: A set of any number of attributes that can identify a row uniquely
-- Candidate: Minimal set of attributes that can identify a row uniquely
-- Primary: One key chosen out of candidate keys to identify a row uniquely
-- Composite: If a combination of attributes are used as the primary key
-- Alternate: Candidate keys except the primary key
-- Foreign
+  - It also helps in setting relationship between various columns & tables
+- Super Key: A set of any number of attributes that can identify a row uniquely
+- Candidate Key: Minimal set of attributes that can identify a row uniquely
+- Primary Key: One key chosen out of candidate keys to identify a row uniquely
+- Composite Key: If a combination of attributes are used as the primary key
+- Alternate Key: Candidate keys except the primary key
+- Foreign Key
   - A reference key that can identify a row uniquely in the related table
   - It should be a primary key in the referenced table
 
 ## Constraints
 - While designing a relational model
-  - The conditions defined that must hold true for the data
+  - Conditions are defined that must hold true for the data, these are called constraints
   - These constraints are checked before performing any operation in database
 - Domain Constraints
-  - Attribute level constraints, e.g. age should be > 0 for Student relation
-- Key Integrity
+  - Attribute level constraints, attribute values must match the specified domain
+  - Example: age should be > 0 for Student relation
+- Key Integrity (or Entity Integrity)
   - Every relation should have at least one key to uniquely identify a row
-  - It cannot have NULL values
+  - Primary key cannot have NULL values
 - Referential Integrity
   - When one attribute of a relation can only take values
     - From another attribute of the same or another relation
+  - Foreign keys must match primary keys in the referenced table or be NULL
   - Example: branch_code in Branch relation referenced in Student relation
     - Referencing relation: Student (id, name, branch_code)
     - Referenced relation: Branch (branch_code, branch_name)
@@ -85,8 +87,12 @@
   - Referenced attribute cannot be deleted if its present in a referencing attribute
 - Updation
   - Referenced attribute cannot be updated if its present in a referencing attribute
+  - Example: if branch_code is updated from 'CS' to 'CSE' in Branch
+    - Then it should be updated in Student table as well
 - Solutions for Deletion/Updation
-  - Cascade: Deletes/Updates the referencing rows if the referenced row is deleted/updated
+  - Cascade
+    - Delete Cascade: Deletes the referencing rows if the referenced row is deleted
+    - Update Cascade: Updates the referencing rows if the referenced row is updated
   - Set NULL in referencing rows
 - Normalization can be used to minimize these anamolies
 
@@ -110,7 +116,7 @@
 
 ### Snowflake Schema
 - Variant of star schema
-  - Where dimensions are present in a normalized form im multiple related tables
+  - Where dimensions are present in a normalized form in multiple related tables
   - The dimensions are detailed and highly structured having several levels of relationship
   - The child tables might have multiple parent tables
 - These tables are maintained in normalized form to reduce redundancy
@@ -123,8 +129,9 @@
 - Difference: `A - B`
 - Cartesian Product: `A X B`
 - Selection: `σ condition (relation_name)`
-  - Displays all attributes
+  - Displays all attributes, works on rows
 - Projection: `π (col1, col2) relation_name`
+  - Works on columns, picks speciic columns
 - Divide: `A ÷ B`
 - Rename: `ρ (old_relation, new_relation)`
 
@@ -134,10 +141,16 @@
   - Right: `A ⟖ B`
   - Full: `A ⟗ B`
 - Inner Joins
-  - Conditional or Theta: `A ⋈ θ B`, theta denotes conditions
-  - Equi: `A ⋈ A.column1 =  B.column2 (B)`
+  - Conditional: `A ⋈ θ B`, theta denotes conditions
+  - Equi: `A ⋈ [A.column1 = B.column2] (B)`
+    - Special case of conditional join where only equality condition holds
   - Natural: `A ⋈ B`
+    - Special case of equijoin in which equality condition hold on all attributes
+      - Which have same name in relations
     - If there is a common attribute with the same name & type
+      - Then that row will be joined
+    - Returns the similar attributes only once
+      - As their value will be the same in the resulting relation
 
 ### Nested vs Join Queries
 - Nested queries

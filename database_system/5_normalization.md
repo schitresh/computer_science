@@ -17,45 +17,78 @@
 ### First (1NF)
 - No composite or multi-valued attributes in the relation
 - Helps eliminate duplicate data and simplifies queries
-- Example:
-  - Student (id: 1, phone: [1234, 5678]) is not in 1NF because it has 2 values
+- Example: Student (id: 1, phone: [1234, 5678])
+  - Student is not in 1NF because phone has 2 values
   - Break the row into 2 rows to make it 1NF
-    - Student (id: 1, phone: 1234), Student (id: 1, phone: 5678)
+    - Student (id: 1, phone: 1234)
+    - Student (id: 1, phone: 5678)
 
 ### Second (2NF)
-- No partial dependency in the relation
-  - No non-prime attribute should be dependent on any proper subset of any candidate key
+- Relation is in 2NF if any one of the following holds true
+  - Candidate key is single valued
+  - Candidate key is multi valued, but there is no partial dependency in the relation
+    - Any non-prime attribute should not be dependent on any proper subset of any candidate key
 - Reduces redundant data
+  - Student (id, course_id, course_fee)
   - If 100 students are taking the same course, no need to store its fee 100 times
-- Example:
-  - Student (id, course_id, course_fee) is not in 2NF
-    - course_fee is a non-prime attribute
-      - It cannot identify a row uniquely even if combined with other attributes
-    - But course_id -> course_fee (course_free is dependent on course_id)
-    - And course_id is a proper subset of a candidate key
-      - It cannot identify a row uniquely on its own
+- Consider X -> Y & A -> Y
+  - Let's say X is a composite candidate key {A, B}
+  - It is a partial dependency because Y is non-prime and depends only on A
+    - And A is a proper subset of the candidate key {A, B}
+    - If A -> Y was not present, it will be in 2NF
+  - If the candidate key X was single valued (say B -> Y)
+    - Then also it will be in 2NF
+- Proper subset
+  - A proper subset is a set that contains some but not all elements of another set
+  - E.g. {1} is proper subset of {1, 2}, but {1, 2} is subset (not proper) of {1, 2}
+- Example: Student (id, course_id, course_fee)
+  - It is not in 2NF because
+    - Candidate key here is {id, course_id}
+    - But course_id -> course_fee
+      - course_id is a proper subset of a candidate key
+      - course_fee is a non-prime attribute
+        - It cannot identify a row uniquely even if combined with other attributes
+    - It is a partial dependency and so this relation is not in 2NF
   - Break the table into 2 tables to make it 2NF
-    - Student (id, course_id), Course (id, course_fee)
+    - Student (id, course_id)
+    - Course (id, course_fee)
 
 ### Third (3NF)
-- No transitive dependency for non-prime attributes
-  - Ensures that FD is preserved and lossless
+- No transitive dependency for non-prime attributes on any candidate key
   - If A -> B and B -> C, then A -> C is called transitive dependency
+  - Ensures that FD is preserved and lossless
 - Alternatively, we can say that for a non-trivial FD X -> Y
   - Atleast one of the following conditions should hold true
   - X is a super key
   - Y is a prime attribute
 - 3NF is considered adequate for normal RDBMS
   - Because most of the 3NF tables are free of anomalies
-- Example:
-  - Student (id, name, state, country) is not in 3NF
-    - Since id -> state and state -> country
+- Example: Student (id, name, state, country)
+  - It is not in 3NF because
+    - id -> state and state -> country
+      - Country is a non-prime attribute since the candidate key is {id}
+      - But it depends transitively on id (which is candidate key)
+    - Alternatively, country is non-prime and state is not super key
+      - But state -> country
   - Break the table into 2 tables to make it 3NF
-    - Student (id, name, state), StateCountry (state, country)
+    - Student (id, name, state)
+    - StateCountry (state, country)
+- Example 2:
+  - Student (id, course, instructor, instructor_email)
+  - Candidate key here is {id, course} because a student can have multiple courses
+  - A course can have multiple instructors, so {id, course} -> instructor
+    - That is instructor depends on id & course
+    - But instructor_email depends on instructor
+  - Hence, {id, course} -> instructor -> instructor_email
+    - Which is transitive dependency and hence not in 3NF
+    - Alternatively, instructor_email is non-prime and instructor is not super key
+  - Solution
+    - Student (id, course, instructor)
+    - Instructor (instructor, instructor_email)
 
 ### BCNF
 - Advanced form for 3NF where in a FD X -> Y, X must be a super key
-  - This is the last practiced forms
+  - This is the last practiced form
   - Forms beyond like 4NF & 5NF are used only for theoritical purposes
 - Example:
   - Student (id, course, branch)
@@ -67,7 +100,9 @@
   - For course -> branch, course is not a super key
     - Since multiple courses can have same branch
   - Break the table into 3 tables to make it BCNF
-  - Student (id, branch), StudentCourse (student_id, course_id), Course (id, branch)
+    - Student (id, branch)
+    - StudentCourse (student_id, course_id)
+    - Course (id, branch)
 
 ### Fourth (4NF)
 - No non-trivial multi-valued dependency except candidate key
@@ -76,16 +111,18 @@
 - Example:
   - Student (id, name, course_name)
   - MVD: name & course_name are independent but id -> name, id -> course_name
-  - Solution: Student (id, name), StudentCourse (student_id, course_name)
+  - Solution
+    - Student (id, name)
+    - StudentCourse (student_id, course_name)
 
 ### Fifth (5NF)
 - Also called projection-join normal form (PJNF)
 - No join dependency except candidate keys
   - A relation decomposed into two relations must be lossless
-- Lossless Decomposition
+- Lossless Decompositionwhich
   - If relation R (A, B, C) is decomposed into R1 (A, B) & R2 (B, C)
   - It is lossless if the join of R1 & R2 over B should be equal to R
-  - If is lossy if the number of joined tuples are more or less than R
+  - It is lossy if the number of joined tuples are more or less than R
   - It is dependency preserving if all the FD are preserved in R1 & R2
 - Example:
   - Course (name, faculty, semester)
@@ -103,8 +140,12 @@
     - Course (name: 'DBMS', faculty: 'F1', semester: 1)
     - Course (name: 'DBMS', faculty: 'F1', semester: 2)
   - The join is introducing wrong data (loss of data)
-  - A row requires all the 3 attributes to be known (name, faculty, semester)
-  - Hence there is a join dependency and it is not in 5NF
+    - A row requires all the 3 attributes to be known (name, faculty, semester)
+    - Hence there is a join dependency and it is not in 5NF
+  - Solution
+    - R1 (name, faculty)
+    - R2 (name, semester)
+    - R3 (faculty, semester)
 
 ## Finding Normal Forms
 - Find all the candidate keys (C) using attribute closure
@@ -117,7 +158,8 @@
   - BC is a candidate key since B -> A
 - Prime attributes = { A, B, C }
 - 1NF: Yes, no composite attributes
-- 2NF: No, D is dependent on A (A -> D) which is proper subset of candidate key AC
+- 2NF: No, D is dependent on A (A -> D)
+  - Where A is proper subset of candidate key AC
 
 ### Example 2
 - R (A, B, C, D, E) with FD = { BC -> D, AC -> BE, B -> E }

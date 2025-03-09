@@ -35,7 +35,7 @@
   - Attribute composed of many other attributes
   - Example: Address consists of street, city, state, country
 - Multi-valued Attribute
-  - Example: Email attribute can have multiple values
+  - Example: There can be multiple Email for a user
 - Derived Attribute
   - Example: Age attribute can be derived from date of birth
 
@@ -63,8 +63,11 @@
   - An employee can have only one salary
   - Minimum tables required
     - Total Participation: 1
-    - Partial Participation: 2 (There can be disconnected entities in second table)
-  - Employee (emp_id, salary_id), Salary (emp_id)
+      - Employee (emp_id, salary)
+    - Partial Participation: 2
+      - There can be disconnected entities in second table
+      - If so, it can lead to empty cells for salary column in above approach
+      - Employee (emp_id, salary_id), Salary (emp_id)
 - One to Many
   - A company can have many employees
   - Minimum tables required: 2
@@ -86,11 +89,17 @@
 - Specialization (Subclass)
   - Divide an entity into sub-entities based on characteristics (Top-down approach)
   - 'is a' relationship
-  - Example: Laptop is a computer (laptop is a special class of computer)
-  - Contraints: Total or Partial, Overlapped or Disjoint
+  - Example: Laptop is a computer (laptop is a special/sub class of computer)
+  - Contraints:
+    - Total or Partial
+      - Total subclass if every super-class entity is to be associated
+      - with some sub-class entity
+    - Overlapped or Disjoint
+      - Overlapping subclass if an entity from a super-set can be related (can occur)
+      - in multiple sub-class sets
 - Generalization (Superclass)
   - Extracting common properties and creating a generalized entity (Bottom-up approach)
-  - Example: Laptop is a computer (computer is a general class of laptop)
+  - Example: Laptop is a computer (computer is a general/super class of laptop)
 - Inheritance
   - Feature that allows subclasses to inherit attributes & relationships from superclasses
 - Multiple Inheritance
@@ -113,10 +122,10 @@
 ### Employee - Boss
 - Employee
   - Min cardinality = 0 (CEO can't have boss)
-  - Max cardinality = 1
+  - Max cardinality = 1 (employee can have only one boss)
 - Boss
-  - Min cardinality = 0
-  - Max cardinality = n
+  - Min cardinality = 0 (individual contributors don't manage any employee)
+  - Max cardinality = n (can manage many employees)
 - Participation: Partial
 - Relationship: Many to one
   - Employee (emp_id, boss_id)
@@ -142,7 +151,7 @@
 - In databases, it refers to discrepancy between
   - OOP model in application code & relational model in database
   - OOP models represent data as objects with properties & methods
-  - Relation model represents data as tables with columns & rows
+  - Relational model represents data as tables with columns & rows
 - Challenges in mapping objects to tables & vice versa
   - Object heirarchy may need to be flattened into single table
   - Multiple related tables may need to be joined together to represent a single object
