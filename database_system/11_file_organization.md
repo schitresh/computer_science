@@ -2,13 +2,13 @@
 - Data is stored in the form of tables in the database
   - But in physical memory it is stored in the form of files
 - File organization refers to logical relationships among various records that constitute the file
-  - Particularly with respect to identification and access to any specifi record
+  - Particularly with respect to identification and access to any specific record
 
 ## Types of File Organization
 - Sequential File Organization
   - Pile File Method: Records are stored sequentially in the order of insertion in tables
   - Sorted File Method: Records are inserted in a sorted sequence based on primary or any other key
-  - We canot jump on a particular record, but have to move in a sequential manner
+  - We cannot jump on a particular record, but have to move in a sequential manner
 - Heap File Organization
   - Records are inserted at the end as data blocks
   - If a data block is full, the new record is stored in some other block in the memory
@@ -26,7 +26,7 @@
   - Index maintainance can add overhead in insert & update operation
 
 ## Hashing File Organization
-- For larger databases with thousands & millions of records, indeximng becomes inefficient
+- For larger databases with thousands & millions of records, indexing becomes inefficient
   - Because searching a specific record consumes more time
   - Hashing can directly reach the location of a record without searching through indices
 - Hash Table

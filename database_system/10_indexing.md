@@ -12,13 +12,13 @@
 
 ### Sequential File Organization (Or Ordered Index File)
 - Dense index
-  - For every search key value in the data file, there is an index record
+  - For every search key in the data file, there is an index record
   - The record contains the search key and the reference to the first data record
 - Sparse index
   - The index record is present for only a few items in the data file
   - The reference in each record points to a block
   - To locate a record
-    - We find the record with the largest search key value less than or equal to the target
+    - We find the record with the largest search-key value less than or equal to the target
   - After jumping to the reference pointer
     - The file is searched sequentially for the target record
   - Number of accesses required = log(n) + 1, where n is the number of blocks
@@ -63,7 +63,6 @@
   -          (35, 65)                              (130, 180)
   - (10, 20) (40, 50) (70, 80, 90)      (110, 120) (140, 160) (190, 240, 260)
 
-
 ### Properties
 - All leaves are at the same level
 - It's defined by the term minimum degree 't', which depends on disk block size
@@ -73,8 +72,9 @@
   - Others: (t - 1) to (2t - 1)
   - Number of children: Number of keys + 1
 - Child between two keys k1 & k2 contains all keys from k1 to k2
-- Grows and shrinks from root unlike BST, BSTs grow downward & also shrink from downward
-- Time Complexity for insert, delete, search = O(height) = O(logn)
+- Grows and shrinks from root unlike BST
+  - BSTs grow downward & also shrink from downward
+- Time Complexity for insert, delete, search = O(height) = O(log(n))
 - Insertion only happens at leaf node
 
 ### Insertion
