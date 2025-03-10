@@ -47,7 +47,7 @@
       - T1 granted A, T2 granted B
       - T1 waiting for B, T2 waiting for A
   - Starvation
-  - Does not insure recoverability
+  - Does not ensure recoverability
 
 ### Strict 2PL Protocol
 - In 2PL, transactions can release any lock before committing
@@ -64,15 +64,17 @@
 ### Conservative or Static 2PL Protocol
 - The transaction should lock all the items before starting execution
   - By predeclaring its read-set and write-set
-  - If any of the predeclared items cannot be locked, the transaction should not lock any of the items
-  - And wait till all the items are available for locking
+  - If any of the predeclared items cannot be locked
+    - Then the transaction should not lock any of the items
+    - And wait till all the items are available for locking
 - Locks can be released at any time
 - Not cascadeless, so does not ensure a strict schedule
 - Deadlock free, since one deadlock condition (hold & wait) is nullified
 - Difficult to use in practice because predeclaration is not possible in many situations
 
 ## Graph Based Protocols
-- Transactions are represented as nodes in a graph and the conflicts between them as edges
+- Transactions are represented as nodes in a graph
+  - And the conflicts between them as edges
 - If a transaction tries to acquire an exclusive lock on an item
   - And if that is already locked by another transaction
   - Then a conflict edge is added between their nodes
@@ -82,7 +84,7 @@
   - And one of the transactions needs to be rolled back to break the cycle
 - It can handle complex transactions better than two-phase locking
   - But it's computationally expensive
-  - And may not scale weel for large databases
+  - And may not scale well for large databases
 - Tree Based Protocol
   - Simple implementation of graph based protocol
   - Data item A can be locked by T1 only if the parent of A is currently locked by T1
@@ -98,7 +100,7 @@
 - Granularity is the size of the data item allowed to lock
 - Multiple granularity means hierarchically breaking up the database into blocks
   - That can be locked and can be tracked what needs to be locked & in what fashion
-- How doees the system determine if the root node can be locked
+- How does the system determine if the root node can be locked
   - If it searches the entire tree, it will nullify the whole purpose of this locking scheme
   - A more efficient way is to introduce a new lock mode (intention lock)
 
@@ -154,11 +156,12 @@
 
 ## Timstamp Ordering Protocol
 - Ensures that the conflicting operations do not violate the ordering
-
 - If R(X) and W(X) are conflicting operations
   - Then R(X) is processed before W(X) if and only if TS(T1) < TS(T2)
   - If a schedule doesn't follow a timestamp serializability, reject and rollback the transaction
-- Transactions are be conflict serializable and deadlock free
+- Each transaction is assigned a unique timestamp when it enters the system
+  - Ensuring that all operations follow a specific order
+  - Making the schedule conflict serializable and deadlock free
 - Cascading rollbacks are possible
 - If T2 occurs before T1
   - Allowed Operations
@@ -182,7 +185,8 @@
   - Else: Operation executed
 
 ## Thomas Write Rule (Write Ahead Logging Protocol)
-- Any modification to a database must be written to disk before control is returned to a user
+- Any modification to a database must be written to disk
+  - Before the control is returned to a user
 - This ensures that database remains consistent and durable
 - Modification of the basic timestamp ordering protocol
 - Does not enforce conflict serializability

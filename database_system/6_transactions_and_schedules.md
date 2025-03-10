@@ -1,21 +1,26 @@
 ## Transaction
-- Transaction: Collection of operations that performs a single logical function in database
+- Transaction
+  - Collection of operations that performs a single logical function in database
 - Operations: Read, Write, Commit, Rollback, Abort
 
 ## Transaction properties
 - Atomicity
   - Either all operations should execute or none
+  - No partial transactions
 - Consistency
   - Data should be consistent everywhere
     - Debit, credit, sender, receiver, total, remaining, before, after
+  - Any transaction should take the database from one consistent state to another
+    - Maintaining the rules and constraints defined for the data
 - Isolation
-  - Operation permission should be granted to one only
+  - Operation permission should be granted to one transaction only
   - No two writes or one read & write should happen simultaneously
-  - Multiple transactions occur independently without interference
+  - Ensures that multiple transactions can occur concurrently and independently
+    - Without interference and without leading to inconsistency of database state
 - Durable
-  - Once committed, changes should be permanent
+  - Once committed, changes should be permanent even if a system failure occurs
   - Account updates shouldn't be lost
-  - Multiple copies of the database is stored at different locations
+  - Multiple copies of the database should be stored at different locations
 
 ## Schedule
 - Series of operations from one or more transactions
@@ -43,7 +48,7 @@
 - Can lead to inconsistency
 - Serializable Schedules
   - Used to verify whether the scheduling will lead to any inconsistency
-  - If any non serial transaction produces an equal outcome when executed serially
+  - These are non-serial transactions that produce an equal outcome when executed serially
 
 ## Conflict Serializable
 - If the schedule can be transformed into serial schedule
@@ -60,10 +65,11 @@
   - Swapping non-conflicting operations
     - S1: R1(A), W1(A), R1(B), W1(B), R2(A), W2(A), R2(B), W2(B)
   - This can be represented as T1 -> T2
-  - It can also be rearranged as T2-> T1
+  - It can also be rearranged as T2 -> T1
 - Example 2:
   - S: R2(A), W2(A), R1(A), W1(A), R1(B), W1(B), R2(B), W2(B)
-  - A needs to be written by T2 first & B needs to be written by T1 first
+  - A needs to be written by T2 first & then needs to be read by T1
+  - B needs to be written by T1 first & then needs to be read by T2
   - Hence, it cannot be rearranged as T1 -> T2 or T2 -> T1
   - So it is not conflict serializable
 
@@ -73,12 +79,17 @@
 - In example 1, S & S1 are conflict equivalent
 
 ## View Serializable
-- If the schedule is view equivalent to a serial schedule
+- A schedule is view serializable if it is view equivalent to a serial schedule
+  - Serial Schedule
+    - Transactions are executed one after another without interleaving
+  - View Equivalent
+    - If two schedules produce the same final state of the database
+    - And ensure the same read/write behavior for all transactions
 - There are no overlapping transactions
-- Schedules that are conflict serializable are always view serialixale
+- Schedules that are conflict serializable are always view serializale
 - Conditions in both the schedules
   - Read of initial value and write of final value must be same for a data item
-  - W -> R conflict must be same
+  - W -> R conflict must be the same
 
 ### View Equivalence
 - Two schedules are view equivalent

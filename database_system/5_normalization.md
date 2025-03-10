@@ -41,7 +41,7 @@
 - Proper subset
   - A proper subset is a set that contains some but not all elements of another set
   - E.g. {1} is proper subset of {1, 2}, but {1, 2} is subset (not proper) of {1, 2}
-- Example: Student (id, course_id, course_fee)
+- Example: StudentCourse (id, course_id, course_fee)
   - It is not in 2NF because
     - Candidate key here is {id, course_id}
     - But course_id -> course_fee
@@ -50,7 +50,7 @@
         - It cannot identify a row uniquely even if combined with other attributes
     - It is a partial dependency and so this relation is not in 2NF
   - Break the table into 2 tables to make it 2NF
-    - Student (id, course_id)
+    - StudentCourse (id, course_id)
     - Course (id, course_fee)
 
 ### Third (3NF)
@@ -74,11 +74,14 @@
     - Student (id, name, state)
     - StateCountry (state, country)
 - Example 2:
-  - Student (id, course, instructor, instructor_email)
-  - Candidate key here is {id, course} because a student can have multiple courses
-  - A course can have multiple instructors, so {id, course} -> instructor
-    - That is instructor depends on id & course
-    - But instructor_email depends on instructor
+  - StudentCourse (id, course, instructor, instructor_email)
+    - {id, course} -> instructor (a course can have multiple instructors)
+    - instructor -> course (an instructor teaches only one course)
+    - instructor -> instructor_email
+    - {id, instructor} -> course (course can be determined through id & instructor)
+  - Candidate keys
+    - {id, course}, since a student can have multiple courses
+    - {id, instructor}, since an instructor teaches only one course
   - Hence, {id, course} -> instructor -> instructor_email
     - Which is transitive dependency and hence not in 3NF
     - Alternatively, instructor_email is non-prime and instructor is not super key
@@ -87,7 +90,8 @@
     - Instructor (instructor, instructor_email)
 
 ### BCNF
-- Advanced form for 3NF where in a FD X -> Y, X must be a super key
+- In a FD X -> Y, X must be a super key
+- Advanced form for 3NF
   - This is the last practiced form
   - Forms beyond like 4NF & 5NF are used only for theoritical purposes
 - Example:
@@ -103,6 +107,19 @@
     - Student (id, branch)
     - StudentCourse (student_id, course_id)
     - Course (id, branch)
+- Example 2:
+  - StudentCourse (id, course, instructor)
+    - {id, course} -> instructor (a course can have multiple instructors)
+    - instructor -> course (an instructor teaches only one course)
+    - {id, instructor} -> course (course can be determined through id & instructor)
+  - Candidate keys
+    - {id, course}, since a student can have multiple courses
+    - {id, instructor}, since an instructor teaches only one course
+  - Here, in instructor -> course, instructor is not a super key
+    - Hence it is not in BCNF
+  - Solution
+    - StudentInstructor (id, instructor)
+    - InstructorCourse (instructor, course)
 
 ### Fourth (4NF)
 - No non-trivial multi-valued dependency except candidate key

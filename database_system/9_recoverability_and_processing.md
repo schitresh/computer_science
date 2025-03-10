@@ -68,10 +68,10 @@
   - Through this, the database can be recovered to a specific point in time
 
 ## OLAP (Online Analytical Processing)
-- OLAP systems can analyze database inforrmation of multiple systems at the current time
+- OLAP systems can analyze database information of multiple systems at the current time
 - The primary goal is data analysis and not data processing
 - Online query management system that consists of historical data
-- Any time of data warehouse system is an OLAP system
+- Any type of data warehouse system is an OLAP system
 - Tables are not normalized
 - Relatively slow due to large amount of data
 - Applications
@@ -81,7 +81,7 @@
 - Benefits
   - Store planning, analysis, budgeting for business analytics within one platform
   - Helps in handling large volumes of data
-    - Shich helps inn enterprise-level business applications
+    - Which helps in enterprise-level business applications
   - Helps in applying security restrictions for data protection
   - Provides multi-dimensional view of data
 - Challenges
@@ -94,7 +94,7 @@
 - Relational
   - Data is stored in relational database
   - Based on the premise that
-    - Data need not be stored multi-dimensinally to be viewed multi-dimensionally
+    - Data need not be stored multi-dimensionally to be viewed multi-dimensionally
 - Multidimensional
   - Data is stored on disks in a specialized multi-dimensional array structure
   - Has advanced indexing and hashing to locate data and handle sparse arrays
