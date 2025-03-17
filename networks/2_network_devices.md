@@ -94,7 +94,7 @@
 - Sends message to the destination device based on the MAC address
   - Learns the MAC address of the device on the switch port on which it received the frame
 
-## Types
+### Types
 - Unmanaged: Simple configuration, suitable for small networks
 - Managed: Advanded configuration like VLAN, QoS, suitable for large networks
 - Layer 2: Operate at data link layer, forwards data between devices on the same network segment

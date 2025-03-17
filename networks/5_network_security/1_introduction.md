@@ -2,7 +2,7 @@
 - Security can be compromised via any of these breaches
   - Breach of confidentiality: Unauthorized reading of data
   - Breach of integrity: Uauthorized modification of data
-  - Break of availability: nauthorized destruction of data
+  - Break of availability: Unauthorized destruction of data
   - Theft of service: Unauthorized use of resources
   - Denial of service: Preventing legitimate use of system
 - The security of a system can be threatened via two violations
@@ -31,12 +31,12 @@
   - Corruption of data is a failure to maintain data integrity
 - To check this, a hash value is generated using hash functions like
   - SHA (Secure Hash Algorithm): 160-bit hash in SHA-1
-  - MD5 (Message Direcct 5): 128-bit hash
+  - MD5 (Message Direct 5): 128-bit hash
 - This hash value is attached to the data
   - When the target host receives the packet, it runs the same function
     - And checks if the generated hash matches the received hash
 
-### Availablity
+### Availability
 - Network (systems, data) should be readily available to its users
   - Or else it may impact the business
 - Network administrator should maintain hardware and make regular upgrades

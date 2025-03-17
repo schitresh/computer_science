@@ -4,7 +4,7 @@
   - Used to transfer data reliably and accurately from one device to another
   - Divides data into packets at the sender and recombines them at the receiver
 - Protocols
-  - TCP (Transmission Control Protocol): Sends an receives data
+  - TCP (Transmission Control Protocol): Sends and receives data
   - IP (Internet Protocol): Finds the destination of the data
 
 ## Network Access Layer
@@ -21,11 +21,11 @@
 - OSI counterparts: Transport
 - Protocols: TCP, UDP
 - Exchanges data receipt acknowledgements
-- Retransmits missing packets to ensure that packets arrive in roder and without error
+- Retransmits missing packets to ensure that packets arrive in order and without error
 
 ## Application Layer
 - OSI counterparts: Application, Presentation, Session
 - Protocols: HTTP, HTTPS, FTP, SSH, SMTP, DNS, DHCP
 - Responsiible for end to end communication and error free delivery of data
 - Shields the upper layer applications from the complexities of data
-- Also called Process or software layer
+- Also called Process or Software layer

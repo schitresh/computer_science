@@ -11,9 +11,9 @@
   - Responsibility of network
 
 ## Flow of Data
-- The data to be transferred travels through 7 layers of the moodel
+- The data to be transferred travels through 7 layers of the model
   - First it travels down the layers from the sender
-  - And then climbs back the layers from the receiver
+  - And then climbs back the layers towards the receiver
 
 ### Example: X sends an email to Y
 - Application: X sends an email using an application like gmail
