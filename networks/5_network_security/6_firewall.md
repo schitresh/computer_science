@@ -9,6 +9,7 @@
   - Drop: Block the traffic with no reply
 - History
   - Before firewalls, network security was performed by ACLs residing on routers
+  - ACL: Access Control List
   - ACL rules can determine whether network access should be granted or denied
   - But they cannot determine the nature of the packet it is blocking
   - And they do not have capacity to keep threats out of the network
@@ -22,7 +23,7 @@
   - TCP, UDP, ICMP which all have a source & a destination address
   - TCP & UDP have port numbers while ICMP uses type code instead of port number
 - It is difficult to explicitly cover every possible rule
-  - Hence a firewal must always have a default policy
+  - Hence a firewall must always have a default policy
 
 ## Types
 - Static Packet Filtering
@@ -42,7 +43,7 @@
   - Examines & filters packets on any OSI layer upto application layer
   - Recognizes when certain application and protocols are being misused
 - Next Generation Firewalls (NGFW)
-  - Deep packeet inspection, application inspection, SSL/SSH inspection
+  - Deep packet inspection, application inspection, SSL/SSH inspection
   - Many functionalities to protect the network from modern threats
 
 ## Zone-based Firewall

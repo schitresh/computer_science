@@ -4,7 +4,7 @@
   - Can be solved using end-point authentication
 - DNS spoofing or DNS cache poisoning
   - Corrupt DNS data is introduced into a DNS resolver's cache
-    - Causing the name serever to return an incorrect IP address
+    - Causing the name server to return an incorrect IP address
 - Phishing
   - Sending emails purporting to be from reputable companies
   - In order to induce individuals to reveal personal information & sensitive data
@@ -22,14 +22,14 @@
   - When communicating at low levels of network layer
     - Computers might not be able to determine with whom they are exchanging data
 - Compromized Key attacks
-  - A key is a secret code or number necessary to interpret secured informatino
+  - A key is a secret code or number necessary to interpret secured information
   - Obtaining a key is difficult and resource intensive process for an attacker
   - But it is possible and referred as compromised key when obtained
 
 ## Vulnerability Attacks
 - Trap Door
   - The designer of a program or system might leave a hole that only he is capable of using
-  - Quite difficult to detect as one needs to go through thee source code of all the components
+  - Quite difficult to detect as one needs to go through the source code of all the components
 - Port Scanning
   - Automated process that creates a TCP/IP connection to a specific port
   - To protect the identity of attacker, they are launched from zombie systems
@@ -46,4 +46,4 @@
     - For a particular date, probability of at least one student born is
       - 1 - (364 / 365)^n = 7.9% for n = 30
     - Probability that at least one student has the same birthday as any other is
-      - 1 - (365! / ((365 - n!) * 365^n)) = 70% for n = 3
+      - 1 - (365! / ((365 - n!) * 365^n)) = 70% for n = 30

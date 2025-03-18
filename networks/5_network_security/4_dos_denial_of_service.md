@@ -11,7 +11,6 @@
     - Running on a targeted host
     - To stop or crash the service
 - Bandwidth flooding
-
   - Target's access link becomes clogged and legitimate packets cannot reach the server
 - Connection flooding
   - A large number of half or fully open TCP connections are established
@@ -21,7 +20,7 @@
 ## DDoS (Distributed DDoS)
 - Multiple compromised systems are used to target a single system causing a DoS
 - Can leverage botnets with thousands of comprised hosts
-- Harder to detect and defect against than DoS attack from a single host
+- Harder to detect and defend against than DoS attack from a single host
 
 ### Types
 - Application layer attacks
@@ -30,8 +29,8 @@
   - But a client can generate and send multiple requests without any load
   - Examples: HTTP flood attack, attack on DNS services
 - Protocol attacks
-  - Focus on vulnerabilites in layer 3 & 4
-  - Consume resources like servers, firewalls, load balancers
+  - Focuses on vulnerabilites in layer 3 & 4
+  - Consumes resources like servers, firewalls, load balancers
   - Examples: SYN flood attack, ping of death
 - Volumetric attacks
   - Consumes network bandwidth and saturates it by amplification or botnet
