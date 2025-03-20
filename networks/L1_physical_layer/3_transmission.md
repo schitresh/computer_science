@@ -15,7 +15,7 @@
 - Signals in both the directions share the capacity of the link with each other
   - Either the link must contain two physically separated transmission path
     - One for sending & the other for receiving
-  - Or the capacity must be divided between signals traveling in both the directions
+  - Or the capacity must be divided between signals travelling in both the directions
 - Requires a high level of bandwidth
 - May not be suitable for all types of applications
 - Examples: phone, video conferencing, online gaming
@@ -73,7 +73,7 @@
 - Conducting material is sandwiched between two layers of the ground plane
   - Which are usually shorted to provide EMI immunity
 - Microstripline
-  - Conducting material is separated from the ground plaen by a layer of dielectric
+  - Conducting material is separated from the ground plane by a layer of dielectric
 
 ## Unguided Media
 - Radiowaves
@@ -82,7 +82,7 @@
   - Frequency range: 3KHz to 1GHz
   - Used by AM & FM radios, cordless phones
 - Microwaves
-  - Sending & receicing antennas need to be properly aligned
+  - Sending & receiving antennas need to be properly aligned
   - Frequency range: 1GHz to 300 GHz
   - Majorly used for mobile phone communication and television distribution
 - Infrared

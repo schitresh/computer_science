@@ -23,7 +23,7 @@
   - 1 is added if it contains odd number of 1's
   - 0 is added if it contains even number of 1's
   - 100011 -> 100011-1
-- Not able to detect even number of bit errors
+- Cannot detect even number of bit errors
   - That is, if two 1's or two 0's are flipped
 
 ### Two-dimensional Parity Check

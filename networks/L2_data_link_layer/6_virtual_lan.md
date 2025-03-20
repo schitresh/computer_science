@@ -24,7 +24,7 @@
 - Required for communication between different VLANs
 - Switch Virtual Interface (SVI)
   - Logical interface on a multilayer switch that processes packets on all switch ports
-  - Provides only management services like creating VLAN or telent/SSH services on layer 2
+  - Provides only management services like creating VLAN or telnet/SSH services on layer 2
   - Provides both management and routing services on layer 3
 
 ## Private VLAN
@@ -33,7 +33,7 @@
 - Secondary VLANs provide isolation between the ports
   - Isolated VLANs
     - Cannot communicate with other hosts directly
-    - Can communicate only with with associated promiscuous port
+    - Can communicate only with associated promiscuous port
   - Community VLANs: Can communicate with each other and associated promiscous port
 
 ## Switch Ports

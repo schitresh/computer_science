@@ -1,3 +1,22 @@
+## ARQ (Automatic Repeat Request or Automatic Repeat Query)
+- ARQ is an error-control strategy used in a two-way communication system
+- It is a group of error-control protocols to achieve reliable data transmission
+  - Over an unreliable source or service
+- These protocols
+  - Reside in the transport layer and data link layer
+  - Responsible for the automatic retransmission of packets
+    - That are found to be corrupted or lost during the transmission process
+
+### Working Principle of ARQ
+- The sender receives an acknowledgment from the receiver before timeout
+  - Implying that the frame or packet is received correctly
+- Timeout is a specific period within which the acknowledgment has to be sent
+  - By the receiver to the sender
+- If a timeout occurs
+  - It is implied that the frame or packet has been corrupt or lost during the transmission
+  - And the sender retransmits the packet
+  - This process is repeated until the correct packet is transmitted
+
 ## Stop and Wait ARQ
 - Error and flow control used in connection-oriented communication
 - Used in data link layer and transport layer
@@ -13,10 +32,10 @@
 
 ### Simple Stop and Wait
 - Sender
-  - Send one packet at a time
-  - Send the next packet only after receiving acknowledgement for the previous one
+  - Sends one packet at a time
+  - Sends the next packet only after receiving acknowledgement for the previous one
 - Receiver
-  - Send acknowledgement (ack) after receiving and consuming a packet
+  - Sends acknowledgement (ack) after receiving and consuming a packet
 - Problems
   - If a packet is lost
     - Sender keeps waiting for ack and receiver keeps waiting for packet
@@ -62,11 +81,11 @@
   - TT = T(t) + 2 * T(p)
 - Efficiency: Useful time / Total time, i.e. T(t) / TT
 - Effective Bandwidth or Throughput
-  - umber of bits sent per second
+  - Number of bits sent per second
   - Throughput = D / TT = Efficiency * Bandwidth
 
 ### Pipelining
-- Window size = Number of packet in one cycle
+- Window size = Number of packets in one cycle
   - One packet is transmitted in T(t) time
   - W = TT / T(t) = 1 + 2 * (T(p) / T(t))
   - W = 1 + 2a, where a = T(p)/T(t)

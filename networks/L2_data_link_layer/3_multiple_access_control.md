@@ -18,7 +18,7 @@
 - Pure Aloha
   - Station waits for an acknowledgement after sending data
   - If acknowledgement is not received within the alotted time
-    - Then the station wait for a random amount of time (backoff time)
+    - Then the station waits for a random amount of time (backoff time)
     - And then re-sends the data
   - The probability of collision decreases
     - Since different stations wait for different amount of time
@@ -44,11 +44,11 @@
   - So back-off algorithm is used
     - Where it waits for random time intervals before resending the frame
 - The size of a frame must be large enough to detect the collision by the sender
-  - Frame tramsission delay must be at least two times the maximum propogation delay
+  - Frame transmission delay must be at least two times the maximum propogation delay
   - T(t) >= 2 * T(p)
   - T(t) = S / B (S = Frame Size, B = Bandwidth or Transmission Speed)
   - T(p) = L / P (L = Distance between farthest nodes, P =  Propogation Speed)
-  - From above equations, we can get the mimimum frame size (S) and the maximm cable length (L)
+  - From above equations, we can get the mimimum frame size (S) and the maximum cable length (L)
 
 ### CSMA/CA (Collision Avoidance)
 - Interframe space

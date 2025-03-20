@@ -66,7 +66,7 @@
     - To the switching table of each intermediate node
 - Resources like buffers, CPU, bandwidth are reserved
   - For the time in which the virtual circuit will be used
-  - If many clients are trying to reserver a router's resources simultaneously
+  - If many clients are trying to reserve a router's resources simultaneously
     - It can become problematic
 - The first sent packet reserves resources at each server along the path
   - Subsequent packets follow the same path as the first packet during the connection

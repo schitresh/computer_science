@@ -22,18 +22,18 @@
   - Designates radio frequencies for communication
     - And performs handover from one cell tower to another
 
-### Network Subsystem
+## Network Subsystem
 - Handles the handover from one BSS to another
-  - Which enables national & internation roaming
+  - Which enables national & international roaming
 - It is aware of the subscriber location via its databases
   - Home location register & visitor location register
 - The movement of a mobile station is traced
   - And updated in the registers if it leaves the current location area
 
-### Operation Subsystem
+## Operation Subsystem
 - Responsible for smooth operations of a network
 - Traffic monitoring, subscriber management, security, accounting, billing
-- This informatino is held in a consolidate database of existing mobile devices
-  - This database is called equiment identity register
+- This informatino is held in a consolidated database of existing mobile devices
+  - This database is called equipment identity register
   - This database is updated to blacklist any stolen device
     - And block communication on the associated SIM
