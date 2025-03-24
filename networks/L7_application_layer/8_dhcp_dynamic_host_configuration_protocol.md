@@ -43,7 +43,7 @@
     - It sends NAK message to the client
     - For example, when there is no IP address left in the pool
 - Decline message
-  - If the offered confguration parameters are invalid
+  - If the offered configuration parameters are invalid
     - The client sends a decline message to the server
     - For example, when there is a reply to the gratuitous ARP by any host to the client
 - Release message

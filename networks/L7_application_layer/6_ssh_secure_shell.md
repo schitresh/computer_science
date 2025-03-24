@@ -9,7 +9,7 @@
 - Types of key pairs
   - User key: If public & private key remain with the user
   - Host key: If public & private key are on a remote system
-  - Sesson key: Used when a large amount of data is to be transmitted
+  - Session key: Used when a large amount of data is to be transmitted
 
 ## Working
 - Public keys from the local system are passed to the server

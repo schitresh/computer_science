@@ -16,7 +16,7 @@
 ## Components
 - Sender's user agent prepares a message and sends it to the Mail Transfer Agent (MTA)
 - MTA maintains a small queue
-  - To schedule repeat delivery of mail in case receiver is not avialable
+  - To schedule repeat delivery of mail in case receiver is not available
 - MTA transfers the mail across the network to the receiver's MTA
 - The user agent on the server side checks the mailboxes at regular intervals
 - If any information is received, it informs the user about the mail

@@ -23,9 +23,9 @@
   - After the transaction is finished
     - The connection between the browser and the server ends
 - Client-server model that uses TCP
-  - Client initiate TCP connection (creates socket) to server, port 80
+  - Client initiates TCP connection (creates socket) to server, port 80
   - Server accepts connection, notifying client
-  - HTTP messages exchanged between browser (client) and web server
+  - HTTP messages are exchanged between browser (client) and web server
 
 ## HTTPS (HTTP Secure)
 - Combination of HTTP with SSL/TLS convention to supply encrypted communication

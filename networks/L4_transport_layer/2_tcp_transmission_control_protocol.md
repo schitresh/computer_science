@@ -37,13 +37,13 @@
 ## Connection using 3 way handshake
 - Step 1: SYN
   - When a client wants to establish a connection
-    - Isends a segment with SYN (Synchronized Sequence Number)
+    - It sends a segment with SYN (Synchronized Sequence Number)
   - This informs the server that the client is likely to start communication
     - And with what sequence number (32-bit number) it starts with
 - Step 2: SYN + ACK
   - Server responds to the client request with SYN-ACK signal bits set
   - Acknowledgement (ACK) signifies that the response of the segment is received
-  - SYN signifies with what sequence number it is likely to start the segements with
+  - SYN signifies with what sequence number it is likely to start the segments with
 - Step 3: ACK
   - Client acknowledges the response of the server
   - And they both establish a reliable connection
@@ -76,7 +76,7 @@
 - If there is no response after 10 probes (75s apart)
   - It assumes that the client is down and terminates the connection
 
-## Time wait timer or quiet timer
+### Time wait timer or quiet timer
 - Used during tcp connection termination
 - Starts after sending the last ack and closing the connnection
 - After connection is closed

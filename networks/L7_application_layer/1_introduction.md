@@ -4,11 +4,11 @@
   - Protocols: HTTP, DHCP, FTP, SSH, SMTP, DNS
   - Platforms: Network applications, Browser, Messenger, Gateways, Firewalls
 - Features
-  - Data produced by applications which needs to be transferred ovoer the network
-  - Provides services to the user like file tranfer, mail services, etc.
+  - Data produced by applications which needs to be transferred over the network
+  - Provides services to the user like file transfer, mail services, etc.
   - Window for users and applications to access network services
   - Network transparency, resource allocation
-  - Also called desktop Layer
+  - Also called Desktop Layer
 - Addressing
   - Socket: Process sends/receive message to/from its socket
 - Functions
@@ -41,13 +41,13 @@
   - Routers maintain no fine-grained state about traffic
   - Scalabe and robust
     - But no guarantee about the kind of delay or performance in a particular application
-- Stateful soluutions
+- Stateful solutions
   - Routers maintain per-flow state
   - Much less scalable & robust
     - But guaranteed services and high resource utilization
 
 ## Web Caching
-- Subustantially reduces response time and traffic for repeated requests
+- Substantially reduces response time and traffic for repeated requests
 - Done by proxy server (intermediate entity between the original server & client)
   - If a request is cached
     - Proxy server forwards the cached result directly to the client

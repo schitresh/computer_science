@@ -9,7 +9,7 @@
 - Was developed to meet the needs of Broadband ISDN
   - And is a core protocol used in SONET
 
-### Details
+## Details
 - Uses small fixed-size packets called cells which are transmitted asynchonously
   - In contrast, IP packets are of variable size
   - Independent of transmission medium

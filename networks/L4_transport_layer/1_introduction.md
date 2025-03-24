@@ -46,7 +46,7 @@
   - All the packets travel in the single route
 - Connection-less service
   - One phase process: data transfer
-  - Receiving devices does not acknowledge receipt of a packet
+  - Receiving device does not acknowledge receipt of a packet
   - Faster communication
   - Each segment is treated as an individual packet
   - Packets travel in different routes to reach the destination
@@ -66,8 +66,8 @@
 
 ## Error and Flow Control
 - Checks errors in messages coming from the applcation layer by
-  - Using error detection codees
-  - Computing checksumes
+  - Using error detection codes
+  - Computing checksums
   - Checking if the received data is corrupted
   - Using ACK & NACK services to inform the sender
 
