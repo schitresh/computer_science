@@ -12,7 +12,7 @@
 - Management of resources (CPU, memory, files)
 
 ## Characteristics
-- Device Management: Tracks all devices, and decide which process gets access, when & for how much time
+- Device Management: Tracks all devices, and decides which process gets access, when & for how much time
 - Processor Management: Allocates processor to process and de-allocates when no longer required or job is done
 - Memory Management: Tracks & allocates primary memory
 - Storage Management: Stores data in various tracks of hard drive
@@ -25,7 +25,7 @@
 - Provides loader to move compiled code to memory for execution
 - Provide routines that handles details of I/O programming
 
-## Computer system
+## Computer System
 - User Interface: Users, application programs
 - System: Utilities, system programs (compilers, loaders, editors), OS
 - Extended Machine: Context save, dispatching, swapping, I/O initiation
@@ -38,10 +38,12 @@
   - It has memory management that includes buffering, caching, spooling and a device driver interface
 - Assemblers
   - Converts an assembly code to object/machine code & instructions required by loader
-- Compiler &
-  - Converts all the given high level code to machine code and then executes. Ex: C, C++, Rust, Go
+- Compiler
+  - Converts all the given high level code to machine code and then executes
+  - Examples: C, C++, Rust, Go
 - Interpreter
-  - Converts high level code to machine code line by line and simultaneously executes it. Ex: Python, Ruby
+  - Converts high level code to machine code line by line and simultaneously executes it
+  - Examples: Python, Ruby
 - Loader
   - A routine that loads an object/machine program in memory and prepares for execution
 
@@ -51,13 +53,14 @@
 - Kernel
   - Core component that provides services to other components
   - Primary interface between OS & hardware that manages system resources
-  - Addresses low level functions:
+  - Addresses low level functions
     - I/O management, device drivers, memory management, application management
     - System calls, process & cpu scheduling
 
 ## Types of OS
 - Batch
-  - Groups jobs into batches based on similar requirements. Ex: Payroll & bank systems
+  - Groups jobs into batches based on similar requirements
+  - For example, payroll & bank systems
 - Single Tasking
 - Multi Programming
   - Can execute multiple programs in main memory
@@ -66,7 +69,7 @@
   - Preemptive: OS can interrupt and switch to another process
   - Cooperative: OS never interrupts to switch to another process
 - Multi Processing
-  - Multiple CPUs are used execution
+  - Multiple CPUs are used for execution
 - Time Sharing
   - Each task is given some time to execute
   - Processor's time is shared among multiple users
@@ -102,13 +105,11 @@
 - A CPU register stores memory addresses, which is how a processor accesses data from RAM
 - One bit in a register can reference an individual byte in memory
 - Based on how much memory can be accessed by a CPU register, there are 32-bit & 64-bit processors
-
-- 32-bit
-  - Can access 2^32 memory addresses (4 GB of RAM or physical memory)
-  - For more than 4 GB of RAM, the system should be 64-bit
-- 64-bit
-  - Can access 2^64 memory addresses (17 * 10^9 GB of RAM or physical memory)
-
+  - 32-bit
+    - Can access 2^32 memory addresses (4 GB of RAM or physical memory)
+    - For more than 4 GB of RAM, the system should be 64-bit
+  - 64-bit
+    - Can access 2^64 memory addresses (17 * 10^9 GB of RAM or physical memory)
 
 ## System Startup
 ### BIOS (Basic Input Output System)
@@ -122,7 +123,7 @@
   - Bootloader is pulled into memory and started
   - Bootloader loads OS in memory
 - Kernel
-  - OS starts running and initialises hardware drivers, and then launches kernel
+  - OS starts running and initializes hardware drivers, and then launches kernel
   - Kernel starts the init system
 - Init
   - Determines the run-level of the system (single user, multi user with network, without network, etc)

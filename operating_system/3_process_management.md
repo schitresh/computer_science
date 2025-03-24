@@ -32,7 +32,8 @@
 - It happens when
   - High priority task comes to ready state
   - Interrupt occurs
-  - Sometimes when user & kernel mode switch (If another process carries out privileged instructions)
+  - Sometimes when user & kernel mode switch
+    - If another process carries out privileged instructions
   - Preemptive CPU scheduling
 
 ## CPU vs I/O Bound

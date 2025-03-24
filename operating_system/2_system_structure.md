@@ -7,7 +7,7 @@
 - User mode (mode bit 1)
   - Prevents user program from interfering with OS program
   - Non privileged instructions
-    - Performing computations,accessing user-level resources like files & memory, managing process control
+    - Performing computations, accessing user-level resources like files & memory, managing process control
 - Concept of modes can be extended beyond two
   - Requires more than a single bit mode CPU that support virtualization
   - One of these extra bits is used to indicate when virtual machine manager (VMM) is in control
@@ -16,7 +16,7 @@
 ### System call
 - Programmatic way for a program to request a service from kernel
 - Program is temporarily switched from user mode to kernel mode
-- Implemented in form of software interrupts
+- Implemented in the form of software interrupts
   - Which causes hardware's interrupt handler to transfer control to an appropriate interrupt handler (part of OS)
   - And switches the bit mode to kernel mode
 - Interrupt handler
@@ -48,7 +48,7 @@
 - Services provided: scheduling, caching, spooling, device reservation, error handling
 - I/O Scheduling
   - Each device has a wait queue for requests
-  - When an application issues a blocking I/O system call, it's place in the queue of the device
+  - When an application issues a blocking I/O system call, it's placed in the queue of the device
   - I/O scheduler rearranges the order to improve the efficiency
 - Buffering
   - Memory area that stores data being transferred between devices or a device & an application
@@ -57,9 +57,11 @@
   - Supports copy semantic for the application I/O
     - Copy semantic
       - If an application wants to write data from buffer to a disc
-      - It calls write() system call providing pointer to the buffer and an integer specifying number of bytes to write
+      - It calls write() system call providing pointer to the buffer
+        - And an integer specifying number of bytes to write
 - Caching
   - Fast memory that holds a copy of data for faster access
 - Spooling
-  - A buffer that holds the output of a device that canot accept interleaved data streams
-  - For example, a printer where several applications send output concurrently, without mixing their outputs
+  - A buffer that holds the output of a device that cannot accept interleaved data streams
+  - For example, a printer where several applications send output concurrently
+    - Without mixing their outputs

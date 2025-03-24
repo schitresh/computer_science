@@ -30,7 +30,7 @@
 ## Schedulers
 - Long Term (Job Scheduler)
   - Which process should be brought in ready queue
-  - How many process should be kept in ready state (decides degree of multi-programming)
+  - How many processes should be kept in ready state (decides degree of multi-programming)
   - Maintains balance between CPU bound & I/O bound processes
   - Once a decision is taken, it lasts for a long time
 - Short Term (CPU Scheduler)
@@ -48,7 +48,7 @@
 
 ## Convoy Effect
 - Few slow processes slow down the entire system
-- Solution: preeemptive algorithms
+- Solution: preemptive algorithms
 - Example
   - I/O bound process runs in CPU and moves to I/O
   - CPU bound process runs in CPU
