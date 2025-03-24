@@ -3,7 +3,7 @@
   - IP addresses are included in the packet headers
   - Connection-less protocol used for packet switched networks
   - Operates on a best effort delivery model
-    - Neither delivery is guaranteeed
+    - Neither delivery is guaranteed
     - Nor proper sequencing nor avoidance of duplicate delivery
   - Host-to-host communication: Determines the path of transmission
 - Data Encapsulation and Formatting
@@ -41,7 +41,7 @@
   - Host ID (Identify the host within a network)
 - The class of IP address determines the bytes used for network ID & host ID
   - And the number of total networks and hosts possible
-  - More number of bytes assigned for host ID means that more number of host are possible
+  - More number of bytes assigned for host ID means that more number of hosts are possible
 - Each ISP or network administrator assigns an IP address to each connected device
   - The first address of any network is the network number
     - So in host ID, all bits cannot be set 0

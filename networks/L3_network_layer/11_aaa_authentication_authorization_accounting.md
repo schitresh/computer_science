@@ -1,7 +1,7 @@
-## AAA
+## AAA (Authentication, Authorization, Accounting)
 - AAA is a standard framework used to control
-  - Who is permitted to use network resoures (authentication)
-  - What they are authorized to do (authorization)
+  - Who is permitted to use network resources (authentication)
+  - What are they authorized to do (authorization)
   - Capture the actions performed while accessing the network (accounting)
 - An administrator can access a router or a device through a console
   - But it is incovenient if he is sitting far from the place of that device
@@ -24,7 +24,7 @@
 - For example, junior engineer and senior engineer will have different permissions
 
 ### Accounting
-- Monitoring and capturing events peformed by a user while accessing network resources
+- Monitoring and capturing events performed by a user while accessing network resources
 - Monitors how long the user has access to the network
 - Administrator can create an accounting method list
   - To specify what should be accounted for
@@ -34,7 +34,7 @@
 - AAA can be implemented by using the local database of router or by using external ACS server
 - Local database of the device (router)
   - First users are created for authentication
-  - Then priviledge levels are provided to users for authorization
+  - Then privilege levels are provided to users for authorization
 - Sending authentication requests to an external server like ACS server
   - Configuration on both router and ACS is required
     - If ACS server fails to authenticate, local database can be used as a backup

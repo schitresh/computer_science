@@ -55,10 +55,10 @@
 
 ### Inverse ARP
 - Uses MAC address to find the IP address (inverse of ARP)
-- Enabled by defualt in ATM (Asynchronous Transfer Mode) networks and frame relays
+- Enabled by default in ATM (Asynchronous Transfer Mode) networks and frame relays
 
 ### Gratuitous ARP
-- Used in advance network scenarios and detecting duplicate IP addresses
+- Used in advanced network scenarios and detecting duplicate IP addresses
 - Performed by computer while booting up
   - When NIC (Network Interface Card) is powered for the first time
   - It automatically broadcast its MAC address to entire network
@@ -74,7 +74,7 @@
   - If the resultant of both are same then the destination is present in the same network
 
 ### Same Network
-- It is checked if the ARP has not been resolved or not
+- It is checked if the ARP has been resolved or not
 - To resolve ARP, ARP request is broadcasted to all the other hosts in the network
   - This generates two packets, one for ICMP & other for ARP
   - The broadcast is performed with the help of a switch
@@ -102,7 +102,7 @@
     - Because the router has to deliver the packet to the destination host
     - The ARP request is broadcasted in the destination network and the same process follows
   - ICMP echo-request packet is unicasted to the destination host
-    - The destination host generates an ICMP echo reply in reponse
+    - The destination host generates an ICMP echo reply in response
     - Which is delivered to the router and then unicasted to the source host
 - The MAC addresses of the source & destination are used only till their respective router
   - After that, the router's MAC address is used

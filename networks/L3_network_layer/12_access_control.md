@@ -10,8 +10,8 @@
 ### Types
 - Standard access list
   - Uses only the source IP address
-  - Permit or deny the entire protocol suite
-  - Don't distinguish between the IP traffic like TCP, UDP, HTTPS, etc.
+  - Permits or denies the entire protocol suite
+  - Doesn't distinguish between the IP traffic like TCP, UDP, HTTPS, etc.
 - Extended access list
   - Uses source IP & port and destination IP & port
   - Can also mention which type of IP traffic should be allowed or denied
@@ -32,12 +32,12 @@
 ## Control Based Access Control (CBAC)
 - Secures and protects the network from unauthorized access and malicious activity
   - Enables granular control of network policies
-  - While maintiaing flexibility & functionality
+  - While maintaining flexibility & functionality
 - Unlike traditional access control that rely on static rules & fixed conditions
   - It analyses in real time by considering a wide range of contextual factors
   - ACLs provide traffic filtering till transport layer
     - While CBAC provides till application layer
-- With the help of CBAC coonfiguration, a router can act as a firewall
+- With the help of CBAC configuration, a router can act as a firewall
 - In addition to access lists
   - Maintains a state table in which the sessions are maintained in memory
     - The outbound traffic & its replies can pass the router using this state entry

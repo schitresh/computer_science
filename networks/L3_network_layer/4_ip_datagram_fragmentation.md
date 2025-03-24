@@ -16,8 +16,8 @@
 - Fragmentation can cause delays and other network issues
 - Increased processing and memory overhead from the network devices involved in transmission
 - Increased likelihood of packet loss or corruption
-  - Since each fragement is transmitted separately
-- If any fragements are lost or corrupted
+  - Since each fragment is transmitted separately
+- If any fragments are lost or corrupted
   - The entire packet must be retransmitted which can introduce delays & network congestion
 - Reassembly delays especially if there are delays in receiving all the fragments
   - Or if they arrive out of order
@@ -43,4 +43,4 @@
   - Fragment offset field is set based on the number of fragments, which is used to identify the sequence of frames
   - Header checksum is re-calculated
 - Reassembly of fragment takes place only at the destination
-  - Snd not at routers since packets take an independent path
+  - And not at routers since packets take an independent path

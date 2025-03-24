@@ -34,7 +34,7 @@
 ### WPA2 (Wifi Protected Access 2)
 - Includes mandatory support for
   - CCMP (Counter Mode CBC-MAC Protocol)
-    - Block chaining message authentication code protocol
+    - Blocks chaining message authentication code protocol
     - More robust and dependable than TKIP
   - AES (Advanced Encryption Standard) based encryption mode
 - Mandatory for all new devices to bear the Wifi trademark

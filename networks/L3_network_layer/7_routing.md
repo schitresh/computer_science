@@ -19,7 +19,7 @@
 - A route is selected for each source & destination pair of nodes in the network
   - The route is fixed and changes only if the topology changes
 - Central routing matrix is created based on the least cost path
-  - It shows each source-destination and identity of next node on the route
+  - It shows each source-destination and identity of the next node on the route
   - Stored in the network control center, but if that fails everything will collapse
   - Famous path algorithms: dijkstra, bellman ford
 - Doesn't react to failure or network congestion

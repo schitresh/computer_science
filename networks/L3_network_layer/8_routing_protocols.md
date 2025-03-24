@@ -19,7 +19,7 @@
 
 ## Types
 - Static or Non-adaptive
-  - Routes are manuallly configured
+  - Routes are manually configured
   - And they are not dynamically updated based on network changes
   - Best suited for small networks where topology does not change
 - Dynamic or Adaptive
@@ -66,7 +66,7 @@
   - Let's say AB = 1 & BC = 1, so AC = 2
     - If B & C are disconnected, B will remove C from its table
     - Meanwhile, if A advertises that AC = 2, then B updates BC = 3 since AB = 1
-    - A then receive update from B that BC = 3 and it updates AC = 4 since AB = 1
+    - A then receives update from B that BC = 3 and it updates AC = 4 since AB = 1
   - Spreading the bad information is called route poisoning
 - Solutions: Poison reverse, Split horizon
 - Examples: RIP (Routing Information Protocol)
@@ -83,7 +83,7 @@
 - Flooding
   - In flooding, each router sends info
     - To every other router on the internetwork except its neighbors
-  - Every router that receives tht packet sends the copies to all the neighbors
+  - Every router that receives the packet sends the copies to all the neighbors
 - Information Sharing
   - Router sends information only when a change occurs in the information
   - Only the updates requested by the neighbor router are exchanged

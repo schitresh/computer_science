@@ -9,7 +9,6 @@
   - Doesn't need to establish a connection
     - With the destination device before sending a message
 
-
 ## Types of Messages
 - Source Quench Message
   - Request to decrease traffic rate for messages sent to the host destination
