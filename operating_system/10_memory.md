@@ -22,11 +22,14 @@
 - Based on program behavior known as locality of references
 - Locality of references: Tendency of a processor to access the same set of memory locations
   - Repetitively over a short period of time
-- Some types of memory like cache and main memory are faster than others but have less size and are less expensive
+- Some types of memory like cache and main memory are faster than others
+  - But have less size and are more expensive
 - Types
-  - Internal or Primary: Directly accessible by the processor
+  - Internal or Primary Memory
+    - Directly accessible by the processor
     - Main memory, cache, CPU registers
-  - External or Secondary: Peripheral storage devices accessible by the processor via an I/O module
+  - External or Secondary
+    - Peripheral storage devices accessible by the processor via an I/O module
     - Magnetic disk, optical disk, magnetic tape
 
 ## Hierarchy Design
@@ -35,9 +38,12 @@
 - Have fastest access time and smallest storage capacity (16 to 64 bits)
 
 ### Cache
-- Small fast memory unit located close to CPU that stores recently accessed data from the main memory
-- Minimizes access time for CPU by storing temporary data or acting as a middleware between CPU & original location
-- Typically integrated directly into CPU chip or placed on a separate chip with a bus interconnect with CPU
+- Small fast memory unit located close to CPU
+  - That stores recently accessed data from the main memory
+- Minimizes access time for CPU by storing temporary data
+  - Or acting as a middleware between CPU & original location
+- Typically integrated directly into CPU chip
+  - Or placed on a separate chip with a bus interconnect with CPU
 
 ### Main Memory
 - Primary memory of a computer system, has larger capacity than cache memory but is slower

@@ -20,7 +20,7 @@
 - Process
   - When the CPU tries to access a page not in memory, it generates an interrupt indicating a memory access fault
   - OS puts the interrupted process in blocking state and it must bring the required page in the memory
-  - OS searches for the required process in the logical address space
+  - OS searches for the required page in the logical address space
   - The require page is brought from logical address space to physical address space
     - Page replacement algorithms are used to decide replacing the page in physical address space
   - The page table is updated accordingly
@@ -34,9 +34,6 @@
   - Generally, page faults decrease if frames are increased
   - But sometimes the opposite occurs and is termed as belady's anamoly
   - Commonly occurs in FIFO
-  - Example: Consider FIFO for 1, 2, 3, 4, 1, 2
-    - With 3 slots: 3 page faults
-    - With 4 slots: 2 page faults
 
 ## Swapping
 - The process of removing all the pages of a process from memory
@@ -58,7 +55,7 @@
 
 ## Frame Allocation
 - Static Allocation: The number of frame allocations to a process is fixed
-- Dyamic Allocation: The number of frame allocations to a process changes
+- Dynamic Allocation: The number of frame allocations to a process changes
 
 ## Paging Policies
 - Fetch Policy: Decides when a page should be loaded into the memory
@@ -77,7 +74,7 @@
     - Module 11: 00 (13), 01 (14), 10 (15), 11 (16)
   - To get the data at 0111, it will look in the module 01 with address 11 and fetch 8 as the data
 - Usage
-  - Whenever a cached miss occurs, the data is to be fetched from the main memory
+  - Whenever a cache miss occurs, the data is to be fetched from the main memory
   - But the main memory is slower than cache, so memory interleaving increases the access time
 
 ## Inverted Page Table

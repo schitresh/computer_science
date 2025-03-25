@@ -5,7 +5,8 @@
   - Producer produces an item and puts it in the buffer
   - Consumer consumes an item by picking up from the buffer
 - Problems
-  - Both processes may try to update the buffer at the same time which can lead to data loss & inconsistency
+  - Both processes may try to update the buffer at the same time
+    - Which can lead to data loss & inconsistency
   - Consumer might consume faster, so it might have to wait
   - Producer might produce faster which can lead to buffer overflow
   - There may be multiple producers & consumers, and same item may be processed multiple times
@@ -87,7 +88,7 @@ def eat(index):
 ```
 
 ## Readers Writers
-- A resoure (e.g. file) shared between multiple users or processes
+- A resource (e.g. file) shared between multiple users or processes
   - Reading: Any number of readers can read the write_semaphore
     - No one is allowed to write because the changes won't be visible to readers
   - Writing: Only the writer is allowed access
@@ -133,7 +134,7 @@ def reader():
 
 ## Sleeping Barber
 - Details
-  - There is one barbar and a number of chairs for waiting customers
+  - There is one barber and a number of chairs for waiting customers
   - Customers arrive at random times and take a chair if available to wait
   - If no chairs are available, the customer leaves
   - When the barber is finished with a customer, he picks up the next customer

@@ -1,8 +1,8 @@
 ## File System
-- Method to used by OS to store, organize and manage data on a storage device using files and directories
+- Method used by OS to store, organize and manage data on a storage device using files and directories
 - Types
   - FAT (File Allocation Table): Older file system
-  - NTFS (New Technology File System): Modern file system that supports permissions, compresssion, encryption
+  - NTFS (New Technology File System): Modern file system that supports permissions, compression, encryption
   - Ext (Extended File System): Commonly used in linux and unix
   - HFS (Hierarchical File System): Used by mac OS
   - APFS (Apple File System): New file system for mac OS
@@ -44,7 +44,7 @@
 - At the top of the file system is the root directory (represented by '/')
   - All other files are descendants of root
 - Each file and directory has an owner, a group, and permissions
-- Supports symbolic links: pointers to other files or directrories
+- Supports symbolic links: pointers to other files or directories
   - Without the need of physically moving them around
 
 ### Structure
@@ -78,7 +78,7 @@
 - Ordinary files: Files containing data, text, program instructions
 - Special files: Represents a physical device used for I/O like printer, tape drive
   - Character special file: Data is transferred one character at a time (raw device access)
-  - Block special file: Date is transferred in large fixed-size blocks (block device access)
+  - Block special file: Data is transferred in large fixed-size blocks (block device access)
 - Directories: Store both special & ordinary files
 - Pipes: UNIX allows linking commands using a pipe
   - The pipe acts as a temporary file which holds data from one command until read by another
@@ -92,7 +92,7 @@
   - Information in the file is processed in order, one record after the other
   - Most common and simplest access method
   - Read: It moves the pointer ahead by one
-  - Write: It allocates memoery and moves the pointer to the end of the file
+  - Write: It allocates memory and moves the pointer to the end of the file
   - Advantages
     - Less prone to data corruption as the data is written sequentially and not randomly
     - More efficient method for reading large files, as it only reads the required data
@@ -115,12 +115,12 @@
   - Hash function is used to calculate a unique key for each record or block based on its content
   - Any record or block can be accessed by specifying its key
   - Ideal for searching large databases or file systems
-  - Allows easy insertion and deletion of records or bloks
+  - Allows easy insertion and deletion of records or blocks
   - There is an overhead of calculating hashes and possibility of collision
 
 ## Disk or I/O Scheduling
 - Only one I/O request can be served at a time by the disk controller
-- Two or more requests may be far from each which can result in greater disk arm movement
+- Two or more requests may be far from each other which can result in greater disk arm movement
 - Hard drives are one of the slowest parts of the system and needs to be accessed in an efficient manner
 - Key Terms
   - Seek time: Time take to locate the disk arm to a specified track where the data is to be read or written
@@ -137,21 +137,21 @@
 - Data is sent to and stored in memory or other volatile storage until the program requests for execution
 - Devices like printers, keyboard, mouse are slow relative to the rest of the system creating a bottleneck
   - Spooling resolves this by accumulating data, instructions & processes from multiple sources in a request queue
-  - Which is then processedin a FIFO manner
+  - Which is then processed in a FIFO manner
 - Batch processing systems also use spooling to maintain a queue of ready-to-run jobs
   - Which can be started as soon as the system has resources
 - Allows multiple processes to write documents to a print queue without waiting and resume their work
 
 ### Difference from Buffering
 - Main memory has an area called buffer to store or hold data temporarily
-  - That is being transmitted between two devices or between a device or an application
+  - That is being transmitted between two devices or between a device & an application
 - Helps in matching the speed of data stream between the sender and the receiver
 
 ## RAID:
 - 0
 - 1 – Clone
 - 2 – Error correcting code and bits
-- 3 – Byte level striping with parity disk
+- 3 – Byte level stripking with parity disk
 - 4 – Block level striping with parity disk
 - 5 – Block level striping with distributed parity
 - 6 – extends 5 with one more parity block

@@ -18,7 +18,7 @@
 ## Livelock
 - When two or more processes continually repeat the same interaction
   - In response to changes in other processes without doing any useful work
-- All processes are in running concurrently while in deadlock they are in waiting state
+- All processes in livelock are running concurrently while in deadlock they are in waiting state
 
 ## Deadlock Prevention
 - Achieved by solving or avoiding one of the four conditions
@@ -48,10 +48,10 @@
 ### Resource Allocation Graph (RAG)
 - Process: circles
 - Resources: rectangles, number of instances are denoted by dots
-- Requesting: arrow from P to R,
+- Requesting: arrow from P to R
 - Allocated: arrow from R to P
 - It's a deadlock if a cycle forms
-  - If a resource has multiple instance, there must be that many cycles for deadlock
+  - If a resource has multiple instances, there must be that many cycles for deadlock
 
 ### Banker's algorithm
 - Used in banking system to check if a loan can be sanctioned to a person

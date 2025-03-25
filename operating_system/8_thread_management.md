@@ -29,7 +29,7 @@
   - Application dependent and OS independent
 - Kernel level
   - Have their own thread table to keep track and kernel helps in their management
-  - Slower than user-level, context switch times is more, complex implementation
+  - Slower than user-level, context switch time is more, complex implementation
   - Can schedule multiple threads of the same process on different processors
   - OS dependent
 
@@ -43,7 +43,7 @@
   - This default action can be overriden by a user defined signal handler
 - Thread Cancellation
   - A browser often loads a web page using several threads (each image is loaded in a separate thread)
-  - When stop button is preseed, all threads loading the page are canceled
+  - When stop button is pressed, all threads loading the page are cancelled
   - Cancellation may occur in 2 different scenarios
     - Async: One thread immediately terminates the target thread
     - Deferred: Target thread continuously checks whether it should terminate

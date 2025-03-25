@@ -2,12 +2,13 @@
 - Memory management is the functionality which manages primary memory
   - Moves processes between main memory and disk during execution
   - Keeps track of each memory location whether it's allocated or free
-  - Allocates memory dynamically to the programs when requested and de-allocates for reuse when no longer needed
+  - Allocates memory dynamically to the programs when requested
+    - And de-allocates for reuse when no longer needed
 - Memory Management Unit (MMU) handles these tasks
 - Requirements
   - Relocation: Relocate the process when swapped back if the previous location is occupied by another process
   - Protection: One process should not write to the address of another process (accidental or incidental)
-  - Sharing: Allow controlled access to shared memory share copy of process where requried
+  - Sharing: Allow controlled access to shared memory, share copy of process where required
   - Organization of logical & physical memory
 - Programs always execute in main memory, so larger the main memory, larger the multiprogramming
 
@@ -17,7 +18,8 @@
 - First fit: First available block which is large enough
 - Best fit: First smallest sufficient partition
   - Consumes a lot of process time to search
-  - May not always be the best algorithm, it depends on how the memory can be distributed among all processes
+  - May not always be the best algorithm
+    - It depends on how the memory can be distributed among all processes
 - Worst fit: Largest sufficient partition
 - Next fit: Similar to first fit, but will be searched from the last allocation point
 
@@ -28,7 +30,8 @@
 - Segmented: Memory is divided into different segments
   - Segment is a logical grouping of the process data or code
   - Allocated memory doesn’t have to be contiguous
-  - Most OS use segmentation with paging, a process is divided into segments and each segment has pages
+  - Most OS use segmentation with paging
+    - A process is divided into segments and each segment has pages
 
 ### Fragmentation
 - When many of the free blocks are too small to satisfy any request
@@ -45,7 +48,7 @@
 - Typically allocated at boot time and remains dedicated to a process till it terminates or releases
 - Advantages
   - Simple and easy to implement
-  - Minimum memory can be ensured for each proces
+  - Minimum memory can be ensured for each process
   - Prevents processes from interfering into each other's memory space
 - Disadvantages
   - Internal fragmentation (memory in partition remains unused)
@@ -56,8 +59,8 @@
 
 ### Variable or Dynamic Partitioning
 - Partitions are not made before execution but during run-time
-- Partition is creeated depending on the process requirements avoiding internal fragmentation
-- Number of partitions is not fixed and depends upon the incoming
+- Partition is created depending on the process requirements avoiding internal fragmentation
+- Number of partitions is not fixed and depends upon the incoming processes and the main memory size
 - First partition is reserved for OS
 - Keeping track of partitions: Bitmap, Linked List
 - Advantages: No interal fragmentation, no limitation on multiprogramming, no limitation on process size
@@ -139,15 +142,17 @@
 
 ### Types
 - Compile Time
-  - If it is known at the compile time where the process will reside in memory, then an absolute address is generated
+  - If it is known at the compile time where the process will reside in memory
+    - Then an absolute address is generated
   - Physical address is embedded to the executable of the program during compilation
   - Loading executable as a process in memory is very fast
   - If the generated address space is preoccupied by other processes, then the program crashes
     - The program needs to be recompiled to change the address space
 - Load Time
-  - If it is not known at the compile time where the process will reside, then a relocatable address is generated
+  - If it is not known at the compile time where the process will reside
+    - Then a relocatable address is generated
   - The loader translates the relocatable address to an absolute address
-  - To generate an absolutie address
+  - To generate an absolute address
     - The base address of the process in main memory is added to all logical addresses by the loader
   - If the base address of the process changes, the process needs to be reloaded
 - Execution Time
@@ -156,13 +161,13 @@
   - Used if a process can be moved from one memory to another during execution
 
 ### Page Table
-- Data structure used by OS to keep track the mapping between logical and physical addresses
+- Data structure used by OS to keep track of the mapping between logical and physical addresses
 - Contents of Page Table Entry (PTE)
   - Frame Number (or Address Translation Bit): Frame number in which the page is present (physical address)
   - Present/Absent Bit (or Valid/Invalid Bit): If the page is not present, it is called Page Fault
   - Protection Bit: Specifies protection like read, write, etc.
   - Reference Bit: Whether the page was referred in the last cycle or not
-  - Caching Enabled/Disabled: Caching is disabled when the lastest info is required
+  - Caching Enabled/Disabled: Caching is disabled when the latest info is required
   - Modified Bit (or Dirty Bit): If a page is modified, it has to be written or saved somewhere on page replacement
 - The size and format of PTE can vary depending on the architecture of the system and the OS
 
@@ -198,8 +203,9 @@
 - Disadvantages: Complex to implement, may require more memory overhead
 
 ## Garbage Collector
-- Prevent Memory leaks and fragmentation
-- Dynamic approach to automatic memory management and heap allocation that processes and identifies
+- Prevents memory leaks and fragmentation
+- Dynamic approach to automatic memory management and heap allocation
+  - That processes and identifies memory no longer referenced
 - Dynamic memory management process that finds dead memory blocks and reallocates them
 - 3 primary approaches
   - Mark and sweep: Reclaiming available memory
