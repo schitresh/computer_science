@@ -1,0 +1,25 @@
+## Database Management System
+- Introduction to DBMS
+- Architectures
+- SQL vs NoSQL
+- Entity Relationship Model
+- Relational Model
+  - Keys in Relational Model
+- Relationship Algebra
+  - DDL, DML, DQL, DCL
+- CAP Theorem, PACELC
+- Functional Dependencies
+- Normalization
+  - Normal Forms
+  - De-normalization
+- Concurrency Control
+  - Locking
+  - Transactions
+  - ACID Model, BASE Model
+- Indexing
+  - B Tree, B+ Tree
+- Views
+- Stored Procedures
+- Database Federation
+- Replication
+- Sharding

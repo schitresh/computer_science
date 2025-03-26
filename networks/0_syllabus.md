@@ -1,0 +1,15 @@
+## Networks
+- Introduction
+- DNS, HTTP
+- TCP/IP Model
+- OSI Model
+- TLS, HTTPS
+- Sockets
+- Circuit Switching Vs Packet Switching
+- Flow Control Protocols
+- Addressing (IP, Classful Addressing, Classless Addressing)
+- Routing Protocols
+- ARP & DHCP
+- Transport Layer
+- TCP & UDP
+- Application Layer

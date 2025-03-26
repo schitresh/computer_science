@@ -1,0 +1,12 @@
+## Operating System
+- Introduction & Types
+- CPU Interrupts
+- Multiprogramming, Multiprocessing & Multithreading
+- Concurrency, Socket Connections
+- Process Management & Scheduling
+- Process Synchronization
+  - Lock, Mutex, Semaphore
+- Processes vs Threads
+- Deadlock
+- Memory Management
+- Virtual Memory
