@@ -1,0 +1,12 @@
+# Database Management System
+- [Introduction](01_introduction.md)
+- [Entity Relationship Model](02_entity_relationship_model.md)
+- [Relational Model](03_relational_model.md)
+- [Functional Dependencies](04_functional_dependencies.md)
+- [Normalization](05_normalization.md)
+- [Transactions and Schedules](06_transactions_and_schedules.md)
+- [Concurrency Control](07_concurrency_control.md)
+- [Concurrency Control Protocols](08_concurrency_control_protocols.md)
+- [Recoverability and Processing](09_recoverability_and_processing.md)
+- [Indexing](10_indexing.md)
+- [File Organization](11_file_organization.md)
