@@ -3,7 +3,7 @@
 - [Network Devices](02_network_devices.md)
 - [OSI Model](03_osi_model.md)
 - [TCP/IP Model](04_tcp_ip_model.md)
-- [Network Security](05_network_security.md)
+- [Network Security](05_network_security/00_index.md)
 - [Physical Layer](L1_physical_layer/00_index.md)
 - [Data Link Layer](L2_data_link_layer/00_index.md)
 - [Network Layer](L3_network_layer/00_index.md)

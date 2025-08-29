@@ -1,2 +1,2 @@
-# L6: Presentation Layer
+# L5 Session Layer
 - [Introduction](01_introduction.md)

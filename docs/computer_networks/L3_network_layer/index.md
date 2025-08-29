@@ -1,4 +1,4 @@
-# L3: Network Layer
+# L3 Network Layer
 - [Introduction](01_introduction.md)
 - [IP (Internet Protocol)](02_ip_internet_protocol.md)
 - [IP v6](03_ip_v6.md)

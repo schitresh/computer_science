@@ -1,4 +1,4 @@
-# L2: Data Link Layer
+# L2 Data Link Layer
 - [Introduction](01_introduction.md)
 - [Switching](02_switching.md)
 - [Multiple Access Control](03_multiple_access_control.md)

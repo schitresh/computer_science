@@ -1,4 +1,4 @@
-# L7: Application Layer
+# L7 Application Layer
 - [Introduction](01_introduction.md)
 - [HTTP (HyperText Transfer Protocol)](02_http_hypertext_transfer_protocol.md)
 - [ATM (Asynchronous Transfer Mode)](03_atm_asynchonous_transfer_mode.md)
