@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>13 storage management - Computer Science</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Computer Science</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Computer Science</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Computer networks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../computer_networks/00_index/" class="dropdown-item">00 index</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/02_network_devices/" class="dropdown-item">02 network devices</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/03_osi_model/" class="dropdown-item">03 osi model</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/04_tcp_ip_model/" class="dropdown-item">04 tcp ip model</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05 network security</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/05_network_security/00_index/" class="dropdown-item">Network Security</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/02_threat_modeling/" class="dropdown-item">02 threat modeling</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/03_malware/" class="dropdown-item">03 malware</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/04_dos_denial_of_service/" class="dropdown-item">04 dos denial of service</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/05_miscellaneous_attacks/" class="dropdown-item">05 miscellaneous attacks</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/06_firewall/" class="dropdown-item">06 firewall</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/07_message_authentication_codes/" class="dropdown-item">07 message authentication codes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L1 physical layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/00_index/" class="dropdown-item">L1: Physical Layer</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/02_architecture/" class="dropdown-item">02 architecture</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/03_transmission/" class="dropdown-item">03 transmission</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L2 data link layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/02_switching/" class="dropdown-item">02 switching</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/03_multiple_access_control/" class="dropdown-item">03 multiple access control</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/04_sliding_window_protocol/" class="dropdown-item">04 sliding window protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/05_error_detection/" class="dropdown-item">05 error detection</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/06_virtual_lan/" class="dropdown-item">06 virtual lan</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/07_mobile_communication/" class="dropdown-item">07 mobile communication</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L3 network layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/02_ip_internet_protocol/" class="dropdown-item">02 ip internet protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/03_ip_v6/" class="dropdown-item">03 ip v6</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/04_ip_datagram_fragmentation/" class="dropdown-item">04 ip datagram fragmentation</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/05_icmp_internet_control_message_protocol/" class="dropdown-item">05 icmp internet control message protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/06_arp_address_resolution_protocol/" class="dropdown-item">06 arp address resolution protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/07_routing/" class="dropdown-item">07 routing</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/08_routing_protocols/" class="dropdown-item">08 routing protocols</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/09_nat_network_address_translation/" class="dropdown-item">09 nat network address translation</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/10_isdn_integrated_services_digital_network/" class="dropdown-item">10 isdn integrated services digital network</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/11_aaa_authentication_authorization_accounting/" class="dropdown-item">11 aaa authentication authorization accounting</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/12_access_control/" class="dropdown-item">12 access control</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/13_wifi/" class="dropdown-item">13 wifi</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L4 transport layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/02_tcp_transmission_control_protocol/" class="dropdown-item">02 tcp transmission control protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/03_udp_user_datagram_protocol/" class="dropdown-item">03 udp user datagram protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/04_congestion_control/" class="dropdown-item">04 congestion control</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L5 session layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L5_session_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L5_session_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L6 presentation layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L6_presentation_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L6_presentation_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L7 application layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/02_http_hypertext_transfer_protocol/" class="dropdown-item">02 http hypertext transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/03_atm_asynchonous_transfer_mode/" class="dropdown-item">03 atm asynchonous transfer mode</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/04_smtp_simple_mail_transfer_protocol/" class="dropdown-item">04 smtp simple mail transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/05_ftp_file_transfer_protocol/" class="dropdown-item">05 ftp file transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/06_ssh_secure_shell/" class="dropdown-item">06 ssh secure shell</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/07_dns_domain_system_name/" class="dropdown-item">07 dns domain system name</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/08_dhcp_dynamic_host_configuration_protocol/" class="dropdown-item">08 dhcp dynamic host configuration protocol</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Database system</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../database_system/00_index/" class="dropdown-item">Database Management System</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/01_introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/02_entity_relationship_model/" class="dropdown-item">Entity Relationship Model</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/03_relational_model/" class="dropdown-item">Relational Model</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/04_functional_dependency/" class="dropdown-item">Functional Dependency</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/05_normalization/" class="dropdown-item">Normalization</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/06_transactions_and_schedules/" class="dropdown-item">Transaction and Schedules</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/07_concurrency_control/" class="dropdown-item">Concurrency Control</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/08_concurrency_control_protocols/" class="dropdown-item">Concurrency Control Protocols</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/09_recoverability_and_processing/" class="dropdown-item">Recoverability and Processing</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/10_indexing/" class="dropdown-item">Indexing</a>
+</li>
+                                    
+<li>
+    <a href="../../database_system/11_file_organization/" class="dropdown-item">File Organization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Object oriented programming</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../object_oriented_programming/00_index/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../object_oriented_programming/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Operating system</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../00_index/" class="dropdown-item">Operating System</a>
+</li>
+                                    
+<li>
+    <a href="../01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                    
+<li>
+    <a href="../02_system_structure/" class="dropdown-item">02 system structure</a>
+</li>
+                                    
+<li>
+    <a href="../03_process_management/" class="dropdown-item">03 process management</a>
+</li>
+                                    
+<li>
+    <a href="../04_process_scheduling/" class="dropdown-item">04 process scheduling</a>
+</li>
+                                    
+<li>
+    <a href="../05_process_synchronization/" class="dropdown-item">05 process synchronization</a>
+</li>
+                                    
+<li>
+    <a href="../06_process_synchronization_solutions/" class="dropdown-item">06 process synchronization solutions</a>
+</li>
+                                    
+<li>
+    <a href="../07_process_synchronization_application/" class="dropdown-item">07 process synchronization application</a>
+</li>
+                                    
+<li>
+    <a href="../08_thread_management/" class="dropdown-item">08 thread management</a>
+</li>
+                                    
+<li>
+    <a href="../09_resource_allocation/" class="dropdown-item">09 resource allocation</a>
+</li>
+                                    
+<li>
+    <a href="../10_memory/" class="dropdown-item">10 memory</a>
+</li>
+                                    
+<li>
+    <a href="../11_memory_management/" class="dropdown-item">11 memory management</a>
+</li>
+                                    
+<li>
+    <a href="../12_virtual_memory/" class="dropdown-item">12 virtual memory</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">13 storage management</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../12_virtual_memory/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#file-system" class="nav-link">File System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#file-allocation-methods" class="nav-link">File Allocation Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#disk-free-space-management" class="nav-link">Disk Free Space Management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#unix-file-system" class="nav-link">Unix File System</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#file-access-methods" class="nav-link">File Access Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#disk-or-io-scheduling" class="nav-link">Disk or I/O Scheduling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#spooling" class="nav-link">Spooling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#raid" class="nav-link">RAID:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="file-system">File System</h2>
+<ul>
+<li>Method used by OS to store, organize and manage data on a storage device using files and directories</li>
+<li>Types</li>
+<li>FAT (File Allocation Table): Older file system</li>
+<li>NTFS (New Technology File System): Modern file system that supports permissions, compression, encryption</li>
+<li>Ext (Extended File System): Commonly used in linux and unix</li>
+<li>HFS (Hierarchical File System): Used by mac OS</li>
+<li>APFS (Apple File System): New file system for mac OS</li>
+<li>File: Collection of related information used to store and manage data in the computer system</li>
+<li>Directory: Collection of files</li>
+<li>Contains information about files: attributes, location, ownership</li>
+<li>Directory is itself a file accessible by file management routines</li>
+<li>Helps in grouping files and locating files quickly</li>
+</ul>
+<h2 id="file-allocation-methods">File Allocation Methods</h2>
+<ul>
+<li>Continuous Allocation</li>
+<li>A single continuous set of block is allocated at the time of file creation</li>
+<li>Pre-allocation strategy using variable size portions</li>
+<li>File allocation table needs a single entry for each file, with starting block and length</li>
+<li>Linked or Non-contiguous Allocation</li>
+<li>Individual blocks contain pointer to the next block, any free block can be added to the chain</li>
+<li>Although pre-allocation is possible, it is more common to allocate as needed</li>
+<li>If the pointer of any block is lost, the file will be truncated</li>
+<li>Supports only sequential access of files</li>
+<li>File allocation table needs a single entry for each file, with starting block and length</li>
+<li>Indexed Allocation</li>
+<li>File allocation table contains a separate one-level index for each file</li>
+<li>The index has one entry for each block allocated to the file</li>
+<li>The allocation can be on basis of fixed-size or variable-size blocks</li>
+<li>Supports both sequential and direct access to the file</li>
+</ul>
+<h2 id="disk-free-space-management">Disk Free Space Management</h2>
+<ul>
+<li>Space not allocated to any file also needs to be managed</li>
+<li>To know what blocks are available on a disk, a disk allocation table is required</li>
+<li>Bit Tables</li>
+<li>A vector containing one bit is used for each block on the disk: 0 for free blocks, 1 for occupied blocks</li>
+<li>Works well with any file allocation method, and easy to find contiguous free blocks</li>
+<li>Free Block List</li>
+<li>Each block is assigned a number sequentially</li>
+<li>List of the numbers of all free blocks is maintained in a reserved block of the disk</li>
+</ul>
+<h2 id="unix-file-system">Unix File System</h2>
+<ul>
+<li>Files are organized in multi-level hierarchy structure called directory tree</li>
+<li>At the top of the file system is the root directory (represented by '/')</li>
+<li>All other files are descendants of root</li>
+<li>Each file and directory has an owner, a group, and permissions</li>
+<li>Supports symbolic links: pointers to other files or directories</li>
+<li>Without the need of physically moving them around</li>
+</ul>
+<h3 id="structure">Structure</h3>
+<ul>
+<li>/: root</li>
+<li>/bin (binaries): fundamental utilities like ls, cp</li>
+<li>/boot: files required for successful booting</li>
+<li>/dev (devices): contains file representations of peripheral &amp; pseudo devices</li>
+<li>/etc: system wide configuration files &amp; system databases</li>
+<li>/home: home directories for users</li>
+<li>/lib: system libraries, critical files like kernel modules or device drivers</li>
+<li>/media: default mount point for removable devices like USB drives</li>
+<li>/mnt (mount): file system mount points, used if the system uses multiple hard disks or disk partitions</li>
+<li>Also used for file remote/network file systems, CD/DVD drives</li>
+<li>/proc: procfs virtual file system showing info about processes as files</li>
+<li>/root: home directory for the super user 'root'</li>
+<li>Not kept in /home in case specific maintenance needs to be performed</li>
+<li>During which other file systems are not available</li>
+<li>/tmp: temporary files, many systems clear it upon startup</li>
+<li>/usr: originally held user home directories which is now done by /home</li>
+<li>Now holds executables, libraries, shared resources that are not system critical</li>
+<li>/usr/bin: stores binary programs distributed with OS not residing in /bin &amp; /sbin</li>
+<li>/usr/include: stores development headers used throughout the system, mostly used by #include in C/C++</li>
+<li>/usr/lib: required libraries and data files for programs stored in /usr</li>
+<li>/var (variable): files that may change often especially in size</li>
+<li>/var/log: system log files</li>
+<li>/var/mail: stores incoming mails</li>
+<li>/var/spool: contains print jobs, mail spools and other queued tasks</li>
+<li>/var/tmp: temporary files which should be preserved between system reboots</li>
+</ul>
+<h3 id="types-of-unix-files">Types of Unix Files</h3>
+<ul>
+<li>Ordinary files: Files containing data, text, program instructions</li>
+<li>Special files: Represents a physical device used for I/O like printer, tape drive</li>
+<li>Character special file: Data is transferred one character at a time (raw device access)</li>
+<li>Block special file: Data is transferred in large fixed-size blocks (block device access)</li>
+<li>Directories: Store both special &amp; ordinary files</li>
+<li>Pipes: UNIX allows linking commands using a pipe</li>
+<li>The pipe acts as a temporary file which holds data from one command until read by another</li>
+<li>Sockets: Special file that allows for advanced inter-process communication</li>
+<li>It is a stream of data, similar to network stream &amp; network sockets</li>
+<li>But all transactions are local to the file system</li>
+<li>Symbolic link: Used to reference some other file in the file system</li>
+</ul>
+<h2 id="file-access-methods">File Access Methods</h2>
+<ul>
+<li>Sequential Access</li>
+<li>Information in the file is processed in order, one record after the other</li>
+<li>Most common and simplest access method</li>
+<li>Read: It moves the pointer ahead by one</li>
+<li>Write: It allocates memory and moves the pointer to the end of the file</li>
+<li>Advantages<ul>
+<li>Less prone to data corruption as the data is written sequentially and not randomly</li>
+<li>More efficient method for reading large files, as it only reads the required data</li>
+<li>Reliable method for backup and restore operations</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Does not allow quick access to a specific record in the file</li>
+<li>Not suitable for applications that require frequent updates or modifications to the file</li>
+<li>Space between records cannot be used by other records</li>
+</ul>
+</li>
+<li>Index Sequential Access</li>
+<li>Constructs an index for the file, which contains the pointers to various blocks</li>
+<li>Direct Access (or Relative Access)</li>
+<li>A fixed length logical record that allows to read and write record rapidly in no particular order</li>
+<li>The file is viewed as a numbered sequence of block or record</li>
+<li>Relative Record Access</li>
+<li>Records are accessed relative to the current position of the file pointer</li>
+<li>Requires fixed length records and may not be flexible enough for some applications</li>
+<li>Difficult to insert or delete records in the middle of a file<ul>
+<li>Without disrupting the relative positions of other records</li>
+</ul>
+</li>
+<li>Content Addressable Access</li>
+<li>Hash function is used to calculate a unique key for each record or block based on its content</li>
+<li>Any record or block can be accessed by specifying its key</li>
+<li>Ideal for searching large databases or file systems</li>
+<li>Allows easy insertion and deletion of records or blocks</li>
+<li>There is an overhead of calculating hashes and possibility of collision</li>
+</ul>
+<h2 id="disk-or-io-scheduling">Disk or I/O Scheduling</h2>
+<ul>
+<li>Only one I/O request can be served at a time by the disk controller</li>
+<li>Two or more requests may be far from each other which can result in greater disk arm movement</li>
+<li>Hard drives are one of the slowest parts of the system and needs to be accessed in an efficient manner</li>
+<li>Key Terms</li>
+<li>Seek time: Time take to locate the disk arm to a specified track where the data is to be read or written</li>
+<li>Rotational Latency: Time taken by the desired sector to rotate into a position<ul>
+<li>So that read/write heads can be accessed</li>
+</ul>
+</li>
+<li>Transfer time: Time taken to transfer data, depends on rotating speed and size of data</li>
+<li>Disk access time = Seek time + Rotational latency + Transfer time</li>
+<li>Disk Response time: Average time spent by a request to wait for I/O</li>
+</ul>
+<h2 id="spooling">Spooling</h2>
+<ul>
+<li>SPOOL: Simultaneous Peripheral Operations On-Line</li>
+<li>Similar to a buffering mechanism in which data is temporarily held</li>
+<li>To be used and executed by a device, program or system</li>
+<li>Data is sent to and stored in memory or other volatile storage until the program requests for execution</li>
+<li>Devices like printers, keyboard, mouse are slow relative to the rest of the system creating a bottleneck</li>
+<li>Spooling resolves this by accumulating data, instructions &amp; processes from multiple sources in a request queue</li>
+<li>Which is then processed in a FIFO manner</li>
+<li>Batch processing systems also use spooling to maintain a queue of ready-to-run jobs</li>
+<li>Which can be started as soon as the system has resources</li>
+<li>Allows multiple processes to write documents to a print queue without waiting and resume their work</li>
+</ul>
+<h3 id="difference-from-buffering">Difference from Buffering</h3>
+<ul>
+<li>Main memory has an area called buffer to store or hold data temporarily</li>
+<li>That is being transmitted between two devices or between a device &amp; an application</li>
+<li>Helps in matching the speed of data stream between the sender and the receiver</li>
+</ul>
+<h2 id="raid">RAID:</h2>
+<ul>
+<li>0</li>
+<li>1 – Clone</li>
+<li>2 – Error correcting code and bits</li>
+<li>3 – Byte level stripking with parity disk</li>
+<li>4 – Block level striping with parity disk</li>
+<li>5 – Block level striping with distributed parity</li>
+<li>6 – extends 5 with one more parity block</li>
+<li>10 – combine raids 1 and 0</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Introduction - Computer Science</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Computer Science</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Computer Science</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Computer networks</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../computer_networks/00_index/" class="dropdown-item">00 index</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/02_network_devices/" class="dropdown-item">02 network devices</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/03_osi_model/" class="dropdown-item">03 osi model</a>
+</li>
+                                    
+<li>
+    <a href="../../computer_networks/04_tcp_ip_model/" class="dropdown-item">04 tcp ip model</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">05 network security</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/05_network_security/00_index/" class="dropdown-item">Network Security</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/02_threat_modeling/" class="dropdown-item">02 threat modeling</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/03_malware/" class="dropdown-item">03 malware</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/04_dos_denial_of_service/" class="dropdown-item">04 dos denial of service</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/05_miscellaneous_attacks/" class="dropdown-item">05 miscellaneous attacks</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/06_firewall/" class="dropdown-item">06 firewall</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/05_network_security/07_message_authentication_codes/" class="dropdown-item">07 message authentication codes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L1 physical layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/00_index/" class="dropdown-item">L1: Physical Layer</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/02_architecture/" class="dropdown-item">02 architecture</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L1_physical_layer/03_transmission/" class="dropdown-item">03 transmission</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L2 data link layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/02_switching/" class="dropdown-item">02 switching</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/03_multiple_access_control/" class="dropdown-item">03 multiple access control</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/04_sliding_window_protocol/" class="dropdown-item">04 sliding window protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/05_error_detection/" class="dropdown-item">05 error detection</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/06_virtual_lan/" class="dropdown-item">06 virtual lan</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L2_data_link_layer/07_mobile_communication/" class="dropdown-item">07 mobile communication</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L3 network layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/02_ip_internet_protocol/" class="dropdown-item">02 ip internet protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/03_ip_v6/" class="dropdown-item">03 ip v6</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/04_ip_datagram_fragmentation/" class="dropdown-item">04 ip datagram fragmentation</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/05_icmp_internet_control_message_protocol/" class="dropdown-item">05 icmp internet control message protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/06_arp_address_resolution_protocol/" class="dropdown-item">06 arp address resolution protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/07_routing/" class="dropdown-item">07 routing</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/08_routing_protocols/" class="dropdown-item">08 routing protocols</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/09_nat_network_address_translation/" class="dropdown-item">09 nat network address translation</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/10_isdn_integrated_services_digital_network/" class="dropdown-item">10 isdn integrated services digital network</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/11_aaa_authentication_authorization_accounting/" class="dropdown-item">11 aaa authentication authorization accounting</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/12_access_control/" class="dropdown-item">12 access control</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L3_network_layer/13_wifi/" class="dropdown-item">13 wifi</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L4 transport layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/02_tcp_transmission_control_protocol/" class="dropdown-item">02 tcp transmission control protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/03_udp_user_datagram_protocol/" class="dropdown-item">03 udp user datagram protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L4_transport_layer/04_congestion_control/" class="dropdown-item">04 congestion control</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L5 session layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L5_session_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L5_session_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L6 presentation layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L6_presentation_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L6_presentation_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">L7 application layer</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/00_index/" class="dropdown-item">00 index</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/02_http_hypertext_transfer_protocol/" class="dropdown-item">02 http hypertext transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/03_atm_asynchonous_transfer_mode/" class="dropdown-item">03 atm asynchonous transfer mode</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/04_smtp_simple_mail_transfer_protocol/" class="dropdown-item">04 smtp simple mail transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/05_ftp_file_transfer_protocol/" class="dropdown-item">05 ftp file transfer protocol</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/06_ssh_secure_shell/" class="dropdown-item">06 ssh secure shell</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/07_dns_domain_system_name/" class="dropdown-item">07 dns domain system name</a>
+</li>
+            
+<li>
+    <a href="../../computer_networks/L7_application_layer/08_dhcp_dynamic_host_configuration_protocol/" class="dropdown-item">08 dhcp dynamic host configuration protocol</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Database system</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../00_index/" class="dropdown-item">Database Management System</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../02_entity_relationship_model/" class="dropdown-item">Entity Relationship Model</a>
+</li>
+                                    
+<li>
+    <a href="../03_relational_model/" class="dropdown-item">Relational Model</a>
+</li>
+                                    
+<li>
+    <a href="../04_functional_dependency/" class="dropdown-item">Functional Dependency</a>
+</li>
+                                    
+<li>
+    <a href="../05_normalization/" class="dropdown-item">Normalization</a>
+</li>
+                                    
+<li>
+    <a href="../06_transactions_and_schedules/" class="dropdown-item">Transaction and Schedules</a>
+</li>
+                                    
+<li>
+    <a href="../07_concurrency_control/" class="dropdown-item">Concurrency Control</a>
+</li>
+                                    
+<li>
+    <a href="../08_concurrency_control_protocols/" class="dropdown-item">Concurrency Control Protocols</a>
+</li>
+                                    
+<li>
+    <a href="../09_recoverability_and_processing/" class="dropdown-item">Recoverability and Processing</a>
+</li>
+                                    
+<li>
+    <a href="../10_indexing/" class="dropdown-item">Indexing</a>
+</li>
+                                    
+<li>
+    <a href="../11_file_organization/" class="dropdown-item">File Organization</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Object oriented programming</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../object_oriented_programming/00_index/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../object_oriented_programming/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Operating system</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../operating_system/00_index/" class="dropdown-item">Operating System</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/01_introduction/" class="dropdown-item">01 introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/02_system_structure/" class="dropdown-item">02 system structure</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/03_process_management/" class="dropdown-item">03 process management</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/04_process_scheduling/" class="dropdown-item">04 process scheduling</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/05_process_synchronization/" class="dropdown-item">05 process synchronization</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/06_process_synchronization_solutions/" class="dropdown-item">06 process synchronization solutions</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/07_process_synchronization_application/" class="dropdown-item">07 process synchronization application</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/08_thread_management/" class="dropdown-item">08 thread management</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/09_resource_allocation/" class="dropdown-item">09 resource allocation</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/10_memory/" class="dropdown-item">10 memory</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/11_memory_management/" class="dropdown-item">11 memory management</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/12_virtual_memory/" class="dropdown-item">12 virtual memory</a>
+</li>
+                                    
+<li>
+    <a href="../../operating_system/13_storage_management/" class="dropdown-item">13 storage management</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../00_index/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../02_entity_relationship_model/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#types" class="nav-link">Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#components" class="nav-link">Components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#three-layer-architecture" class="nav-link">Three Layer Architecture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#multimedia-database" class="nav-link">Multimedia Database</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="introduction">Introduction</h1>
+<ul>
+<li>Data: Collection of units of information</li>
+<li>Database: Organized collection of data that can be easily managed</li>
+<li>Database Management System</li>
+<li>Software system designed to enable users to store, organize &amp; manage a database</li>
+<li>Manages security and access control</li>
+<li>Scalability: Handles large amounts of data</li>
+</ul>
+<h3 id="drawbacks-of-file-system">Drawbacks of File System</h3>
+<ul>
+<li>Redundancy: If some data needs to be updated, it takes a lot of effort</li>
+<li>Inconsistency</li>
+<li>For the same information, there can be different data at different places</li>
+<li>Data access</li>
+<li>To access a particular info, user should already know the file<ul>
+<li>The file that the info is stored in and its location</li>
+</ul>
+</li>
+<li>Unauthorised access: Anyone can access and update the data in unauthorized way</li>
+<li>No backup &amp; recovery</li>
+</ul>
+<h3 id="key-features">Key features</h3>
+<ul>
+<li>Data modeling: Data models define the structure &amp; relationships of the data</li>
+<li>Data storage &amp; retrieval: Create, modify, query data</li>
+<li>Concurrency control</li>
+<li>Allow multiple users to access data without conflicting with each other</li>
+<li>Data integrity &amp; security</li>
+<li>Constraints on the values of data and access control to restrict users</li>
+<li>Backup &amp; recorvery</li>
+<li>Multiple data views: Same data can be represented in different ways</li>
+<li>Analytics &amp; reporting</li>
+</ul>
+<h2 id="types">Types</h2>
+<ul>
+<li>Relational DBMS: SQL</li>
+<li>The data is organized in the form of tables, and tables in rows &amp; columns</li>
+<li>The data is related to each other through primary &amp; foreign keys</li>
+<li>Non-Relational DBMS: NoSQL</li>
+<li>The data is organized in the form of key-value pairs, documents, graphs, or columns</li>
+<li>Designed to handle large scale, high performance scenarios</li>
+</ul>
+<h2 id="components">Components</h2>
+<h3 id="database-object">Database Object</h3>
+<ul>
+<li>Any defined object in database used to store, reference, hold or manipulate data</li>
+<li>Table: Basic unit of storage composed of rows &amp; columns</li>
+<li>View: Logically represented subset of data from one or more tables</li>
+<li>Index: Improves performance of fetching data</li>
+<li>Sequence: Generates primary key values</li>
+<li>Synonym: Alternative name for an object</li>
+</ul>
+<h3 id="database-languages">Database Languages</h3>
+<ul>
+<li>Data Definition Language (DDL)</li>
+<li>Deals with schemas and descriptions about how the data should reside in the database</li>
+<li>Create, Alter, Drop, Truncate (remove all records from table), Rename</li>
+<li>Data Manipulation Language (DML)</li>
+<li>Used to store, modify, retrieve, delete and update data</li>
+<li>Select, Insert, Update, Delete</li>
+<li>Data Control Lanuage (DCL)</li>
+<li>Access specifier to grant and revoke permissions to users</li>
+<li>Grant, Revoke</li>
+<li>Transaction Control Language (TCL)</li>
+<li>Manager for all transactional data and transaction</li>
+<li>Rollback, Commit, Savepoint (Save data temporarily)</li>
+</ul>
+<h2 id="three-layer-architecture">Three Layer Architecture</h2>
+<ul>
+<li>Physical or Internal Layer</li>
+<li>Keeps info about the location of database objects in data store</li>
+<li>Describes how the data is being stored in secondary storage</li>
+<li>Conceptual or Logical Layer</li>
+<li>Data is represented in the form of tables and relations</li>
+<li>Describes what kind of data is to be stored (schema)</li>
+<li>External or View Layer</li>
+<li>View of data in terms of conceptual level tables</li>
+<li>Users can view data in form of rows &amp; columns</li>
+<li>Different views can be generated for different users</li>
+</ul>
+<h3 id="data-independence">Data Independence</h3>
+<ul>
+<li>Change of data at one level should not affect another level</li>
+<li>Physical data independence</li>
+<li>Change in physical location of tables &amp; indexes<ul>
+<li>Should not affect conceptual or external level</li>
+</ul>
+</li>
+<li>The changes can be<ul>
+<li>Using new storage devices</li>
+<li>Modifying data structures used for storage or altering indexes</li>
+<li>Using alternative file organization techniques</li>
+</ul>
+</li>
+<li>Conceptual data independence</li>
+<li>Adding or deleting attributes in a table should not affect the user's view of table</li>
+<li>Other changes can be altering table structures or relationships</li>
+<li>Difficult to achieve compared to physical data independence</li>
+</ul>
+<h2 id="multimedia-database">Multimedia Database</h2>
+<ul>
+<li>Stores documents, graphics, images, animations, video, audio, etc</li>
+<li>Types of media: Static media, dynamic media, dimensional media</li>
+</ul>
+<h3 id="contents">Contents</h3>
+<ul>
+<li>Media data: Actual data representing an object</li>
+<li>Format data</li>
+<li>Information about the format of media data<ul>
+<li>Like sampling rate, resolution, encoding scheme</li>
+</ul>
+</li>
+<li>After it goes through acquisition, processing &amp; encoding phase</li>
+<li>Keyword data</li>
+<li>Keyword description related to the generation of data like date, time, place</li>
+<li>Feature data</li>
+<li>Content dependent data</li>
+<li>Like distribution of colors, kinds of texture, different shapes present in data</li>
+</ul>
+<h3 id="types-based-on-data-management">Types based on data management</h3>
+<ul>
+<li>Repository applications</li>
+<li>Data &amp; metadata stored for retrieval purpose<ul>
+<li>Like format, date, keyword data, feature data</li>
+</ul>
+</li>
+<li>Examples<ul>
+<li>Repository of satellite images, engineering drawings, radiology scanned pictures</li>
+</ul>
+</li>
+<li>Presentation applications</li>
+<li>Delivery of multimedia data subject to temporal constraint<ul>
+<li>Optimal viewing or listening requires delivering data at certain rate</li>
+<li>Data is processed as it is delivered</li>
+</ul>
+</li>
+<li>Offers quality of service above certain threshold</li>
+<li>Example: Annotating video &amp; audio data, real time editing analysis</li>
+<li>Colloborative applications</li>
+<li>Executing complex task by merging drawings, changing notifications</li>
+<li>Example: Intelligent healthcare network</li>
+</ul>
+<h3 id="challenges">Challenges</h3>
+<ul>
+<li>Modelling &amp; design</li>
+<li>There can be performance &amp; tuning issues<ul>
+<li>In external, conceptual &amp; physical design layers</li>
+</ul>
+</li>
+<li>Designing can be complex due to various formats like jpeg, gif, png, mpeg</li>
+<li>These formats are not easy to convert from one form to another</li>
+<li>Storage</li>
+<li>Challenge of representation, compression, archiving, buffering<ul>
+<li>And mapping device hierarchies</li>
+</ul>
+</li>
+<li>BLOB (Binary Large Object) facility allows untyped bitmaps to be stored and retrieved</li>
+<li>Performance</li>
+<li>Physical limitations in video playback or audio-video synchronization</li>
+<li>Parallel processing may alleviate some problems<ul>
+<li>But such techniques are not fully developed</li>
+</ul>
+</li>
+<li>Multimedia database consumes a lot of processing time and bandwidth</li>
+<li>Queries &amp; retrieval</li>
+<li>Accessing data for multimedia through query have many issues</li>
+<li>Query formulation, query execution and optimization needs to be worked upon</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
