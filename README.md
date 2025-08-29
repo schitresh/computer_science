@@ -1,1 +1,1 @@
-View the notes at [Computer Science](https://schitresh.github.io/computer_science)
+View at [Computer Science](https://schitresh.github.io/computer_science)
