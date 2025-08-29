@@ -1,4 +1,4 @@
-## Message Authentication Codes (MAC)
+# Message Authentication Codes (MAC)
 - Also known as error detection code or cyptographic checksum
 - Let's say user A wants to send a message to user B
   - A encrypts and sends the message using shared-cryptosystem

@@ -1,3 +1,4 @@
+# Sliding Window Protocol
 ## ARQ (Automatic Repeat Request or Automatic Repeat Query)
 - ARQ is an error-control strategy used in a two-way communication system
 - It is a group of error-control protocols to achieve reliable data transmission

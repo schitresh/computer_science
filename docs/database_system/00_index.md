@@ -2,7 +2,7 @@
 - [Introduction](01_introduction.md)
 - [Entity Relationship Model](02_entity_relationship_model.md)
 - [Relational Model](03_relational_model.md)
-- [Functional Dependencies](04_functional_dependencies.md)
+- [Functional Dependency](04_functional_dependency.md)
 - [Normalization](05_normalization.md)
 - [Transactions and Schedules](06_transactions_and_schedules.md)
 - [Concurrency Control](07_concurrency_control.md)

@@ -1,3 +1,4 @@
+# Architecture
 ## Line Configuration
 - A link is a communication pathway that transfers data from one device to another
 - Point to point connection

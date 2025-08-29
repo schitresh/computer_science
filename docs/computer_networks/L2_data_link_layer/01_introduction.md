@@ -1,4 +1,4 @@
-## Data Link Layer
+# Introduction
 - Basic info
   - Packet: Frame
   - Devices: Switch, Bridge, NIC/adaptor/chip, device driver

@@ -1,4 +1,4 @@
-## Object Oriented Programming
+# Introduction
 - Break down requirements into classes, functionalities, behaviour
 - Make projects more manageable and predictable
 - Modularization and reusability

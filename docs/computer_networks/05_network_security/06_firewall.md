@@ -1,4 +1,4 @@
-## Firewall
+# Firewall
 - Network security device
   - That prevents unauthorized access to a network
   - Monitors both incoming & outgoing traffic to detect and prevent threats

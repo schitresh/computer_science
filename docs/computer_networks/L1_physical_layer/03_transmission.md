@@ -1,4 +1,5 @@
-## Transmission Modes
+# Transmission
+## Modes
 ### Simplex
 - Unidirectional communication
 - Only one of the devices on the link can transmit, the other can only receive

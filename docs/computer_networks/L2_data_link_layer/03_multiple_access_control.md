@@ -1,4 +1,4 @@
-## Multiple Access Control
+# Multiple Access Control
 - If there is no dedicated link between the sender and the receiver
   - Then multiple stations can access the channel simultaneously
   - Multiple access protocols are required to decrease collision and avoid crosstalk

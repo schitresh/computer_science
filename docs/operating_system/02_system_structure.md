@@ -1,3 +1,4 @@
+# System Structure
 ## Kernel Operations
 - Kernel mode (mode bit 0)
   - CPU can execute certain instructions only in kernel mode (privilege instructions)

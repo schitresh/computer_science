@@ -1,4 +1,4 @@
-## TCP (Transmission Control Protocol)
+# TCP (Transmission Control Protocol)
 - Connection oriented protocol for communication between different devices in a network
   - Sender & receiver are connected till the completion of the process
   - Order of the data is maintained (order remains same before & after the transmission)

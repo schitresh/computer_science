@@ -1,4 +1,4 @@
-## Process Management
+# Process Management
 - Program: Collection of instructions that performs a specific task when executed by a computer
 - Process
   - Program in execution with allocated time and resources

@@ -1,4 +1,4 @@
-## Network Address Translation (NAT)
+# Network Address Translation (NAT)
 - Allows multiple devices to access the internet through a single public address
   - Also masks the port number of the host with another port
   - Provides privacy to the local users

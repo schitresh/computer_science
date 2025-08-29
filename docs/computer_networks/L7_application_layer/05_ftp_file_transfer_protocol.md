@@ -1,4 +1,4 @@
-## File Transfer Protocol
+# File Transfer Protocol
 - Moves files between local and remote file systems
 - Shields users from system differences like OS, directory structure, character sets
 - Can transfer these categories of data

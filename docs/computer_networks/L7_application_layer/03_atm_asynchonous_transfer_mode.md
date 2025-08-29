@@ -1,4 +1,4 @@
-## Aysnchronous Transfer Mode (ATM)
+# Aysnchronous Transfer Mode (ATM)
 - Telecommunications standard for digital transmission of multiple types of traffic
   - Can handle both
     - Traditional high throughput data

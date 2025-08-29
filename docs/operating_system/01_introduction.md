@@ -1,4 +1,4 @@
-## Introduction of OS
+# Introduction
 - Interface between users and hardware
 - Provides an environment to execute programs in a convenient and efficient manner
 - Prevents interfering with proper operation of a system

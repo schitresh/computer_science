@@ -1,4 +1,4 @@
-## Virtual LAN (VLAN)
+# Virtual LAN (VLAN)
 - Dividing devices in a network logically on layer 2 (data link layer)
 - Broadcast domain
   - Broadcast domain is a network segment

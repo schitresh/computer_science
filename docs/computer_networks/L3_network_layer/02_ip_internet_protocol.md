@@ -1,4 +1,4 @@
-## IP (Internet Protocol)
+# IP (Internet Protocol)
 - Responsible for delivering packets from the source host to the destination host
   - IP addresses are included in the packet headers
   - Connection-less protocol used for packet switched networks

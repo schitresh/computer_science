@@ -1,3 +1,4 @@
+# Process Synchronization Solutions
 ## Lock variable
 - 0 means CS is vacant
 - Process entering CS sets it 1

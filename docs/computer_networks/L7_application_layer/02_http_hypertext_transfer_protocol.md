@@ -1,4 +1,4 @@
-## HTTP (HyperText Transfer Protocol)
+# HTTP (HyperText Transfer Protocol)
 - Communication protocol used to deliver data between a client and a server
   - Data such as text, images, and other multimedia files are shared on WWW
   - Uses hypertext pages that can be interlinked with each other to form web pages

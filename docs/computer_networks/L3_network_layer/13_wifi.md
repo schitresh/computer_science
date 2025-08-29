@@ -1,4 +1,4 @@
-## WiFi (Wireless Fidelity)
+# WiFi (Wireless Fidelity)
 - Wireless networking technique that functions similar to a local area network
   - Routers and radio frequency waves are used to transmit data
 - Can be less expensive and easier to install than wires & cables

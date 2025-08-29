@@ -1,4 +1,4 @@
-## UDP (User Datagram Protocol)
+# UDP (User Datagram Protocol)
 - Unreliable and connectionless protocol unlike TCP
   - No need to establish connection before data transfer
   - No congestion control, no flow control

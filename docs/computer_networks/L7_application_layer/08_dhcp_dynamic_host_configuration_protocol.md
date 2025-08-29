@@ -1,4 +1,4 @@
-## Dynamic Host Configuration Protocol (DHCP)
+# Dynamic Host Configuration Protocol (DHCP)
 - Helps enterprises to smoothly manage the allocation of IP addresses to the client devices
 - Maintains information on TCP/IP configuration
 - IP addresses are assigned using DORA messages

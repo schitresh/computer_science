@@ -1,4 +1,4 @@
-## IP Datagram Fragmentation
+# IP Datagram Fragmentation
 - Different networks may have different maximum transmission unit (MTU)
   - For example, it can be due to differences in LAN technology
   - MTU determine the maximum size of a data packet that can be transmitted over that network

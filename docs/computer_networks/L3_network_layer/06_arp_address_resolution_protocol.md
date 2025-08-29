@@ -1,4 +1,4 @@
-## ARP (Address Resolution Protocol)
+# ARP (Address Resolution Protocol)
 - Finds the hardware address of a host from a known address
   - Network layer to data link layer mapping process
 - Most applications use logical address (IP address) to send & receive messages

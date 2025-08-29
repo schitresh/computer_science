@@ -1,4 +1,4 @@
-## Domain Name System (DNS)
+# Domain Name System (DNS)
 - Distributed database implemented in a heirarchy of name servers
 - Every host is identified by its IP address
   - But managing numbers is very difficult since there are millions of websites

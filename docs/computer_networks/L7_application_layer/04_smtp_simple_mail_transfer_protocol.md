@@ -1,4 +1,4 @@
-## SMTP (Simple Mail Transfer Protocol)
+# SMTP (Simple Mail Transfer Protocol)
 - SMTP is a push protocol used to send emails
 - POP/IMAP are used to retrieve emails
   - POP (Post Office Protocol)

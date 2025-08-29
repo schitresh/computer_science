@@ -1,4 +1,4 @@
-## Threat Modeling
+# Threat Modeling
 - Threat can be anything that can take advantage of a vulnerability to breach security
   - And negatively alter, erase, or harm objects of interest
 - Threat modeling is used to identify, communicate, understand & mitigate threats

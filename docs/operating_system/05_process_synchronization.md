@@ -1,4 +1,4 @@
-## Process Synchronization
+# Process Synchronization
 - Communication/Coordination/Concurrency control
 - Coordination of execution of multiple processes that use shared resources
 - Ensures that shared resources are accessed in a controlled and predictable manner

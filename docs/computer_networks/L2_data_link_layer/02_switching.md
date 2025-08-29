@@ -1,4 +1,4 @@
-## Switching
+# Switching
 - Technique by which nodes control or switch data
   - To transmit it between specific points on a network
 - There are three common switching techniques

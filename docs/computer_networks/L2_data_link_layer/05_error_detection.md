@@ -1,4 +1,4 @@
-## Error Detection
+# Error Detection
 - Error is a condition when receiver's information does not match sender's information
 - During transmission
   - Digital signals suffer from noise that can introduce errors in the binary bits

@@ -1,4 +1,4 @@
-## Open Systems Interconnection (OSI) Model
+# Open Systems Interconnection (OSI) Model
 - Basic info
   - Acts as a reference model
   - Not implemented on internet because of its late invention

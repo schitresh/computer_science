@@ -1,4 +1,4 @@
-## Congestion Control
+# Congestion Control
 - Congestion is a situation when too many sources attempt to send data
   - And the router buffer starts overflowing
   - Due to which packets are lost

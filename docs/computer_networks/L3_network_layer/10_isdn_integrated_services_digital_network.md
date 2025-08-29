@@ -1,4 +1,4 @@
-## Integrated Services Digital Network (ISDN)
+# Integrated Services Digital Network (ISDN)
 - Communication standards for simultaneous digital transmission
   - Including voice, video, data, and other network services
   - Over traditional circuits of the public switched telephone network

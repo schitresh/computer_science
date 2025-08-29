@@ -1,4 +1,4 @@
-## TCP/IP Model
+# TCP/IP Model
 - Basic info
   - The OSI model just acts as a reference model because of its late invention
   - Used to transfer data reliably and accurately from one device to another

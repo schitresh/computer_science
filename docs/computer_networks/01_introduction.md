@@ -1,4 +1,4 @@
-## Computer Networks
+# Introduction
 - Collection of computers & devices connected together to enable communication and data exchange
 - System connected to network and ready for communication is called open system (vs closed system)
 - Basic building blocks of a computer network are nodes and links

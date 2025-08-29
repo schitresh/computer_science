@@ -1,4 +1,4 @@
-## Memory Management
+# Memory Management
 - Memory management is the functionality which manages primary memory
   - Moves processes between main memory and disk during execution
   - Keeps track of each memory location whether it's allocated or free

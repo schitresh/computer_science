@@ -1,3 +1,4 @@
+# Network Devices
 ## Domains
 - The more the number of collision domains & broadcast domains
   - The better bandwidth the network provides

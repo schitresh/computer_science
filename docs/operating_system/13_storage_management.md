@@ -1,3 +1,4 @@
+# Storage Management
 ## File System
 - Method used by OS to store, organize and manage data on a storage device using files and directories
 - Types

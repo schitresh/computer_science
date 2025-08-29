@@ -1,4 +1,4 @@
-## ICMP (Internet Control Message Protocol)
+# ICMP (Internet Control Message Protocol)
 - Mostly utilized on network equipment like routers for error handling
   - Provides hosts with information about network problems
   - Encapsulated within IP datagrams with specific headers & data

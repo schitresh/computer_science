@@ -1,4 +1,4 @@
-## Networks
+# Computer Networks
 - [Introduction](01_introduction.md)
 - [Network Devices](02_network_devices.md)
 - [OSI Model](03_osi_model.md)

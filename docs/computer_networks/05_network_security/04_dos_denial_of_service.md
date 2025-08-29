@@ -1,4 +1,4 @@
-## Denial of Service (DoS)
+# Denial of Service (DoS)
 - Renders a network, host or other pieces of infrastructure unusable by legitimate users
 - May target servers, routers or communication links
 - Example

@@ -1,4 +1,4 @@
-## SSH (Secure Shell)
+# SSH (Secure Shell)
 - Cryptographic network protocol used to transfer encrypted data over a network
   - Allows you to connect to a server without having to enter password for each system
   - The port number of SSH is 22

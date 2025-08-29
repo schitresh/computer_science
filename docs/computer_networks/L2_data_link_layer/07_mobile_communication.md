@@ -1,4 +1,4 @@
-## Mobile Communication
+# Mobile Communication
 - SIM (Subscriber Identity Module) card
   - Stores subscriber's identification and account information
   - Stores security credentials that allow a device to connect to the network

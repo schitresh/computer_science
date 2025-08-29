@@ -1,4 +1,4 @@
-## AAA (Authentication, Authorization, Accounting)
+# AAA (Authentication, Authorization, Accounting)
 - AAA is a standard framework used to control
   - Who is permitted to use network resources (authentication)
   - What are they authorized to do (authorization)

@@ -1,4 +1,4 @@
-## Memory
+# Memory
 - Required to save data and instructions either temporarily or permanently
 - Divided into cells or registers having an unique location or address
 - Each register stores one bit of data

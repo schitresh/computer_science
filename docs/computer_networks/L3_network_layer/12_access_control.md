@@ -1,4 +1,4 @@
-## Access Control Lists (ACL)
+# Access Control Lists (ACL)
 - Set of rules defined to control network traffic and reduce network attacks
   - Once a rule matches, no further comparison takes place
   - If no rule matches, then the packet is discarded

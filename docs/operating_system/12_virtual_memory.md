@@ -1,4 +1,4 @@
-## Virtual Memory
+# Virtual Memory
 - Storage allocation scheme where secondary memory can be addressed as if it were part of the main memory
 - The basis is non-contiguous memory allocation and the software component is called Virtual Memory Manager (VMM)
 - The part of secondary memory used for virtual memory is called swap space or swap file
