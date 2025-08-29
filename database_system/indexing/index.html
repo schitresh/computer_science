@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Indexing - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Indexing";
+        var mkdocs_page_input_path = "database_system/10_indexing.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Indexing</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="indexing">Indexing</h1>
+<ul>
+<li>Data structure technique to quickly locate and access data</li>
+<li>Minimizes disk accesses required for a query</li>
+<li>An index entry consists of the search key with value as the data reference</li>
+<li>Complex columns should not be indexed, it might decrease the performance instead</li>
+<li>Columns with large datasets but small classification should not be indexed</li>
+<li>For example, boolean columns since there will be large data for a single key</li>
+<li>Indexing 10K rows into true &amp; false can deplete performance</li>
+</ul>
+<h2 id="indexing-mechanisms">Indexing Mechanisms</h2>
+<ul>
+<li>File organization mechanisms followed by indexing methods to store data</li>
+</ul>
+<h3 id="sequential-file-organization-or-ordered-index-file">Sequential File Organization (Or Ordered Index File)</h3>
+<ul>
+<li>Dense index</li>
+<li>For every search key in the data file, there is an index record</li>
+<li>The record contains the search key and the reference to the first data record</li>
+<li>Sparse index</li>
+<li>The index record is present for only a few items in the data file</li>
+<li>The reference in each record points to a block</li>
+<li>To locate a record<ul>
+<li>We find the record with the largest search-key value less than or equal to the target</li>
+</ul>
+</li>
+<li>After jumping to the reference pointer<ul>
+<li>The file is searched sequentially for the target record</li>
+</ul>
+</li>
+<li>Number of accesses required = log(n) + 1, where n is the number of blocks</li>
+</ul>
+<h3 id="hash-file-organization">Hash File Organization</h3>
+<ul>
+<li>Indices are based on the values distributed uniformly across a range of buckets</li>
+<li>A hash function determines the bucket to which a value is assigned</li>
+<li>Clustered or Primary Index</li>
+<li>Similar records are grouped and indexes are created for these groups</li>
+<li>In some cases, index is created on non-primary key columns which may not be unique<ul>
+<li>In such cases, two or more columns are grouped to get unique values</li>
+</ul>
+</li>
+<li>Non-clustered or Secondary Index</li>
+<li>Nested index through virtual pointers</li>
+<li>Data is not physically stored in the order of the index</li>
+<li>Data is present in the leaf nodes</li>
+<li>Requires more time than clustered index to extract the data by following pointers</li>
+<li>Multilevel Index</li>
+<li>As database size grows, indices also grow</li>
+<li>As the index is stored in main memory, a single level index might become too large</li>
+<li>It segregates the main block into various smaller blocks<ul>
+<li>Which ultimately point to the data blocks</li>
+</ul>
+</li>
+<li>B and B+ trees</li>
+</ul>
+<h2 id="b-tree">B-Tree</h2>
+<ul>
+<li>For storing and searching large amounts of data</li>
+<li>Traditional binary search trees can become impractical</li>
+<li>Due to their poor performance and high memory usage</li>
+<li>Balanced Tree (B-Tree) is a type of self-balancing tree</li>
+<li>It maintains balance by ensuring that each node has a minimum number of keys</li>
+<li>This balance guarantees the time complexity of O(log(n))<ul>
+<li>Regardless of the initial shape of the tree</li>
+</ul>
+</li>
+<li>This is true for operations like insertion, deletion, and searching</li>
+<li>Can store a large number of keys in a single node</li>
+<li>This allows the tree to have a larger branching factor and shallower height</li>
+<li>This shallow height leads to less disk I/O and faster search &amp; insertion</li>
+<li>Node size is kept equal to disk block</li>
+<li>It's particularly well suited for storage systems with slow &amp; bulky data access</li>
+<li>Like hard drives, flash memory</li>
+<li>When number of keys is high, data is read from disk in form of blocks</li>
+<li>Example:</li>
+<li>(100)</li>
+<li>(35, 65)                              (130, 180)</li>
+<li>(10, 20) (40, 50) (70, 80, 90)      (110, 120) (140, 160) (190, 240, 260)</li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>All leaves are at the same level</li>
+<li>It's defined by the term minimum degree 't', which depends on disk block size</li>
+<li>All keys of a node are sorted in ascending order</li>
+<li>Number of keys in nodes</li>
+<li>Root: (1) to (2t - 1)</li>
+<li>Others: (t - 1) to (2t - 1)</li>
+<li>Number of children: Number of keys + 1</li>
+<li>Child between two keys k1 &amp; k2 contains all keys from k1 to k2</li>
+<li>Grows and shrinks from root unlike BST</li>
+<li>BSTs grow downward &amp; also shrink from downward</li>
+<li>Time Complexity for insert, delete, search = O(height) = O(log(n))</li>
+<li>Insertion only happens at leaf node</li>
+</ul>
+<h3 id="insertion">Insertion</h3>
+<ul>
+<li>Start from the root and traverse down till we reach a leaf node</li>
+<li>While traversing, keeping check if the next node has space</li>
+<li>If there's no space</li>
+<li>Split the leaf node into two and separate the mid</li>
+<li>Move the mid to the parent node (That's why B-tree grows up)</li>
+<li>Repeat this process for every iteration if there's no space</li>
+<li>Add the key in the leaf node</li>
+<li>Example:</li>
+<li>We need to insert 52 and we have: (40, 60) -&gt; (45, 50, 55)</li>
+<li>Shift 50 to parent &amp; insert 52: (40, 50, 60) -&gt; (45, 52, 55)</li>
+</ul>
+<h3 id="deletion">Deletion</h3>
+<ul>
+<li>Deletion is more complicated than insertion because a key can be deleted from any node</li>
+<li>When a key is deleted from an internal node, the node's children needs to be rearranged</li>
+<li>A node should not get too small during deletion</li>
+<li>Case 1: Key is in a leaf node -&gt; Delete the key</li>
+<li>Case 2: Key is in an internal node</li>
+<li>If the parent has at least t keys<ul>
+<li>Delete the predecessor of the key from parent node</li>
+<li>Replace the key with the predecessor in the current node</li>
+</ul>
+</li>
+<li>If the parent has fewer than t keys and the child has at least t keys<ul>
+<li>Then delete the successor of the key from the child node</li>
+<li>Replace the key with the successor in the current node</li>
+</ul>
+</li>
+<li>If both the parent and the child node has (t - 1) keys<ul>
+<li>Merge the current and the child node into the parent node</li>
+<li>The parent node will contain (2t - 1) keys</li>
+<li>Delete the key from the parent node</li>
+</ul>
+</li>
+<li>Case 3: Key is not in the current node</li>
+<li>Find the child that may contain the key</li>
+<li>If the child has only (t - 1) keys but has an immediate sibling with at least t keys<ul>
+<li>Move a key from the current node to the child</li>
+<li>Move a key from the child's sibling to the current node</li>
+</ul>
+</li>
+<li>If the child and its immediate siblings have (t - 1) keys<ul>
+<li>Merge the child with one sibling</li>
+<li>Move a key from the current node to the merged node as a median</li>
+</ul>
+</li>
+</ul>
+<h2 id="b-tree_1">B+ tree</h2>
+<ul>
+<li>Variation of B-tree where data pointers are stored only at the leaf node</li>
+<li>The leaf nodes</li>
+<li>Have an entry for every value of the search field</li>
+<li>Have a data pointer to the record (or the block that contains the record)</li>
+<li>Are linked together to provide ordered access to the search field to the records</li>
+<li>The internal nodes</li>
+<li>Are only used to guide the search and don't store any data pointer</li>
+<li>As a result, more key values can be stored in a node</li>
+<li>Hence, they have a different order than leaf nodes</li>
+<li>Some search field values from the leaf nodes are repeated in the internal nodes</li>
+<li>Hence takes more storage</li>
+<li>B tree stores the data pointers along with the key values in the internal nodes</li>
+<li>This reduces the number of entries that can be packed into a node</li>
+<li>And increases the number of levels which increases the search time</li>
+<li>B+ tree is very useful for range queries and bulk data retrieval</li>
+</ul>
+<h2 id="bitmap-indexing">Bitmap Indexing</h2>
+<ul>
+<li>Used to improve performance of read-only queries that involve large datasets</li>
+<li>Used for a most frequently used column with low cardinality</li>
+<li>Each distinct value in a column is assigned a bit vector</li>
+<li>The vector contains a bit for each row and represents the presence or absence of the value</li>
+</ul>
+<h2 id="inverted-index">Inverted Index</h2>
+<ul>
+<li>Used in information retrieval systems to efficiently retrieve documents or web pages</li>
+<li>Containing a specific term or set of terms</li>
+<li>Index is organized by terms (words) pointing to a list of documents</li>
+<li>Types</li>
+<li>Record level: Contains a list of references to documents for each word</li>
+<li>Word level: Also contains the positions of each word within a document</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../recoverability_and_processing" class="btn btn-neutral float-left" title="Recoverability And Processing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../file_organization" class="btn btn-neutral float-right" title="File Organization">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../recoverability_and_processing" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../file_organization" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Entity Relationship Model - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Entity Relationship Model";
+        var mkdocs_page_input_path = "database_system/02_entity_relationship_model.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Entity Relationship Model</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="entity-relationship-model">Entity Relationship Model</h1>
+<ul>
+<li>Representation of entities and their relationships</li>
+</ul>
+<h3 id="representations">Representations</h3>
+<ul>
+<li>Entity</li>
+<li>Strong: Rectange</li>
+<li>Weak: Double Rectangle</li>
+<li>Entity Set: Vertical Oval</li>
+<li>Attribute</li>
+<li>Single-valued: Oval</li>
+<li>Key: Oval with Underline</li>
+<li>Multi-valued: Double Oval</li>
+<li>Derived: Dashed Oval</li>
+<li>Relationship: Diamond</li>
+<li>Identifying Relationship: Double Diamond</li>
+<li>Participation<ul>
+<li>Total: Double Line</li>
+<li>Partial: Line</li>
+</ul>
+</li>
+</ul>
+<h2 id="entity">Entity</h2>
+<ul>
+<li>Also known as Entity Type</li>
+<li>Strong Entity</li>
+<li>Entity that has a key attribute and does not depend on other entities</li>
+<li>Records are identified uniquely using primary key</li>
+<li>Weak Entity</li>
+<li>Dependent entity with no key attribute</li>
+<li>Example: Salary entity won't exist without employee entity</li>
+<li>Participation: Total</li>
+<li>Entity Set: Set of individual entities (instances of entity type)</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li>Properties that define the entity type</li>
+<li>Key Attribute: Uniquely identifies each entity in the entity set</li>
+<li>Composite Attribute</li>
+<li>Attribute composed of many other attributes</li>
+<li>Example: Address consists of street, city, state, country</li>
+<li>Multi-valued Attribute</li>
+<li>Example: There can be multiple Email for a user</li>
+<li>Derived Attribute</li>
+<li>Example: Age attribute can be derived from date of birth</li>
+</ul>
+<h2 id="relationship">Relationship</h2>
+<ul>
+<li>Association between entity types</li>
+<li>Identifying Relationship</li>
+<li>Relationship between weak entity &amp; its identifying strong entity</li>
+<li>Relationship Set: Set of relationships of the same type</li>
+</ul>
+<h3 id="degree">Degree</h3>
+<ul>
+<li>Number of different entity sets participating in a relationship set</li>
+<li>Unary</li>
+<li>One entity is related to another entity of the same type</li>
+<li>Example: A person is married to another person</li>
+<li>Binary</li>
+<li>One entity is related to another entity of a different type</li>
+<li>Example: A student is enrolled in a course</li>
+<li>N-ary</li>
+<li>More than 2 entities are related</li>
+<li>Example: A doctor prescribes a medicine to a patient</li>
+</ul>
+<h3 id="cardinality">Cardinality</h3>
+<ul>
+<li>Number of times an entity participates in a relationship</li>
+<li>One to One</li>
+<li>An employee can have only one salary</li>
+<li>Minimum tables required<ul>
+<li>Total Participation: 1</li>
+<li>Employee (emp_id, salary)</li>
+<li>Partial Participation: 2</li>
+<li>There can be disconnected entities in second table</li>
+<li>If so, it can lead to empty cells for salary column in above approach</li>
+<li>Employee (emp_id, salary_id), Salary (emp_id)</li>
+</ul>
+</li>
+<li>One to Many</li>
+<li>A company can have many employees</li>
+<li>Minimum tables required: 2</li>
+<li>Company (com_id), Employee (emp_id, com_id)</li>
+<li>Many to Many</li>
+<li>A student can enroll in many courses &amp; a course can be enrolled by many students</li>
+<li>Minimum tables required: 3</li>
+<li>Student (stu_id), Course (course_id), StudentCourses (stu_id, course_id)</li>
+</ul>
+<h3 id="participation">Participation</h3>
+<ul>
+<li>Total</li>
+<li>Each entity in entity set participates in the relationship</li>
+<li>Each student must enroll in a course</li>
+<li>Partial</li>
+<li>Entity in entity set may or may not participate in the relationship</li>
+<li>A person may or may not have a car</li>
+</ul>
+<h2 id="enhanced-er-model">Enhanced ER Model</h2>
+<ul>
+<li>Specialization (Subclass)</li>
+<li>Divide an entity into sub-entities based on characteristics (Top-down approach)</li>
+<li>'is a' relationship</li>
+<li>Example: Laptop is a computer (laptop is a special/sub class of computer)</li>
+<li>Contraints:<ul>
+<li>Total or Partial</li>
+<li>Total subclass if every super-class entity is to be associated</li>
+<li>with some sub-class entity</li>
+<li>Overlapped or Disjoint</li>
+<li>Overlapping subclass if an entity from a super-set can be related (can occur)</li>
+<li>in multiple sub-class sets</li>
+</ul>
+</li>
+<li>Generalization (Superclass)</li>
+<li>Extracting common properties and creating a generalized entity (Bottom-up approach)</li>
+<li>Example: Laptop is a computer (computer is a general/super class of laptop)</li>
+<li>Inheritance</li>
+<li>Feature that allows subclasses to inherit attributes &amp; relationships from superclasses</li>
+<li>Multiple Inheritance</li>
+<li>An entity can be a subclass of multiple entity types</li>
+<li>Teaching Assistant can be a subclass of Employee &amp; Student both</li>
+<li>Attributes of the subclass are union of attributes of all superclasses</li>
+<li>Aggregation</li>
+<li>Abstraction that represents a group of entities as a single entity</li>
+<li>Example: An employee working on a project may require machinery<ul>
+<li>Aggregate entities Employee &amp; Project</li>
+<li>Are connected with the relationship 'working on'</li>
+<li>Entities Employee-Project-Aggregate and Machinery</li>
+<li>Are connected with the relationship 'requires'</li>
+</ul>
+</li>
+</ul>
+<h2 id="recursive-relationship">Recursive Relationship</h2>
+<ul>
+<li>Employee &amp; Boss (Boss is also employee)</li>
+<li>User &amp; Friend (Friend is also user)</li>
+<li>Boss and Friend are called role names</li>
+</ul>
+<h3 id="employee-boss">Employee - Boss</h3>
+<ul>
+<li>Employee</li>
+<li>Min cardinality = 0 (CEO can't have boss)</li>
+<li>Max cardinality = 1 (employee can have only one boss)</li>
+<li>Boss</li>
+<li>Min cardinality = 0 (individual contributors don't manage any employee)</li>
+<li>Max cardinality = n (can manage many employees)</li>
+<li>Participation: Partial</li>
+<li>Relationship: Many to one</li>
+<li>Employee (emp_id, boss_id)</li>
+<li>Foreign keys: boss_id in Employee</li>
+</ul>
+<h3 id="user-friend">User - Friend</h3>
+<ul>
+<li>User</li>
+<li>Min cardinality = 0</li>
+<li>Max cardinality = n</li>
+<li>Friend</li>
+<li>Min cardinality = 0</li>
+<li>Max cardinality = n</li>
+<li>Participation: Partial</li>
+<li>Relationship: Many to many</li>
+<li>User (user_id), Friendship (user_id, friend_user_id)</li>
+<li>Store both (user_id, friend_user_id) &amp; (friend_user_id, user_id)<ul>
+<li>To make it simple &amp; scalable</li>
+</ul>
+</li>
+</ul>
+<h2 id="impedance-mismatch">Impedance Mismatch</h2>
+<ul>
+<li>When two systems or components that are supposed to work together</li>
+<li>Have different data models, structures or interfaces</li>
+<li>It can make communciation difficult or inefficient</li>
+<li>In databases, it refers to discrepancy between</li>
+<li>OOP model in application code &amp; relational model in database</li>
+<li>OOP models represent data as objects with properties &amp; methods</li>
+<li>Relational model represents data as tables with columns &amp; rows</li>
+<li>Challenges in mapping objects to tables &amp; vice versa</li>
+<li>Object heirarchy may need to be flattened into single table</li>
+<li>Multiple related tables may need to be joined together to represent a single object</li>
+<li>Data type mismatch between the programming language and the data models</li>
+<li>The query results can be sets or multisets of tuples</li>
+<li>Where each tuple is formed of attribute values</li>
+<li>The result's data structures needs to be binded<ul>
+<li>To the programming language's data structures</li>
+</ul>
+</li>
+<li>The tuples are required to be looped over to extract individual values</li>
+<li>These can lead to performance issues, data inconsistency, development time &amp; cost</li>
+<li>To overcome the impedance mismatch problem, Object Relational Mapping (ORM) is used</li>
+<li>It automates the mapping process between objects &amp; tables</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../relational_model" class="btn btn-neutral float-right" title="Relational Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../relational_model" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

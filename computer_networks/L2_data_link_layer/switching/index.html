@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Switching - Computer Science</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Switching";
+        var mkdocs_page_input_path = "computer_networks/L2_data_link_layer/02_switching.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >L2 Data Link Layer</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Computer Networks</li>
+          <li class="breadcrumb-item">L2 Data Link Layer</li>
+      <li class="breadcrumb-item active">Switching</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="switching">Switching</h1>
+<ul>
+<li>Technique by which nodes control or switch data</li>
+<li>To transmit it between specific points on a network</li>
+<li>There are three common switching techniques</li>
+<li>Circuit switching</li>
+<li>Packet switching</li>
+<li>Message switching</li>
+</ul>
+<h2 id="circuit-switching">Circuit Switching</h2>
+<ul>
+<li>Network resources (bandwidth) are divided into pieces</li>
+<li>Before the data transmission begins</li>
+<li>A dedicated path (circuit) is established between sender &amp; receiver</li>
+<li>The circuit remains dedicated for the session and provides a guaranteed data rate</li>
+<li>The bandwidth is reserved even when no data is being transmitted</li>
+<li>Which might be inefficient</li>
+<li>The connection is not required to be established for each packet</li>
+<li>Hence data can be transmitted without any delays</li>
+<li>That's why it's used in real time communication like voice &amp; video</li>
+<li>The number of circuits that can be established is finite</li>
+<li>So it has limited scalability</li>
+<li>And also expensive because it requires dedicated resources</li>
+<li>Examples: Telephone system network</li>
+</ul>
+<h3 id="multiplexing-methods">Multiplexing Methods</h3>
+<ul>
+<li>Frequency Division Multiplexing</li>
+<li>Bandwidth is divided into a series of non-overlapping frequency sub-bands</li>
+<li>Each sub-band carry different signal</li>
+<li>Used in radio spectrum &amp; optical fibre</li>
+<li>Time Division Multiplexing (Digital Circuit)</li>
+<li>Independing signals are transmitted over a common signal path by synchonized switches</li>
+<li>Used for long distance communication links and bears heavy data traffic</li>
+</ul>
+<h2 id="packet-switching">Packet Switching</h2>
+<ul>
+<li>Transferring data to a network in the form of packets</li>
+<li>Data is broken into small pieces of variable length called packet</li>
+<li>To transfer the data efficiently and minimize the transmission latency</li>
+<li>These packets may travel through different routes</li>
+<li>They are reassembled at the destination</li>
+<li>Uses the store and forward technique</li>
+<li>Packets may get discarded at any hop for some reason</li>
+<li>So while forwarding the packet, each hop first stores the packet and then forwards</li>
+<li>Advantages</li>
+<li>Efficient use of bandwidth since it's shared</li>
+<li>Less expensive than circuit switching since resources are shared</li>
+<li>Resources are allocated only during data transmission</li>
+<li>Flexible: Can handle a wide range of data rates and packet sizes</li>
+<li>Scalable: Can handle large amounts of traffic in a network</li>
+<li>Disadvantages</li>
+<li>Higher latency than circuit switching since packets are routed through multiple nodes</li>
+<li>May result in packet loss due to congestion or errors in transmission</li>
+<li>There can be transmission delay &amp; packet loss, so not ideal for real time communication</li>
+<li>Types of delays</li>
+<li>Transmission: Time taken by station to transmit data to the link</li>
+<li>Propogation: Time spent to propogate data through the link</li>
+<li>Queueing: Time for which a packet waits at the destination's queue</li>
+<li>Processing: Processing time at the destination</li>
+</ul>
+<h3 id="connection-oriented-packet-switching-virtual-circuit">Connection-oriented Packet Switching (Virtual Circuit)</h3>
+<ul>
+<li>Before starting the transmission</li>
+<li>It establishes a logical path or virtual connection using a signaling protocol</li>
+<li>Virtual circuit ID is provided by switches/routers<ul>
+<li>To uniquely identify this virtual connection</li>
+</ul>
+</li>
+<li>There are three phases: connection setup, data transfer, tear down</li>
+<li>Address information is transferred only during the setup phase</li>
+<li>Once the route is decided, entry is added<ul>
+<li>To the switching table of each intermediate node</li>
+</ul>
+</li>
+<li>Resources like buffers, CPU, bandwidth are reserved</li>
+<li>For the time in which the virtual circuit will be used</li>
+<li>If many clients are trying to reserve a router's resources simultaneously<ul>
+<li>It can become problematic</li>
+</ul>
+</li>
+<li>The first sent packet reserves resources at each server along the path</li>
+<li>Subsequent packets follow the same path as the first packet during the connection</li>
+<li>Only the first packet requires a global header</li>
+<li>Since all packets follow a specific path<ul>
+<li>They are received in order at the destination</li>
+<li>Packets are also appended with sequence numbers</li>
+</ul>
+</li>
+<li>Used by ATM (Asynchronous Transfer Mode) network, specifically for telephone calls</li>
+</ul>
+<h3 id="connection-less-packet-switching-datagram">Connection-less Packet Switching (Datagram)</h3>
+<ul>
+<li>Packet belonging to one flow may take different routes</li>
+<li>Because routing decisions are made dynamically</li>
+<li>So the packets arriving at the destination might be out of order</li>
+<li>All packets are associated with a header<ul>
+<li>Which contains all necessary addressing information</li>
+<li>Like source &amp; destination address, port numbers</li>
+</ul>
+</li>
+<li>There is no connection setup, teardown phase, resource reservation like virtual circuits</li>
+<li>Cost efficient and easy to implement than virtual circuit</li>
+<li>Packet delivery is not guaranteed</li>
+<li>Packet is discarded if resources like buffer, CUP, bandwidth are not available</li>
+<li>So reliable delivery must be provided by end systems using additional protocols</li>
+<li>Generally used by IP network, which is used for data services like the internet</li>
+</ul>
+<h2 id="message-switching">Message Switching</h2>
+<ul>
+<li>Developed as an alternative to circuit switching before packet switching was introduced</li>
+<li>Many major networks used are packet switched or circuit switched</li>
+<li>But their delivery processes can be message switched (like email systems)</li>
+<li>End users communicate by sending &amp; receiving messages</li>
+<li>That include the entire data to be shared</li>
+<li>Each message has a header with information about message routing, source, destination</li>
+<li>Store and forward</li>
+<li>Intermediate nodes transfer the entire message to the next node</li>
+<li>Since messages are stored indefinitely, switches require large storage capacity</li>
+<li>Message is delivered only if sufficient resources are available<ul>
+<li>The next hop and the link connecting it both should be available</li>
+</ul>
+</li>
+<li>It is slow</li>
+<li>Each node waits for the entire message to be received</li>
+<li>After processing the next node depending on availability &amp; traffic<ul>
+<li>It must store &amp; transmit the message</li>
+</ul>
+</li>
+<li>Cannot be used for real time communication</li>
+<li>Efficient traffic management by assigning priorities to the messages</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../multiple_access_control" class="btn btn-neutral float-right" title="Multiple Access Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../multiple_access_control" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

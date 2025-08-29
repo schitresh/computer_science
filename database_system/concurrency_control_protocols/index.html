@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Concurrency Control Protocols - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Concurrency Control Protocols";
+        var mkdocs_page_input_path = "database_system/08_concurrency_control_protocols.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Concurrency Control Protocols</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="concurrency-control-protocols">Concurrency Control Protocols</h1>
+<h2 id="lock-based-protocols">Lock Based Protocols</h2>
+<ul>
+<li>Each transaction needs to acquire locks before accessing or modifying the data items</li>
+<li>Shared Lock</li>
+<li>Read lock, no modification allowed</li>
+<li>Allows multiple transactions to read the data simultaneously</li>
+<li>Exclusive Locks</li>
+<li>Write lock, allows updation</li>
+<li>Only one transaction can hold this lock on a data item at a time</li>
+<li>A transaction is allowed to upgrade or downgrade a lock if the conditions are met</li>
+<li>Simple lock based protocal (binary locking) don't guarantee serializability</li>
+<li>Additional protocols for positioning of locking &amp; unlocking operations are required</li>
+<li>Which gives rise to two phase locking protocol</li>
+<li>Starvation and deadlocks are possible</li>
+</ul>
+<h3 id="locking">Locking</h3>
+<ul>
+<li>Lock manager manages the locking requests made by transactions</li>
+<li>It relies on the process of message passing between transactions and lock manager</li>
+<li>Lock table</li>
+<li>Hash table where names of data items are used as hashing index</li>
+<li>Every locked data item has a linked list associated with it</li>
+<li>Every node in the list represents a transaction that requested lock<ul>
+<li>Mode of lock requested (mutual/exclusive)</li>
+<li>Current status of the request (granted/waiting)</li>
+</ul>
+</li>
+<li>Collisions are handled by separate chaining</li>
+<li>A node is deleted after unlock or abort</li>
+</ul>
+<h2 id="two-phase-locking-protocol">Two-Phase Locking Protocol</h2>
+<ul>
+<li>Phases</li>
+<li>Growing<ul>
+<li>The transaction starts acquiring locks before performing any modification to data items</li>
+<li>Once a lock is acquired, it cannot be released until the end of the execution</li>
+<li>Upgrading is allowed in growing phase only</li>
+</ul>
+</li>
+<li>Shrinking<ul>
+<li>The transaction releases all the acquired locks after all the modifications</li>
+<li>Once it starts releasing the locks, it cannot acquire any locks further</li>
+<li>Downgrading is allowed in shrinking phase only</li>
+</ul>
+</li>
+<li>Lock Point</li>
+<li>The point at which the growing phase ends</li>
+<li>That is, when a transaction takes the final lock</li>
+<li>Cascading Rollback is possible if the dependent transaction's commit fails</li>
+<li>To claim an exclusive (write) lock</li>
+<li>Transaction must acquire a shared (read) lock first</li>
+<li>And then upgrade it to an exclusive lock</li>
+<li>Problems</li>
+<li>Deadlock<ul>
+<li>Example: L1(A), L2(B), L1(B), L2(A)</li>
+<li>T1 granted A, T2 granted B</li>
+<li>T1 waiting for B, T2 waiting for A</li>
+</ul>
+</li>
+<li>Starvation</li>
+<li>Does not ensure recoverability</li>
+</ul>
+<h3 id="strict-2pl-protocol">Strict 2PL Protocol</h3>
+<ul>
+<li>In 2PL, transactions can release any lock before committing</li>
+<li>In strict 2PL, transactions can release exclusive locks only after they commit</li>
+<li>Recoverable, Cascadeless</li>
+<li>Deadlocks are possible</li>
+<li>Most popular version of 2PL</li>
+</ul>
+<h3 id="rigorous-2pl-protocol">Rigorous 2PL Protocol</h3>
+<ul>
+<li>Transactions can release a shared or exclusive lock only after they commit</li>
+<li>Recoverable, Cascadeless</li>
+<li>Deadlocks are possible</li>
+</ul>
+<h3 id="conservative-or-static-2pl-protocol">Conservative or Static 2PL Protocol</h3>
+<ul>
+<li>The transaction should lock all the items before starting execution</li>
+<li>By predeclaring its read-set and write-set</li>
+<li>If any of the predeclared items cannot be locked<ul>
+<li>Then the transaction should not lock any of the items</li>
+<li>And wait till all the items are available for locking</li>
+</ul>
+</li>
+<li>Locks can be released at any time</li>
+<li>Not cascadeless, so does not ensure a strict schedule</li>
+<li>Deadlock free, since one deadlock condition (hold &amp; wait) is nullified</li>
+<li>Difficult to use in practice because predeclaration is not possible in many situations</li>
+</ul>
+<h2 id="graph-based-protocols">Graph Based Protocols</h2>
+<ul>
+<li>Transactions are represented as nodes in a graph</li>
+<li>And the conflicts between them as edges</li>
+<li>If a transaction tries to acquire an exclusive lock on an item</li>
+<li>And if that is already locked by another transaction</li>
+<li>Then a conflict edge is added between their nodes</li>
+<li>When the transaction is completed, its edges are removed</li>
+<li>Before granting a lock, graph is checked for any cycles</li>
+<li>If a cycle exists, there is a conflict</li>
+<li>And one of the transactions needs to be rolled back to break the cycle</li>
+<li>It can handle complex transactions better than two-phase locking</li>
+<li>But it's computationally expensive</li>
+<li>And may not scale well for large databases</li>
+<li>Tree Based Protocol</li>
+<li>Simple implementation of graph based protocol</li>
+<li>Data item A can be locked by T1 only if the parent of A is currently locked by T1</li>
+<li>Data items can be unlocked at any time</li>
+</ul>
+<h2 id="multiple-granularity-locking">Multiple Granularity Locking</h2>
+<ul>
+<li>Various concurrency control protocols perform synchronization on individual data items</li>
+<li>If a transaction need to access the entire database<ul>
+<li>It will need to lock each item individually</li>
+</ul>
+</li>
+<li>This is inefficient and it would be simpler if a single lock can lock the entire database</li>
+<li>But if another transaction needs to access a few data items, it should be able to do that</li>
+<li>Locking the entire database in that case will result in loss of concurrency</li>
+<li>Granularity is the size of the data item allowed to lock</li>
+<li>Multiple granularity means hierarchically breaking up the database into blocks</li>
+<li>That can be locked and can be tracked what needs to be locked &amp; in what fashion</li>
+<li>How does the system determine if the root node can be locked</li>
+<li>If it searches the entire tree, it will nullify the whole purpose of this locking scheme</li>
+<li>A more efficient way is to introduce a new lock mode (intention lock)</li>
+</ul>
+<h3 id="representation">Representation</h3>
+<ul>
+<li>It can be represented graphically as a tree. Example:</li>
+<li>Root: Entire database</li>
+<li>1st Level: Areas within the database</li>
+<li>2nd Level: Files within each area (each file can have only one area)</li>
+<li>3rd Level: Records within each file</li>
+<li>Each node can be locked (shared or exclusive) individually</li>
+<li>When a node is locked, it implicitly locks all the descendants in the same mode</li>
+</ul>
+<h3 id="intention-locks">Intention Locks</h3>
+<ul>
+<li>In addition to Shared (S) &amp; Exclusive (X) locks, multiple granularity has 3 additional locks</li>
+<li>This ensures serializability</li>
+<li>Intention-Shared (IS)</li>
+<li>Intention-Exclusive (IX)</li>
+<li>Shared &amp; Intention-Exclusive (SIX)</li>
+</ul>
+<h3 id="procedure-for-transaction-to-acquire-lock">Procedure for transaction to acquire lock</h3>
+<ul>
+<li>Check the lock compatiblity</li>
+<li>Lock the root of the tree first in any mode</li>
+<li>Follows 2PL, so deadlocks are possible</li>
+<li>Locks are acquired top-down (root to leaf) and released bottom-up (leaf to root)</li>
+<li>Lock can be acquired only</li>
+<li>If the parent is locked</li>
+<li>If none of the children is locked</li>
+<li>Node can be locked in</li>
+<li>S, IS if the parent is in IX, IS</li>
+<li>X, IX, SIX if the parent is in IX, SIX</li>
+</ul>
+<h2 id="timestamp-based-protocols">Timestamp Based Protocols</h2>
+<ul>
+<li>Each transaction has a timestamp attached to it</li>
+<li>The timestamps are usually assigned in the order of submission</li>
+<li>The conflicting pairs of operations can be resolved by their timestamps</li>
+<li>TS(T) – Timestamp of transaction T when submitted</li>
+<li>TS(W(X)): Latest timestamp when any transaction executed W(X) successfully</li>
+<li>TS(R(X)): Latest timestamp when any transaction executed R(X) successfully</li>
+</ul>
+<h3 id="deadlock-prevention">Deadlock Prevention</h3>
+<ul>
+<li>Wait Die</li>
+<li>An older transaction should wait for a younger transaction</li>
+<li>If a younger transaction waiting for an older transaction<ul>
+<li>Younger transaction should be aborted and restarted with the same timestamp</li>
+</ul>
+</li>
+<li>Non-preemptive technique</li>
+<li>Wound Wait</li>
+<li>A younger transaction should wait for an older transaction</li>
+<li>If an older transaction is waiting for a younger transaction<ul>
+<li>Younger transaction should be aborted and restarted with the same timestamp</li>
+</ul>
+</li>
+<li>Preemptive technique</li>
+<li>In both cases, younger transaction is aborted</li>
+<li>Based on the assumption that it will waste less processing effort</li>
+</ul>
+<h2 id="timstamp-ordering-protocol">Timstamp Ordering Protocol</h2>
+<ul>
+<li>Ensures that the conflicting operations do not violate the ordering</li>
+<li>If R(X) and W(X) are conflicting operations</li>
+<li>Then R(X) is processed before W(X) if and only if TS(T1) &lt; TS(T2)</li>
+<li>If a schedule doesn't follow a timestamp serializability, reject and rollback the transaction</li>
+<li>Each transaction is assigned a unique timestamp when it enters the system</li>
+<li>Ensuring that all operations follow a specific order</li>
+<li>Making the schedule conflict serializable and deadlock free</li>
+<li>Cascading rollbacks are possible</li>
+<li>If T2 occurs before T1</li>
+<li>Allowed Operations<ul>
+<li>R1(X), R2(X)</li>
+</ul>
+</li>
+<li>Not Allowed Operations<ul>
+<li>R1(X), W2(X)</li>
+<li>W1(X), R2(X)</li>
+<li>W1(X), W2(X)</li>
+</ul>
+</li>
+<li>Strict Timestamp Ordering</li>
+<li>A variation where the read or write operation is delayed</li>
+<li>Until the transaction that wrote the value of the data item is committed or aborted</li>
+</ul>
+<h3 id="working">Working</h3>
+<ul>
+<li>If a transaction Ti issues a read(X) operation</li>
+<li>If TS(T) &lt; TS(W(X)): Abort and rollback</li>
+<li>If TS(T) &gt;= TS(W(X)): Execute W(X) and set TS(W(X)) to TS(T)</li>
+<li>All data-item timestamps updated</li>
+<li>If a transaction Ti issues a write(X) operation</li>
+<li>If TS(Ti) &lt; RTS(X): Operation rejected</li>
+<li>If TS(Ti) &lt; WTS(X): Operation rejected and Ti rolled back</li>
+<li>Else: Operation executed</li>
+</ul>
+<h2 id="thomas-write-rule-write-ahead-logging-protocol">Thomas Write Rule (Write Ahead Logging Protocol)</h2>
+<ul>
+<li>Any modification to a database must be written to disk</li>
+<li>Before the control is returned to a user</li>
+<li>This ensures that database remains consistent and durable</li>
+<li>Modification of the basic timestamp ordering protocol</li>
+<li>Does not enforce conflict serializability</li>
+<li>But rejects fewer write operations by modifying the check operations for W(X)</li>
+<li>If T2 occurs before T1</li>
+<li>Allowed Operations<ul>
+<li>W1(X), W2(X)</li>
+<li>R1(X), R2(X)</li>
+</ul>
+</li>
+<li>Not Allowed Operations<ul>
+<li>R1(X), W2(X)</li>
+<li>W1(X), R2(X)</li>
+</ul>
+</li>
+</ul>
+<h3 id="working_1">Working</h3>
+<ul>
+<li>If TS(R(X)) &gt; TS(T): Abort and rollback T</li>
+<li>If TS(W(X)) &gt; TS(T): Skip the write operation and continue</li>
+<li>Case of outdated of obsolete writes</li>
+<li>A transaction has already updated the value of X</li>
+<li>TO protocol aborts such a transaction</li>
+<li>Example Schedule: T2(R(X)), T1(W(X)), T2(W(X)) but T1 already wrote X</li>
+<li>Else: Execute W(X) and set TS(W(X)) to TS(T)</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../concurrency_control" class="btn btn-neutral float-left" title="Concurrency Control"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../recoverability_and_processing" class="btn btn-neutral float-right" title="Recoverability And Processing">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../concurrency_control" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../recoverability_and_processing" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

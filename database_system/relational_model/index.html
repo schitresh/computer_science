@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Relational Model - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Relational Model";
+        var mkdocs_page_input_path = "database_system/03_relational_model.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Relational Model</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="relational-model">Relational Model</h1>
+<ul>
+<li>Representing data in form of tables (or relations) connected by key fields</li>
+<li>After designing the conceptual model of the database using ER diagram</li>
+<li>It needs to be converted into a relational model</li>
+<li>So that it can be implemented using the language of RDBMS</li>
+<li>Relational Schema</li>
+<li>Structure of a relation</li>
+<li>The number of attributes in a relation is called its degree</li>
+<li>Example: Student (id, name, email) has a degree of 3</li>
+<li>Relational Instance</li>
+<li>Set of values present in a relationship</li>
+<li>The number of these instances is called cardinality</li>
+<li>Example: Student (id: 1, name: 'Test', email: 'test@email.com')</li>
+<li>Relational Algebra</li>
+<li>Set of operations that can be performed on relations</li>
+</ul>
+<h2 id="codds-rules">Codd's Rules</h2>
+<ul>
+<li>Checks whether DBMS has the quality to become RDBMS</li>
+<li>It's rare to fulfill all the rules, generally 8-9 rules are followed</li>
+<li>These 13 rules are popularly known as Codd's 12 rules (index 0 - 12)</li>
+<li>Rule 0: Foundation</li>
+<li>Must be able to manage databases entirely through its relational capabilities</li>
+<li>Rule 1: Information</li>
+<li>Data stored must be a value of some cell of a table</li>
+<li>Rule 2: Guaranteed Access</li>
+<li>Every data element must be accessible<ul>
+<li>By the table name, primary key, and attribute name</li>
+</ul>
+</li>
+<li>Rule 3: Systematic Treatment of NULL values</li>
+<li>NULL value must only correspond to missing, unknown, or not applicable values</li>
+<li>Rule 4: Active Online Catalog</li>
+<li>Structure of the database must be stored in an online catalog<ul>
+<li>That can be queried by authorized users</li>
+</ul>
+</li>
+<li>Rule 5: Comprehensive Data Sub-language</li>
+<li>Database should be accessible by a language<ul>
+<li>Supported for definition, manipulation, &amp; transaction management</li>
+</ul>
+</li>
+<li>Rule 6: View Updating Rule</li>
+<li>Different views should be updatable by the system</li>
+<li>Rule 7: High level insert, update &amp; delete</li>
+<li>Should support operations like insert, delete, update, etc at each level of relations</li>
+<li>Rule 8: Physical Data Independence</li>
+<li>Any modification in physical location of table should not affect application level</li>
+<li>Rule 9: Logical Data Independence</li>
+<li>Any modification in conceptual schema of table should not affect application level</li>
+<li>Example: Merging two tables into one<ul>
+<li>Should not affect the application accessing it (difficult to achieve)</li>
+</ul>
+</li>
+<li>Rule 10: Integrity Independence</li>
+<li>Integrity constraints modified at database level should not affect application level</li>
+<li>Rule 11: Distribution Independence</li>
+<li>Distribution of data over various locations should not be visible to end-users</li>
+<li>Rule 12: Non-subversion</li>
+<li>Low level access to data should not be able to bypass the integrity rule to change data</li>
+</ul>
+<h2 id="relation-keys">Relation Keys</h2>
+<ul>
+<li>Keys are used to identify a row in a table uniquely</li>
+<li>It also helps in setting relationship between various columns &amp; tables</li>
+<li>Super Key: A set of any number of attributes that can identify a row uniquely</li>
+<li>Candidate Key: Minimal set of attributes that can identify a row uniquely</li>
+<li>Primary Key: One key chosen out of candidate keys to identify a row uniquely</li>
+<li>Composite Key: If a combination of attributes are used as the primary key</li>
+<li>Alternate Key: Candidate keys except the primary key</li>
+<li>Foreign Key</li>
+<li>A reference key that can identify a row uniquely in the related table</li>
+<li>It should be a primary key in the referenced table</li>
+</ul>
+<h2 id="constraints">Constraints</h2>
+<ul>
+<li>While designing a relational model</li>
+<li>Conditions are defined that must hold true for the data, these are called constraints</li>
+<li>These constraints are checked before performing any operation in database</li>
+<li>Domain Constraints</li>
+<li>Attribute level constraints, attribute values must match the specified domain</li>
+<li>Example: age should be &gt; 0 for Student relation</li>
+<li>Key Integrity (or Entity Integrity)</li>
+<li>Every relation should have at least one key to uniquely identify a row</li>
+<li>Primary key cannot have NULL values</li>
+<li>Referential Integrity</li>
+<li>When one attribute of a relation can only take values<ul>
+<li>From another attribute of the same or another relation</li>
+</ul>
+</li>
+<li>Foreign keys must match primary keys in the referenced table or be NULL</li>
+<li>Example: branch_code in Branch relation referenced in Student relation<ul>
+<li>Referencing relation: Student (id, name, branch_code)</li>
+<li>Referenced relation: Branch (branch_code, branch_name)</li>
+</ul>
+</li>
+</ul>
+<h2 id="anomalies">Anomalies</h2>
+<ul>
+<li>Insertion</li>
+<li>Referencing attribute cannot have a value that is not present in the referenced attribute</li>
+<li>Deletion</li>
+<li>Referenced attribute cannot be deleted if its present in a referencing attribute</li>
+<li>Updation</li>
+<li>Referenced attribute cannot be updated if its present in a referencing attribute</li>
+<li>Example: if branch_code is updated from 'CS' to 'CSE' in Branch<ul>
+<li>Then it should be updated in Student table as well</li>
+</ul>
+</li>
+<li>Solutions for Deletion/Updation</li>
+<li>Cascade<ul>
+<li>Delete Cascade: Deletes the referencing rows if the referenced row is deleted</li>
+<li>Update Cascade: Updates the referencing rows if the referenced row is updated</li>
+</ul>
+</li>
+<li>Set NULL in referencing rows</li>
+<li>Normalization can be used to minimize these anamolies</li>
+</ul>
+<h2 id="data-warehouse-modeling">Data Warehouse Modeling</h2>
+<h3 id="star-schema">Star Schema</h3>
+<ul>
+<li>Data is organized into a central fact table</li>
+<li>That contains metrics or measures that are of interest</li>
+<li>In a sales data warehouse<ul>
+<li>Fact table might contain sales revenue, units sold, profit margins</li>
+</ul>
+</li>
+<li>Each record in the fact table represents a specific event or transaction<ul>
+<li>Like a sale or order</li>
+</ul>
+</li>
+<li>Fact table is surrounded by dimension tables</li>
+<li>That describe the attributes of the measures</li>
+<li>These attributes are used to slice and dice the data in fact table</li>
+<li>This allows users to analyze the data from different perspectives</li>
+<li>In a sales data warehouse<ul>
+<li>Dimension tables might include product, customer, time &amp; location</li>
+</ul>
+</li>
+<li>Each dimension table is joined to fact table through a foreign key relationship</li>
+<li>A user might want sales revenue by product category or region or time period</li>
+<li>It improves the data retrieval and is used by many OLAP systems</li>
+</ul>
+<h3 id="snowflake-schema">Snowflake Schema</h3>
+<ul>
+<li>Variant of star schema</li>
+<li>Where dimensions are present in a normalized form in multiple related tables</li>
+<li>The dimensions are detailed and highly structured having several levels of relationship</li>
+<li>The child tables might have multiple parent tables</li>
+<li>These tables are maintained in normalized form to reduce redundancy</li>
+<li>It makes them easy to maintain</li>
+<li>Though more joins are required that impact the performance</li>
+</ul>
+<h2 id="relational-algebra">Relational Algebra</h2>
+<ul>
+<li>Union: <code>A U B</code></li>
+<li>Intersection: <code>A ∩ B</code></li>
+<li>Difference: <code>A - B</code></li>
+<li>Cartesian Product: <code>A X B</code></li>
+<li>Selection: <code>σ condition (relation_name)</code></li>
+<li>Displays all attributes, works on rows</li>
+<li>Projection: <code>π (col1, col2) relation_name</code></li>
+<li>Works on columns, picks speciic columns</li>
+<li>Divide: <code>A ÷ B</code></li>
+<li>Rename: <code>ρ (old_relation, new_relation)</code></li>
+</ul>
+<h3 id="joins">Joins</h3>
+<ul>
+<li>Outer Joins</li>
+<li>Left: <code>A ⟕ B</code></li>
+<li>Right: <code>A ⟖ B</code></li>
+<li>Full: <code>A ⟗ B</code></li>
+<li>Inner Joins</li>
+<li>Conditional: <code>A ⋈ θ B</code>, theta denotes conditions</li>
+<li>Equi: <code>A ⋈ [A.column1 = B.column2] (B)</code><ul>
+<li>Special case of conditional join where only equality condition holds</li>
+</ul>
+</li>
+<li>Natural: <code>A ⋈ B</code><ul>
+<li>Special case of equijoin in which equality condition hold on all attributes</li>
+<li>Which have same name in relations</li>
+<li>If there is a common attribute with the same name &amp; type</li>
+<li>Then that row will be joined</li>
+<li>Returns the similar attributes only once</li>
+<li>As their value will be the same in the resulting relation</li>
+</ul>
+</li>
+</ul>
+<h3 id="nested-vs-join-queries">Nested vs Join Queries</h3>
+<ul>
+<li>Nested queries</li>
+<li>Only relevant info from each table can be extracted</li>
+<li>Can lead to bugs or poor performance, optimization depends on the developer</li>
+<li>Every constant subquery is evaluated as many times encountered<ul>
+<li>Large subqueries may take time to execute</li>
+</ul>
+</li>
+<li>Join queries</li>
+<li>Whole tables are fetched and a large table is created from which filtering happens</li>
+<li>Joins are universally understood, so no optimization issues can arise</li>
+<li>Foreign &amp; primary keys are usually indexed<ul>
+<li>So performs better than large subqueries</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../entity_relationship_model" class="btn btn-neutral float-left" title="Entity Relationship Model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../functional_dependency" class="btn btn-neutral float-right" title="Functional Dependency">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../entity_relationship_model" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../functional_dependency" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

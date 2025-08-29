@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Process Scheduling - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Process Scheduling";
+        var mkdocs_page_input_path = "operating_system/04_process_scheduling.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Operating System</li>
+      <li class="breadcrumb-item active">Process Scheduling</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="process-scheduling">Process Scheduling</h1>
+<h2 id="timings">Timings</h2>
+<ul>
+<li>Arrival Time: At which arrives in ready queue</li>
+<li>Completion Time: At which execution is completed</li>
+<li>Burst Time: Required for CPU execution</li>
+<li>Turnaround time: Arrival to Completion</li>
+<li>Waiting time: Time spent in ready queue waiting (Turnaround - Burst)</li>
+<li>Response time: Submission to first response</li>
+<li>Throughput: Number of processes that complete execution per unit time</li>
+</ul>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Maximum utilization of CPU (percentage in use)</li>
+<li>Fair allocation of CPU</li>
+<li>Maximum throughput</li>
+<li>Minimum turnaround time</li>
+<li>Minimum waiting time and avoid starvation</li>
+<li>Minimum response time</li>
+</ul>
+<h2 id="categories">Categories</h2>
+<ul>
+<li>Non-preemptive</li>
+<li>Process is removed from CPU only when it has finished execution or switches to wait state</li>
+<li>High throughput rate</li>
+<li>Bugs can freeze up the system</li>
+<li>Wastes CPU time while the process is interacting with I/O</li>
+<li>Preemptive</li>
+<li>Process runs for a limited amount of time in CPU and then switched</li>
+<li>Better average response time</li>
+<li>Avoids starvation</li>
+<li>Overhead of more context switching</li>
+</ul>
+<h2 id="schedulers">Schedulers</h2>
+<ul>
+<li>Long Term (Job Scheduler)</li>
+<li>Which process should be brought in ready queue</li>
+<li>How many processes should be kept in ready state (decides degree of multi-programming)</li>
+<li>Maintains balance between CPU bound &amp; I/O bound processes</li>
+<li>Once a decision is taken, it lasts for a long time</li>
+<li>Short Term (CPU Scheduler)</li>
+<li>Which process should be executed next (scheduling algorithms are used)</li>
+<li>Calls dispatcher</li>
+<li>Runs frequently</li>
+<li>Medium Term (Swapping Scheduler)</li>
+<li>Used for swapping (moving process from main to secondary memory &amp; vice versa)</li>
+<li>Reduces degree of multiprogramming</li>
+</ul>
+<h2 id="dispatcher">Dispatcher</h2>
+<ul>
+<li>Module that gives control of CPU to the process selected by scheduler</li>
+<li>Responsible for moving process from ready to run state &amp; vice versa</li>
+<li>Takes care of switching context, switching to user mode, jumping to proper location in user pogram</li>
+</ul>
+<h2 id="convoy-effect">Convoy Effect</h2>
+<ul>
+<li>Few slow processes slow down the entire system</li>
+<li>Solution: preemptive algorithms</li>
+<li>Example</li>
+<li>I/O bound process runs in CPU and moves to I/O</li>
+<li>CPU bound process runs in CPU</li>
+<li>I/O bound process moves to CPU &amp; waits for CPU bound process</li>
+<li>CPU bound process runs to I/O</li>
+<li>I/O bound process moves to I/O &amp; waits for CPU bound process</li>
+</ul>
+<h2 id="priority-inversion">Priority Inversion</h2>
+<ul>
+<li>Happens when a high priority task ends up waiting for a low priority task</li>
+<li>Example</li>
+<li>We have 3 tasks defined by priority: L (Low), M (Medium), H (High)</li>
+<li>H is waiting on L for I/O</li>
+<li>So M will run first, then L, and then finally H</li>
+<li>Priority Inheritance</li>
+<li>Process holding the shared resource inherits the priority of highest priority process waiting for it</li>
+<li>This is done only till the lock is released</li>
+<li>So L will run first, then H, and then finally M</li>
+</ul>
+<h2 id="algorithms">Algorithms</h2>
+<h3 id="first-come-first-serve-fcfs">First Come First Serve (FCFS)</h3>
+<ul>
+<li>Also known as First In First out (FIFO)</li>
+<li>Waiting time is high</li>
+<li>Convoy effect can happen (Few slow processes slow down the entire system)</li>
+<li>Used by other algorithms in case of conflict</li>
+</ul>
+<h3 id="shortest-job-first-sjf">Shortest Job First (SJF)</h3>
+<ul>
+<li>Burst time can't be known in advance but can be approximated</li>
+<li>Process size</li>
+<li>Process type<ul>
+<li>OS process: compiler, program manager</li>
+<li>User process: editors, utility software</li>
+<li>Interactive process: which have high I/O frequency</li>
+</ul>
+</li>
+<li>Can approximate by averaging last run-times</li>
+<li>Minimum waiting time among all algorithms</li>
+<li>Starvation can happen if short jobs keep coming</li>
+<li>Starvation can be solved using ageing, but defining ageing rate can be challenging</li>
+<li>Preemptive version: Shortest Remaining Time First (SRTF)</li>
+</ul>
+<h3 id="longest-job-first-ljf">Longest Job First (LJF)</h3>
+<ul>
+<li>May lead to convoy effect due to high average waiting time &amp; average turnaround time</li>
+<li>Preemptive version: Longest Remaining Job First (LRJF)</li>
+</ul>
+<h3 id="priority-scheduling">Priority Scheduling</h3>
+<ul>
+<li>If a higher priority process comes, current process is suspended</li>
+<li>May lead to starvation (Can be solved using ageing or dynamic priority)</li>
+<li>Priority inversion can happen (Low priority process holds a resource required by high priority process)</li>
+<li>Inversion avoidance techniques (priority inheritance, priority ceiling protocals) can make it more complicated</li>
+</ul>
+<h3 id="round-robin-rr">Round Robin (RR)</h3>
+<ul>
+<li>Preemptive version of FCFS</li>
+<li>Fixed time slots/quantum/slice over all the processes in a circular fashion</li>
+<li>High response time for high time quantum</li>
+<li>High context switch overhead for low time quantum</li>
+<li>High wait time and reduced throughput depending on time quantum</li>
+<li>Deciding perfect time quantum is a task</li>
+</ul>
+<h3 id="selfish-round-robin-srr">Selfish Round Robin (SRR)</h3>
+<ul>
+<li>Round robin that give better service to existing processes than the new ones</li>
+<li>Processes in ready list are partitioned into: New and Accepted</li>
+<li>Priority of new processes increases at rate 'a' and that of accepted processes increases at rate 'b'</li>
+<li>When priority of a new process reaches that of an accepted process, it becomes an accepted process</li>
+<li>Poor response time and priority handling</li>
+</ul>
+<h3 id="high-response-ratio-next-hrrn">High Response Ratio Next (HRRN)</h3>
+<ul>
+<li>Modification of SJF to reduce starvation</li>
+<li>Response Ratio = (Waiting Time + Burst Time) / Burst Time</li>
+</ul>
+<h3 id="multilevel-queue">Multilevel Queue</h3>
+<ul>
+<li>Divides the ready queue into several separate queues (having their own priority)</li>
+<li>Different types of processes are queued based on their priority</li>
+<li>Each queue uses its own scheduling algorithm</li>
+<li>Starvation may happen</li>
+<li>Example:</li>
+<li>System Processes: CPU itself has its processes</li>
+<li>Interactive Processes: Processes with the same type of interaction</li>
+<li>Batch Processes: Collecting similar programs in a batch before executing</li>
+</ul>
+<h3 id="multilevel-queue-scheduling-with-feedback">Multilevel Queue Scheduling with Feedback</h3>
+<ul>
+<li>Allows processes to move between queues</li>
+<li>More CPU overhead and complexity</li>
+<li>Useful because burst time approximation may become more accurate later</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../process_management" class="btn btn-neutral float-left" title="Process Management"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../process_synchronization" class="btn btn-neutral float-right" title="Process Synchronization">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../process_management" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../process_synchronization" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

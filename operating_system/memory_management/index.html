@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Memory Management - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Memory Management";
+        var mkdocs_page_input_path = "operating_system/11_memory_management.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database_system/file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Operating System</li>
+      <li class="breadcrumb-item active">Memory Management</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="memory-management">Memory Management</h1>
+<ul>
+<li>Memory management is the functionality which manages primary memory</li>
+<li>Moves processes between main memory and disk during execution</li>
+<li>Keeps track of each memory location whether it's allocated or free</li>
+<li>Allocates memory dynamically to the programs when requested<ul>
+<li>And de-allocates for reuse when no longer needed</li>
+</ul>
+</li>
+<li>Memory Management Unit (MMU) handles these tasks</li>
+<li>Requirements</li>
+<li>Relocation: Relocate the process when swapped back if the previous location is occupied by another process</li>
+<li>Protection: One process should not write to the address of another process (accidental or incidental)</li>
+<li>Sharing: Allow controlled access to shared memory, share copy of process where required</li>
+<li>Organization of logical &amp; physical memory</li>
+<li>Programs always execute in main memory, so larger the main memory, larger the multiprogramming</li>
+</ul>
+<h2 id="memory-allocation-and-partitioning">Memory Allocation and Partitioning</h2>
+<h3 id="placement-algorithms">Placement Algorithms</h3>
+<ul>
+<li>OS decides which free block to allocate when a process is loaded into main memory</li>
+<li>First fit: First available block which is large enough</li>
+<li>Best fit: First smallest sufficient partition</li>
+<li>Consumes a lot of process time to search</li>
+<li>May not always be the best algorithm<ul>
+<li>It depends on how the memory can be distributed among all processes</li>
+</ul>
+</li>
+<li>Worst fit: Largest sufficient partition</li>
+<li>Next fit: Similar to first fit, but will be searched from the last allocation point</li>
+</ul>
+<h3 id="allocation-methods">Allocation Methods</h3>
+<ul>
+<li>Single Continguous: Except the reserved memory for OS, all memory is available to a process</li>
+<li>Partitioned: Memory is divided into different blocks or partitions and allocated based on requirements</li>
+<li>Paged: Memory is divided into fixed size units called page frames and used as virtual memory</li>
+<li>Segmented: Memory is divided into different segments</li>
+<li>Segment is a logical grouping of the process data or code</li>
+<li>Allocated memory doesn’t have to be contiguous</li>
+<li>Most OS use segmentation with paging<ul>
+<li>A process is divided into segments and each segment has pages</li>
+</ul>
+</li>
+</ul>
+<h3 id="fragmentation">Fragmentation</h3>
+<ul>
+<li>When many of the free blocks are too small to satisfy any request</li>
+<li>External: Memory not contiguous, requires memory shuffling</li>
+<li>Internal: Allocated memory larger than required</li>
+<li>Defragmentation</li>
+</ul>
+<h2 id="contiguous-partitioning">Contiguous Partitioning</h2>
+<ul>
+<li>Processes can only be allocated contiguous or adjacent blocks of memory</li>
+</ul>
+<h3 id="fixed-or-static-partitioning">Fixed or Static Partitioning</h3>
+<ul>
+<li>Main memory is divided into fixed number of partitions but the sizes may vary with no overlaps</li>
+<li>Each partition is assigned to a specific process or user, OS occupies the first partition</li>
+<li>Typically allocated at boot time and remains dedicated to a process till it terminates or releases</li>
+<li>Advantages</li>
+<li>Simple and easy to implement</li>
+<li>Minimum memory can be ensured for each process</li>
+<li>Prevents processes from interfering into each other's memory space</li>
+<li>Disadvantages</li>
+<li>Internal fragmentation (memory in partition remains unused)</li>
+<li>External fragmentation (since partitions are contiguous, some parts of memory may remain unused)</li>
+<li>Process size limitation (cannot exceed than the allocated partition)</li>
+<li>Limits the number of processes running concurrently (each process requires a dedicated partition)</li>
+<li>Used in embedded systems, real-time systems, limited memory systems</li>
+</ul>
+<h3 id="variable-or-dynamic-partitioning">Variable or Dynamic Partitioning</h3>
+<ul>
+<li>Partitions are not made before execution but during run-time</li>
+<li>Partition is created depending on the process requirements avoiding internal fragmentation</li>
+<li>Number of partitions is not fixed and depends upon the incoming processes and the main memory size</li>
+<li>First partition is reserved for OS</li>
+<li>Keeping track of partitions: Bitmap, Linked List</li>
+<li>Advantages: No interal fragmentation, no limitation on multiprogramming, no limitation on process size</li>
+<li>Disadvantages: External fragmentation, complex memory allocation</li>
+</ul>
+<h2 id="non-contiguous-partitioning">Non-Contiguous Partitioning</h2>
+<ul>
+<li>Processes can be allocated a series of non-contiguous blocks of memory that can be located anywhere</li>
+<li>Pointers are used to link the blocks and track the blocks allocated to a process</li>
+<li>Use of pointers introduces an overhead in allocation &amp; de-allocation</li>
+<li>Need to maintain page table for each process</li>
+</ul>
+<h3 id="paging">Paging</h3>
+<ul>
+<li>Logical memory or process address space is divided into blocks of same size called pages</li>
+<li>Main memory is divided into small fixed sized blocks of physical memory called frames</li>
+<li>No external fragmentation since frame size is generally equal to page size</li>
+<li>Retrieving processes from secondary storage into main memory in form of pages is also called paging</li>
+<li>Internal fragmentation can happen in the last page of the process</li>
+<li>Logical address</li>
+<li>Page number: Bits that represent the page in logical address space</li>
+<li>Page offset: Bits that represent a particular word in a page</li>
+<li>p|d (logical) -&gt; f|d (physical)</li>
+<li>Physical address</li>
+<li>Frame number</li>
+<li>Frame offset</li>
+<li>Translation Lookaside Buffer (TLB) is special fast lookup hardware cache</li>
+<li>It is used to track recently used page table entries</li>
+</ul>
+<h3 id="segmentation">Segmentation</h3>
+<ul>
+<li>A process is divided into segments (main program, functions, procedures, variables, etc)</li>
+<li>Segments may not be of same sizes which can lead to external fragmentation</li>
+<li>It gives user's view of process which paging does not</li>
+<li>Segment table maps logical and physical addresses</li>
+</ul>
+<h2 id="address-spaces">Address Spaces</h2>
+<h3 id="logical-or-virtual-address">Logical or Virtual Address</h3>
+<ul>
+<li>Virtual address generated by CPU during program execution relative to the program's address space</li>
+<li>Provides a layer of abstraction that allows processes to access memory without knowing physical addresses</li>
+<li>Memory management unit (MMU) translates logical addresses into physical addresses using page table</li>
+<li>Page table maps each logical page number to a physical frame number</li>
+<li>Process/logical address space</li>
+<li>Set of logical addresses that a process references in its code</li>
+<li>OS maps logical addresses to physical addresses at the time of memory allocation to the program</li>
+<li>Uses</li>
+<li>Allows efficient memory management using paging and segmentation</li>
+<li>Can extend physical memory by disk</li>
+<li>Memory protection</li>
+<li>Less I/O needed to load or swap program in memory</li>
+</ul>
+<h3 id="physical-address">Physical Address</h3>
+<ul>
+<li>Actual address in main memory where data is stored</li>
+<li>Physical addresses are not exposed to processes or users</li>
+<li>Physical address space does not change</li>
+<li>Example</li>
+<li>Physical address = 12 bits, physical address space = 2^12 = 4 * 1024 = 4K words</li>
+<li>Logical address = 13 bits, physical address space = 2^13 = 8 * 1024 = 8K words</li>
+</ul>
+<h2 id="address-binding">Address Binding</h2>
+<ul>
+<li>Process of mapping one address space to another address space</li>
+<li>Done by Memory management unit (MMU) (address translation unit in particular)</li>
+</ul>
+<h3 id="contiguous-memory-allocation">Contiguous Memory Allocation</h3>
+<ul>
+<li>In contiguous memory allocation, it is not a difficult task</li>
+<li>If the base address of the process is known, next addresses can be found out</li>
+<li>MMU is a combination of two registers: Base register &amp; limit register</li>
+<li>Base Register (Relocation Register)</li>
+<li>Contains starting physical address of the process</li>
+<li>Limit Register</li>
+<li>Mentions the limit relative to the base address on the region occupied by the process</li>
+<li>Logical address generated by CPU is first checked by limit register</li>
+<li>If the value of the logical address is less than the limit register<ul>
+<li>The base address stored in the relocation register is added to the logical address to get the physical address</li>
+</ul>
+</li>
+<li>If the value of the logical address is greater than the limit register<ul>
+<li>CPU traps to the OS and OS terminates the program by giving fatal error</li>
+</ul>
+</li>
+</ul>
+<h3 id="non-contiguous-memory-allocation">Non-contiguous Memory Allocation</h3>
+<ul>
+<li>Processes can be allocated anywhere in the available space</li>
+<li>The address translation is difficult, some techniques are Paging &amp; Segmentation</li>
+<li>Different data structures and hardware support like TLB are required</li>
+</ul>
+<h3 id="types">Types</h3>
+<ul>
+<li>Compile Time</li>
+<li>If it is known at the compile time where the process will reside in memory<ul>
+<li>Then an absolute address is generated</li>
+</ul>
+</li>
+<li>Physical address is embedded to the executable of the program during compilation</li>
+<li>Loading executable as a process in memory is very fast</li>
+<li>If the generated address space is preoccupied by other processes, then the program crashes<ul>
+<li>The program needs to be recompiled to change the address space</li>
+</ul>
+</li>
+<li>Load Time</li>
+<li>If it is not known at the compile time where the process will reside<ul>
+<li>Then a relocatable address is generated</li>
+</ul>
+</li>
+<li>The loader translates the relocatable address to an absolute address</li>
+<li>To generate an absolute address<ul>
+<li>The base address of the process in main memory is added to all logical addresses by the loader</li>
+</ul>
+</li>
+<li>If the base address of the process changes, the process needs to be reloaded</li>
+<li>Execution Time</li>
+<li>The stage where instructions are in memory and are being processed by CPU</li>
+<li>Additional memory may be allocated and de-allocated</li>
+<li>Used if a process can be moved from one memory to another during execution</li>
+</ul>
+<h3 id="page-table">Page Table</h3>
+<ul>
+<li>Data structure used by OS to keep track of the mapping between logical and physical addresses</li>
+<li>Contents of Page Table Entry (PTE)</li>
+<li>Frame Number (or Address Translation Bit): Frame number in which the page is present (physical address)</li>
+<li>Present/Absent Bit (or Valid/Invalid Bit): If the page is not present, it is called Page Fault</li>
+<li>Protection Bit: Specifies protection like read, write, etc.</li>
+<li>Reference Bit: Whether the page was referred in the last cycle or not</li>
+<li>Caching Enabled/Disabled: Caching is disabled when the latest info is required</li>
+<li>Modified Bit (or Dirty Bit): If a page is modified, it has to be written or saved somewhere on page replacement</li>
+<li>The size and format of PTE can vary depending on the architecture of the system and the OS</li>
+</ul>
+<h2 id="allocating-kernel-memory">Allocating Kernel Memory</h2>
+<h3 id="buddy-system">Buddy System</h3>
+<ul>
+<li>Divides memory into blocks of fixed size, each block has size in the power of two</li>
+<li>Follows best fit strategy</li>
+<li>On getting a request, it finds the smallest available block with sufficient size</li>
+<li>If the block is larger than required, it is split into two smaller blocks of equal size (buddies)</li>
+<li>This is repeated till the requested size is achieved</li>
+<li>Split strategies: Binary, fibonacci, weighted, tertiary</li>
+<li>Advantages</li>
+<li>Easy to implement and can handle wide range of memory sizes</li>
+<li>Coalescing (how quickly adjacent buddies can be combined to form a larger segment)</li>
+<li>Address calculation is easy</li>
+<li>Disadvantages: Internal fragmentation, can be inefficient in allocating small amounts of memory</li>
+</ul>
+<h3 id="slab-system">Slab System</h3>
+<ul>
+<li>Divides memory into slabs of fixed size consisting of a set of objects of the same type</li>
+<li>Slab</li>
+<li>Made up of one or more physically contiguous pages</li>
+<li>Container of data associated with objects of specific kind of the containing cache</li>
+<li>Possible states depending on the available objects: full, empty, partial</li>
+<li>Cache</li>
+<li>Small amount of very fast memory, consists of one or more slabs</li>
+<li>Single cache for each unique kernel data structure (e.g. file objects, semaphores, process descriptors)</li>
+<li>On getting a request, it attempts to assign free object from a partial slab and then from an empty slab</li>
+<li>If these slabs are not available, a new slab is allocated from contiguous physical pages and assigned to a cache</li>
+<li>When the object is released and marked free, it returns to its cache</li>
+<li>Advantages:</li>
+<li>Efficient in allocating small amounts of memory since objects are created in advance</li>
+<li>Prevents fragmentation</li>
+<li>Disadvantages: Complex to implement, may require more memory overhead</li>
+</ul>
+<h2 id="garbage-collector">Garbage Collector</h2>
+<ul>
+<li>Prevents memory leaks and fragmentation</li>
+<li>Dynamic approach to automatic memory management and heap allocation</li>
+<li>That processes and identifies memory no longer referenced</li>
+<li>Dynamic memory management process that finds dead memory blocks and reallocates them</li>
+<li>3 primary approaches</li>
+<li>Mark and sweep: Reclaiming available memory</li>
+<li>Reference counting<ul>
+<li>Allocated object contains reference count of referencing number</li>
+<li>When memory count is 0, object is garbage and destroyed</li>
+<li>Freed memory returns to heap memory</li>
+</ul>
+</li>
+<li>Copy collection: Two partitions. When one is full, relocate and compact to second</li>
+<li>Buffer Overflow</li>
+</ul>
+<h3 id="memory-leak">Memory Leak</h3>
+<ul>
+<li>When memory which is no longer needed is not released</li>
+<li>When an object is stored in memory but cannot be accessed by running code</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../memory" class="btn btn-neutral float-left" title="Memory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../virtual_memory" class="btn btn-neutral float-right" title="Virtual Memory">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../memory" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../virtual_memory" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

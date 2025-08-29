@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Tcp Transmission Control Protocol - Computer Science</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tcp Transmission Control Protocol";
+        var mkdocs_page_input_path = "computer_networks/L4_transport_layer/02_tcp_transmission_control_protocol.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >L4 Transport Layer</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../database_system/file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Computer Networks</li>
+          <li class="breadcrumb-item">L4 Transport Layer</li>
+      <li class="breadcrumb-item active">Tcp Transmission Control Protocol</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h1>
+<ul>
+<li>Connection oriented protocol for communication between different devices in a network</li>
+<li>Sender &amp; receiver are connected till the completion of the process</li>
+<li>Order of the data is maintained (order remains same before &amp; after the transmission)</li>
+<li>Establishes and maintains full duplex connection between hosts</li>
+<li>And generates a virtual circuit between sender &amp; receiver</li>
+<li>Works with IP that establishes the technique for sending data packets between devices</li>
+<li>Reliable communication using Positive Acknowledgement with Re-transmission (PAR)</li>
+<li>Detects errors and retransmits the damaged frames</li>
+<li>Segments are checked for error detection<ul>
+<li>Corrupted segment, lost segment management, out of order segment, duplicate segment</li>
+</ul>
+</li>
+<li>Before the transmission is completed<ul>
+<li>Ensures that all segments are received and acknowledged</li>
+</ul>
+</li>
+</ul>
+<h2 id="working">Working</h2>
+<ul>
+<li>Sender</li>
+<li>To ensure that each message reaches its target location intact<ul>
+<li>Data/message is divided into small segments</li>
+</ul>
+</li>
+<li>It keeps track of the segments by assigning sequence number</li>
+<li>As opposed to sending everything in one go<ul>
+<li>This makes it simpler to maintain efficiency</li>
+</ul>
+</li>
+<li>Segments may travel through multiple routes and arrive in different order</li>
+<li>It makes it easier to route segments if one route is jammed</li>
+<li>Receiver</li>
+<li>All segments are collected and reordered based on sequence numbers</li>
+<li>Received segmments are assigned acknowledgement numbers</li>
+<li>TCP then waits for the transmission to finish<ul>
+<li>And acknowledges once all packets have been received</li>
+</ul>
+</li>
+<li>Flow control</li>
+<li>Limits the rate at which a sender transfers data</li>
+<li>The receiver continually hints on how much data can be received<ul>
+<li>Using a sliding window</li>
+</ul>
+</li>
+<li>After the user request is received by the server</li>
+<li>It sends back an HTML page using HTTP</li>
+<li>HTTP requests TCP layer to set the required connection and send the HTML file</li>
+</ul>
+<h2 id="connection-using-3-way-handshake">Connection using 3 way handshake</h2>
+<ul>
+<li>Step 1: SYN</li>
+<li>When a client wants to establish a connection<ul>
+<li>It sends a segment with SYN (Synchronized Sequence Number)</li>
+</ul>
+</li>
+<li>This informs the server that the client is likely to start communication<ul>
+<li>And with what sequence number (32-bit number) it starts with</li>
+</ul>
+</li>
+<li>Step 2: SYN + ACK</li>
+<li>Server responds to the client request with SYN-ACK signal bits set</li>
+<li>Acknowledgement (ACK) signifies that the response of the segment is received</li>
+<li>SYN signifies with what sequence number it is likely to start the segments with</li>
+<li>Step 3: ACK</li>
+<li>Client acknowledges the response of the server</li>
+<li>And they both establish a reliable connection<ul>
+<li>With which they will start the actual data transfer</li>
+</ul>
+</li>
+</ul>
+<h2 id="tcp-timers">TCP Timers</h2>
+<ul>
+<li>TCP uses several timers during communications</li>
+<li>To ensure that excessive delays are not encountered</li>
+</ul>
+<h3 id="retransmission-timer">Retransmission timer</h3>
+<ul>
+<li>Retransmission timeout (RTO) is used to retransmit lost segments</li>
+<li>Starts when TCP sends a segment and stops when the ack is received</li>
+<li>This is determined using RTT (Round trip time)</li>
+<li>Measured RTT: Time taken by segment to reach destination &amp; be acknowledged</li>
+<li>Smoothed RTT: Weighted average of measured RTT</li>
+</ul>
+<h3 id="persistent-timer">Persistent timer</h3>
+<ul>
+<li>Used to deal with a zero-window-size deadlock situation</li>
+<li>When TCP receives an ack with window size of zero, it starts a persistence timer</li>
+<li>When it goes off, TCP sends a special segment called probe</li>
+<li>Probe contains only 1 byte of data</li>
+<li>It has a sequence number but it's never acked<ul>
+<li>Also ignored in calculating sequence nuumber for rest of the data</li>
+</ul>
+</li>
+<li>Probe causes the receiver to resend ack which was lost</li>
+</ul>
+<h3 id="keep-alive-timer">Keep alive timer</h3>
+<ul>
+<li>Used to prevent a long idle connection between two TCPs</li>
+<li>Each time the server hears from client, it resets the timer (usually 2 hours)</li>
+<li>If the server does not hear from the client after timeout, it sends a probe segment</li>
+<li>If there is no response after 10 probes (75s apart)</li>
+<li>It assumes that the client is down and terminates the connection</li>
+</ul>
+<h3 id="time-wait-timer-or-quiet-timer">Time wait timer or quiet timer</h3>
+<ul>
+<li>Used during tcp connection termination</li>
+<li>Starts after sending the last ack and closing the connnection</li>
+<li>After connection is closed</li>
+<li>It is possible for datagrams that are still their way through the network<ul>
+<li>To attempt to access the closed port</li>
+</ul>
+</li>
+<li>This timer prevents just closed port from reopening again quickly<ul>
+<li>And receiving these last datagrams</li>
+</ul>
+</li>
+<li>Usually set to twice the maximum segment lifetime</li>
+<li>Same value as time-to-live field in IP header</li>
+</ul>
+<h2 id="connection-termination">Connection Termination</h2>
+<ul>
+<li>Supports two types of connection releases</li>
+<li>Like most connection-oriented transport protocols</li>
+</ul>
+<h3 id="graceful-connection-release">Graceful connection release</h3>
+<ul>
+<li>Connection is open until both parties have closed their sides of connection</li>
+<li>Carried out by using the TCP header's FIN (finish) flag</li>
+<li>Step 1 (FIN from client)</li>
+<li>Suppose that the client wants to close the connection<ul>
+<li>Server can also choose to do so</li>
+</ul>
+</li>
+<li>Client sends a segment to server with FIN bit set to 1</li>
+<li>Client enters into FIN_WAIT_1 state and waits for ack from the server</li>
+<li>Step 2 (ACK from server)</li>
+<li>When the server receives FIN bit segment, it immediately sends ack to the client</li>
+<li>When the client receives the ack, it enters into FIN_WAIT_2 state<ul>
+<li>And waits for another segment from server with FIN bit set to 1</li>
+</ul>
+</li>
+<li>Step 3 (FIN from server)</li>
+<li>After some time of sending ack, server sends FIN bit segment to client</li>
+<li>The time is taken due to some closing process in the server</li>
+<li>Step 4 (ACK from client)</li>
+<li>When the client receives FIN bit segment<ul>
+<li>It sends ack to server and enters into TIME_WAIT state</li>
+</ul>
+</li>
+<li>TIME_WAIT state lets client resend the final ack in case its lost<ul>
+<li>Typically 30s, 1min, 2min</li>
+</ul>
+</li>
+<li>After the wait, the connection formally closes<ul>
+<li>And all resources on the client side (port numbers, buffer data) are released</li>
+</ul>
+</li>
+</ul>
+<h3 id="abrupt-connection-release">Abrupt connection release</h3>
+<ul>
+<li>Either an TCP entity is forced to closed the connection</li>
+<li>Or one user closes both directions of data transfer</li>
+<li>Carried out when an RST (reset) segment is sent</li>
+<li>When an non-SYN segement is received for a non-exiting TCP connection</li>
+<li>When a segment with an invalid header is received in an open connection<ul>
+<li>Prevents attacks by closing the corresponding connection</li>
+</ul>
+</li>
+<li>When some implementations need to close an existing TCP connection due to<ul>
+<li>Lack of resources or remote host is unreachable &amp; has stopped responding</li>
+</ul>
+</li>
+<li>RST segement should contain 00 if it does not belong to any existing connection</li>
+<li>Else it should contain current value of the sequence number</li>
+<li>And the ack number should be set to the next expected sequence number</li>
+</ul>
+<h2 id="wrap-around-concept">Wrap Around Concept</h2>
+<ul>
+<li>At high rate of traffic, all the sequence numbers can get used up</li>
+<li>Sequence number should be unique for each packet</li>
+<li>Sequence number is of 32 bits (0 to 2^32 - 1 = 4 Giga numbers)</li>
+<li>Wrap around concept</li>
+<li>Using the sequence number again and again once all of them get used up</li>
+<li>In order to maintain the continuity of data transfer</li>
+<li>Wrap around time</li>
+<li>Time taken to wrap around<ul>
+<li>If we start from sequence number n, after how much time is it used again</li>
+</ul>
+</li>
+<li>Depends on the sequence numbers and bandwidth (rate of bits being consumed)</li>
+<li>It should be at least greater than the life time of a packet<ul>
+<li>For that time the sequence number will be in use</li>
+</ul>
+</li>
+<li>Wrap around time = Count of sequence numbers / Bandwidth<ul>
+<li>For 1 GBps = 2^32 numbers / 10^9 = 4.3 seconds</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../udp_user_datagram_protocol" class="btn btn-neutral float-right" title="Udp User Datagram Protocol">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../udp_user_datagram_protocol" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

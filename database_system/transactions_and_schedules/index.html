@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Transactions And Schedules - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Transactions And Schedules";
+        var mkdocs_page_input_path = "database_system/06_transactions_and_schedules.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../normalization">Normalization</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Transactions And Schedules</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="transaction-and-schedules">Transaction and Schedules</h1>
+<h2 id="transaction">Transaction</h2>
+<ul>
+<li>Transaction</li>
+<li>Collection of operations that performs a single logical function in database</li>
+<li>Operations: Read, Write, Commit, Rollback, Abort</li>
+</ul>
+<h2 id="transaction-properties">Transaction properties</h2>
+<ul>
+<li>Atomicity</li>
+<li>Either all operations should execute or none</li>
+<li>No partial transactions</li>
+<li>Consistency</li>
+<li>Data should be consistent everywhere<ul>
+<li>Debit, credit, sender, receiver, total, remaining, before, after</li>
+</ul>
+</li>
+<li>Any transaction should take the database from one consistent state to another<ul>
+<li>Maintaining the rules and constraints defined for the data</li>
+</ul>
+</li>
+<li>Isolation</li>
+<li>Operation permission should be granted to one transaction only</li>
+<li>No two writes or one read &amp; write should happen simultaneously</li>
+<li>Ensures that multiple transactions can occur concurrently and independently<ul>
+<li>Without interference and without leading to inconsistency of database state</li>
+</ul>
+</li>
+<li>Durable</li>
+<li>Once committed, changes should be permanent even if a system failure occurs</li>
+<li>Account updates shouldn't be lost</li>
+<li>Multiple copies of the database should be stored at different locations</li>
+</ul>
+<h2 id="schedule">Schedule</h2>
+<ul>
+<li>Series of operations from one or more transactions</li>
+<li>Types</li>
+<li>Serial</li>
+<li>Concurrent<ul>
+<li>Serializable</li>
+<li>Conflict Serializable</li>
+<li>View Serializable</li>
+<li>Non-Serializable</li>
+<li>Recoverable<ul>
+<li>Cascading</li>
+<li>Cascadeless</li>
+<li>Strict</li>
+</ul>
+</li>
+<li>Non-Recoverable</li>
+</ul>
+</li>
+</ul>
+<h3 id="serial-schedule">Serial Schedule</h3>
+<ul>
+<li>When one transaction executes completely before starting another transaction</li>
+<li>It is always consistent</li>
+<li>Has low throughput and less resource utilization</li>
+</ul>
+<h3 id="concurrent-schedule">Concurrent Schedule</h3>
+<ul>
+<li>When operations of a transaction are interleaved</li>
+<li>With operations of other transactions of a schedule</li>
+<li>Can lead to inconsistency</li>
+<li>Serializable Schedules</li>
+<li>Used to verify whether the scheduling will lead to any inconsistency</li>
+<li>These are non-serial transactions that produce an equal outcome when executed serially</li>
+</ul>
+<h2 id="conflict-serializable">Conflict Serializable</h2>
+<ul>
+<li>If the schedule can be transformed into serial schedule</li>
+<li>By swapping non-conflicting operations</li>
+</ul>
+<h3 id="conflicting-operations">Conflicting Operations</h3>
+<ul>
+<li>They belong to separate transactions</li>
+<li>Both operate on the same data item</li>
+<li>At least one of them is write operation</li>
+</ul>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>Example 1:</li>
+<li>S: R1(A), W1(A), R2(A), W2(A), R1(B), W1(B), R2(B), W2(B)</li>
+<li>Swapping non-conflicting operations<ul>
+<li>S1: R1(A), W1(A), R1(B), W1(B), R2(A), W2(A), R2(B), W2(B)</li>
+</ul>
+</li>
+<li>This can be represented as T1 -&gt; T2</li>
+<li>It can also be rearranged as T2 -&gt; T1</li>
+<li>Example 2:</li>
+<li>S: R2(A), W2(A), R1(A), W1(A), R1(B), W1(B), R2(B), W2(B)</li>
+<li>A needs to be written by T2 first &amp; then needs to be read by T1</li>
+<li>B needs to be written by T1 first &amp; then needs to be read by T2</li>
+<li>Hence, it cannot be rearranged as T1 -&gt; T2 or T2 -&gt; T1</li>
+<li>So it is not conflict serializable</li>
+</ul>
+<h3 id="conflict-equivalent">Conflict Equivalent</h3>
+<ul>
+<li>Two schedules are conflict equivalent</li>
+<li>If one can be transformed to another by swapping non-conflicting operations</li>
+<li>In example 1, S &amp; S1 are conflict equivalent</li>
+</ul>
+<h2 id="view-serializable">View Serializable</h2>
+<ul>
+<li>A schedule is view serializable if it is view equivalent to a serial schedule</li>
+<li>Serial Schedule<ul>
+<li>Transactions are executed one after another without interleaving</li>
+</ul>
+</li>
+<li>View Equivalent<ul>
+<li>If two schedules produce the same final state of the database</li>
+<li>And ensure the same read/write behavior for all transactions</li>
+</ul>
+</li>
+<li>There are no overlapping transactions</li>
+<li>Schedules that are conflict serializable are always view serializale</li>
+<li>Conditions in both the schedules</li>
+<li>Read of initial value and write of final value must be same for a data item</li>
+<li>W -&gt; R conflict must be the same</li>
+</ul>
+<h3 id="view-equivalence">View Equivalence</h3>
+<ul>
+<li>Two schedules are view equivalent</li>
+<li>If they produce the same set of results when executed against the same state</li>
+<li>Order of any two conflicting operations in S1 should be same in S2</li>
+<li>Conditions</li>
+<li>Initial Read<ul>
+<li>If T1 reads the data item A in S1</li>
+<li>Then T1 should also read A in S2</li>
+</ul>
+</li>
+<li>Updated Read<ul>
+<li>If T1 reads A written by T2 in S1</li>
+<li>Then T1 should also read A written by T2 in S2</li>
+</ul>
+</li>
+<li>Final Write<ul>
+<li>If T1 performs the final write on A in S1</li>
+<li>Then T1 should also perform the final write on A in S2</li>
+</ul>
+</li>
+</ul>
+<h2 id="recoverable-schedules">Recoverable Schedules</h2>
+<ul>
+<li>Transactions commit only after all the transactions whose changes were read are committed</li>
+<li>It allows the system to return the database to a consistent state</li>
+<li>Example:</li>
+<li>T1 reads A, modifies and writes A</li>
+<li>T2 reads A, modifies and writes A</li>
+<li>T1 is committed</li>
+<li>T2 is committed (Committed after T1, A read by T2 was modified by T1)</li>
+<li>Cascading Schedule</li>
+<li>If a transaction fails, all other dependent transactions rolled back or aborted</li>
+<li>Cascadeless Schedule</li>
+<li>Transactions read values only after<ul>
+<li>All the transactions whose changes are to be read are committed</li>
+</ul>
+</li>
+<li>Avoids a series of transaction rollbacks due to abort of a single transaction</li>
+<li>Strict Schedule</li>
+<li>A transaction can read or write updated value of another transaction<ul>
+<li>Only after it is commited or aborted</li>
+</ul>
+</li>
+</ul>
+<h2 id="non-recoverable-schedules">Non Recoverable Schedules</h2>
+<ul>
+<li>If a transaction T2 reads and commits changes made by another transaction T1</li>
+<li>But later if that transaction T1 is aborted, the value read by T2 will be wrong</li>
+<li>Since T2 already committed, the schedule is non-recoverable</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../normalization" class="btn btn-neutral float-left" title="Normalization"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../concurrency_control" class="btn btn-neutral float-right" title="Concurrency Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../normalization" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../concurrency_control" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>

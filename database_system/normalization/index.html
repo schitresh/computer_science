@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Normalization - Computer Science</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Normalization";
+        var mkdocs_page_input_path = "database_system/05_normalization.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Computer Science
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Computer Networks</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/network_devices">Network Devices</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/osi_model">Osi Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../computer_networks/tcp_ip_model">Tcp Ip Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Network Security</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/threat_modeling">Threat Modeling</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/malware">Malware</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/dos_denial_of_service">Dos Denial Of Service</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/miscellaneous_attacks">Miscellaneous Attacks</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/firewall">Firewall</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/network_security/message_authentication_codes">Message Authentication Codes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L1 Physical Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/architecture">Architecture</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L1_physical_layer/transmission">Transmission</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L2 Data Link Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/switching">Switching</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/multiple_access_control">Multiple Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/sliding_window_protocol">Sliding Window Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/error_detection">Error Detection</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/virtual_lan">Virtual Lan</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L2_data_link_layer/mobile_communication">Mobile Communication</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L3 Network Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_internet_protocol">Ip Internet Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_v6">Ip V6</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/ip_datagram_fragmentation">Ip Datagram Fragmentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/icmp_internet_control_message_protocol">Icmp Internet Control Message Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/arp_address_resolution_protocol">Arp Address Resolution Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing">Routing</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/routing_protocols">Routing Protocols</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/nat_network_address_translation">Nat Network Address Translation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/isdn_integrated_services_digital_network">Isdn Integrated Services Digital Network</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/aaa_authentication_authorization_accounting">Aaa Authentication Authorization Accounting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/access_control">Access Control</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L3_network_layer/wifi">Wifi</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L4 Transport Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/tcp_transmission_control_protocol">Tcp Transmission Control Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/udp_user_datagram_protocol">Udp User Datagram Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L4_transport_layer/congestion_control">Congestion Control</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L5 Session Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L5_session_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L6 Presentation Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L6_presentation_layer/introduction">Introduction</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >L7 Application Layer</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/index">Index</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/introduction">Introduction</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/http_hypertext_transfer_protocol">Http Hypertext Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/atm_asynchonous_transfer_mode">Atm Asynchonous Transfer Mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/smtp_simple_mail_transfer_protocol">Smtp Simple Mail Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ftp_file_transfer_protocol">Ftp File Transfer Protocol</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/ssh_secure_shell">Ssh Secure Shell</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dns_domain_system_name">Dns Domain System Name</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../computer_networks/L7_application_layer/dhcp_dynamic_host_configuration_protocol">Dhcp Dynamic Host Configuration Protocol</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../entity_relationship_model">Entity Relationship Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../relational_model">Relational Model</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../functional_dependency">Functional Dependency</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Normalization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../transactions_and_schedules">Transactions And Schedules</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control">Concurrency Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../concurrency_control_protocols">Concurrency Control Protocols</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../recoverability_and_processing">Recoverability And Processing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../indexing">Indexing</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../file_organization">File Organization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Object Oriented Programming</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../object_oriented_programming/introduction">Introduction</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operating System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/index">Index</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/introduction">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/system_structure">System Structure</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_management">Process Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_scheduling">Process Scheduling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization">Process Synchronization</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_solutions">Process Synchronization Solutions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/process_synchronization_application">Process Synchronization Application</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/thread_management">Thread Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/resource_allocation">Resource Allocation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory">Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/memory_management">Memory Management</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/virtual_memory">Virtual Memory</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operating_system/storage_management">Storage Management</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Computer Science</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Database System</li>
+      <li class="breadcrumb-item active">Normalization</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="normalization">Normalization</h1>
+<ul>
+<li>Process of organizing attributes to reduce data redundancy</li>
+<li>Data redundancy</li>
+<li>Advantages<ul>
+<li>Data is readily accessible</li>
+<li>Enhances query performance since less joins are required</li>
+</ul>
+</li>
+<li>Disadvantages<ul>
+<li>Increased storage size</li>
+<li>Inconsistency problems or anamolies during insert, update, delete operations</li>
+</ul>
+</li>
+<li>Data consistency: Keeps data consistent at all places</li>
+<li>Data integrity: Ensures data accuracy and protects against data loss &amp; leaks</li>
+<li>Simplifies data management by breaking down complex tables</li>
+</ul>
+<h2 id="normal-forms">Normal Forms</h2>
+<ul>
+<li>The default requirement for a normal form is to satify all the previous normal forms</li>
+</ul>
+<h3 id="first-1nf">First (1NF)</h3>
+<ul>
+<li>No composite or multi-valued attributes in the relation</li>
+<li>Helps eliminate duplicate data and simplifies queries</li>
+<li>Example: Student (id: 1, phone: [1234, 5678])</li>
+<li>Student is not in 1NF because phone has 2 values</li>
+<li>Break the row into 2 rows to make it 1NF<ul>
+<li>Student (id: 1, phone: 1234)</li>
+<li>Student (id: 1, phone: 5678)</li>
+</ul>
+</li>
+</ul>
+<h3 id="second-2nf">Second (2NF)</h3>
+<ul>
+<li>Relation is in 2NF if any one of the following holds true</li>
+<li>Candidate key is single valued</li>
+<li>Candidate key is multi valued, but there is no partial dependency in the relation<ul>
+<li>Any non-prime attribute should not be dependent on any proper subset of any candidate key</li>
+</ul>
+</li>
+<li>Reduces redundant data</li>
+<li>Student (id, course_id, course_fee)</li>
+<li>If 100 students are taking the same course, no need to store its fee 100 times</li>
+<li>Consider X -&gt; Y &amp; A -&gt; Y</li>
+<li>Let's say X is a composite candidate key {A, B}</li>
+<li>It is a partial dependency because Y is non-prime and depends only on A<ul>
+<li>And A is a proper subset of the candidate key {A, B}</li>
+<li>If A -&gt; Y was not present, it will be in 2NF</li>
+</ul>
+</li>
+<li>If the candidate key X was single valued (say B -&gt; Y)<ul>
+<li>Then also it will be in 2NF</li>
+</ul>
+</li>
+<li>Proper subset</li>
+<li>A proper subset is a set that contains some but not all elements of another set</li>
+<li>E.g. {1} is proper subset of {1, 2}, but {1, 2} is subset (not proper) of {1, 2}</li>
+<li>Example: StudentCourse (id, course_id, course_fee)</li>
+<li>It is not in 2NF because<ul>
+<li>Candidate key here is {id, course_id}</li>
+<li>But course_id -&gt; course_fee</li>
+<li>course_id is a proper subset of a candidate key</li>
+<li>course_fee is a non-prime attribute<ul>
+<li>It cannot identify a row uniquely even if combined with other attributes</li>
+</ul>
+</li>
+<li>It is a partial dependency and so this relation is not in 2NF</li>
+</ul>
+</li>
+<li>Break the table into 2 tables to make it 2NF<ul>
+<li>StudentCourse (id, course_id)</li>
+<li>Course (id, course_fee)</li>
+</ul>
+</li>
+</ul>
+<h3 id="third-3nf">Third (3NF)</h3>
+<ul>
+<li>No transitive dependency for non-prime attributes on any candidate key</li>
+<li>If A -&gt; B and B -&gt; C, then A -&gt; C is called transitive dependency</li>
+<li>Ensures that FD is preserved and lossless</li>
+<li>Alternatively, we can say that for a non-trivial FD X -&gt; Y</li>
+<li>Atleast one of the following conditions should hold true</li>
+<li>X is a super key</li>
+<li>Y is a prime attribute</li>
+<li>3NF is considered adequate for normal RDBMS</li>
+<li>Because most of the 3NF tables are free of anomalies</li>
+<li>Example: Student (id, name, state, country)</li>
+<li>It is not in 3NF because<ul>
+<li>id -&gt; state and state -&gt; country</li>
+<li>Country is a non-prime attribute since the candidate key is {id}</li>
+<li>But it depends transitively on id (which is candidate key)</li>
+<li>Alternatively, country is non-prime and state is not super key</li>
+<li>But state -&gt; country</li>
+</ul>
+</li>
+<li>Break the table into 2 tables to make it 3NF<ul>
+<li>Student (id, name, state)</li>
+<li>StateCountry (state, country)</li>
+</ul>
+</li>
+<li>Example 2:</li>
+<li>StudentCourse (id, course, instructor, instructor_email)<ul>
+<li>{id, course} -&gt; instructor (a course can have multiple instructors)</li>
+<li>instructor -&gt; course (an instructor teaches only one course)</li>
+<li>instructor -&gt; instructor_email</li>
+<li>{id, instructor} -&gt; course (course can be determined through id &amp; instructor)</li>
+</ul>
+</li>
+<li>Candidate keys<ul>
+<li>{id, course}, since a student can have multiple courses</li>
+<li>{id, instructor}, since an instructor teaches only one course</li>
+</ul>
+</li>
+<li>Hence, {id, course} -&gt; instructor -&gt; instructor_email<ul>
+<li>Which is transitive dependency and hence not in 3NF</li>
+<li>Alternatively, instructor_email is non-prime and instructor is not super key</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>Student (id, course, instructor)</li>
+<li>Instructor (instructor, instructor_email)</li>
+</ul>
+</li>
+</ul>
+<h3 id="bcnf">BCNF</h3>
+<ul>
+<li>In a FD X -&gt; Y, X must be a super key</li>
+<li>Advanced form for 3NF</li>
+<li>This is the last practiced form</li>
+<li>Forms beyond like 4NF &amp; 5NF are used only for theoritical purposes</li>
+<li>Example:</li>
+<li>Student (id, course, branch)<ul>
+<li>Student (id: 1, course: 'DSA', branch: 'CSE')</li>
+<li>Student (id: 1, course: 'OS', branch: 'CSE')</li>
+<li>Student (id: 1, course: 'Networks', branch: 'CSE')</li>
+</ul>
+</li>
+<li>For id -&gt; branch, id is not a super key<ul>
+<li>Since there can be multiple values with same id</li>
+</ul>
+</li>
+<li>For course -&gt; branch, course is not a super key<ul>
+<li>Since multiple courses can have same branch</li>
+</ul>
+</li>
+<li>Break the table into 3 tables to make it BCNF<ul>
+<li>Student (id, branch)</li>
+<li>StudentCourse (student_id, course_id)</li>
+<li>Course (id, branch)</li>
+</ul>
+</li>
+<li>Example 2:</li>
+<li>StudentCourse (id, course, instructor)<ul>
+<li>{id, course} -&gt; instructor (a course can have multiple instructors)</li>
+<li>instructor -&gt; course (an instructor teaches only one course)</li>
+<li>{id, instructor} -&gt; course (course can be determined through id &amp; instructor)</li>
+</ul>
+</li>
+<li>Candidate keys<ul>
+<li>{id, course}, since a student can have multiple courses</li>
+<li>{id, instructor}, since an instructor teaches only one course</li>
+</ul>
+</li>
+<li>Here, in instructor -&gt; course, instructor is not a super key<ul>
+<li>Hence it is not in BCNF</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>StudentInstructor (id, instructor)</li>
+<li>InstructorCourse (instructor, course)</li>
+</ul>
+</li>
+</ul>
+<h3 id="fourth-4nf">Fourth (4NF)</h3>
+<ul>
+<li>No non-trivial multi-valued dependency except candidate key</li>
+<li>Multi-valued dependency (MVD)</li>
+<li>If two attributes are independent of one another but both depend on a third attribute</li>
+<li>Example:</li>
+<li>Student (id, name, course_name)</li>
+<li>MVD: name &amp; course_name are independent but id -&gt; name, id -&gt; course_name</li>
+<li>Solution<ul>
+<li>Student (id, name)</li>
+<li>StudentCourse (student_id, course_name)</li>
+</ul>
+</li>
+</ul>
+<h3 id="fifth-5nf">Fifth (5NF)</h3>
+<ul>
+<li>Also called projection-join normal form (PJNF)</li>
+<li>No join dependency except candidate keys</li>
+<li>A relation decomposed into two relations must be lossless</li>
+<li>Lossless Decompositionwhich</li>
+<li>If relation R (A, B, C) is decomposed into R1 (A, B) &amp; R2 (B, C)</li>
+<li>It is lossless if the join of R1 &amp; R2 over B should be equal to R</li>
+<li>It is lossy if the number of joined tuples are more or less than R</li>
+<li>It is dependency preserving if all the FD are preserved in R1 &amp; R2</li>
+<li>Example:</li>
+<li>Course (name, faculty, semester)<ul>
+<li>Course (name: 'DSA', faculty: 'F1', semester: 1)</li>
+<li>Course (name: 'DBMS', faculty: 'F1', semester: 2)</li>
+</ul>
+</li>
+<li>R1<ul>
+<li>Course (name: 'DSA', faculty: 'F1')</li>
+<li>Course (name: 'DBMS', faculty: 'F1')</li>
+</ul>
+</li>
+<li>R2<ul>
+<li>Course (faculty: 'F1', semester: 1)</li>
+<li>Course (faculty: 'F1', semester: 2)</li>
+</ul>
+</li>
+<li>Join (R1, R2)<ul>
+<li>Course (name: 'DSA', faculty: 'F1', semester: 1)</li>
+<li>Course (name: 'DSA', faculty: 'F1', semester: 2)</li>
+<li>Course (name: 'DBMS', faculty: 'F1', semester: 1)</li>
+<li>Course (name: 'DBMS', faculty: 'F1', semester: 2)</li>
+</ul>
+</li>
+<li>The join is introducing wrong data (loss of data)<ul>
+<li>A row requires all the 3 attributes to be known (name, faculty, semester)</li>
+<li>Hence there is a join dependency and it is not in 5NF</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>R1 (name, faculty)</li>
+<li>R2 (name, semester)</li>
+<li>R3 (faculty, semester)</li>
+</ul>
+</li>
+</ul>
+<h2 id="finding-normal-forms">Finding Normal Forms</h2>
+<ul>
+<li>Find all the candidate keys (C) using attribute closure</li>
+<li>Divide all attributes as prime and non-prime</li>
+</ul>
+<h3 id="example-1">Example 1</h3>
+<ul>
+<li>R (A, B, C, D, E) with FD = { A -&gt; D, B -&gt; A, BC -&gt; D, AC -&gt; BE }</li>
+<li>Candidate keys = { AC, BC }</li>
+<li>AC is a candidate key since (AC)+ = { A, C, D, B, E }</li>
+<li>BC is a candidate key since B -&gt; A</li>
+<li>Prime attributes = { A, B, C }</li>
+<li>1NF: Yes, no composite attributes</li>
+<li>2NF: No, D is dependent on A (A -&gt; D)</li>
+<li>Where A is proper subset of candidate key AC</li>
+</ul>
+<h3 id="example-2">Example 2</h3>
+<ul>
+<li>R (A, B, C, D, E) with FD = { BC -&gt; D, AC -&gt; BE, B -&gt; E }</li>
+<li>Candidate keys = { AC }</li>
+<li>AC is a candidate key since (AC)+ = { A, C, B, E, D }</li>
+<li>Prime attributes = { A, C }</li>
+<li>1NF: Yes, no composite attributes</li>
+<li>2NF: Yes, LHS (BC, AC, B) doesn't have any proper subset of candidate keys</li>
+<li>3NF: No</li>
+<li>BC -&gt; D: BC is not a super key, nor D is prime attribute</li>
+<li>B -&gt; E: B is not a super key, nor E is prime attribute</li>
+</ul>
+<h3 id="example-3">Example 3</h3>
+<ul>
+<li>R (A, B, C, D, E) with FD = { B -&gt; A, A -&gt; C, BC -&gt; D, AC -&gt; BE}</li>
+<li>Candidate keys = { A, B }</li>
+<li>B is a candidate key since (B)+ = { B, A, C, D, E }</li>
+<li>A is a candidate key since (A)+ = { A, C, B, E, D }</li>
+<li>Prime attributes = { A, B }</li>
+<li>1NF: Yes, no composite attributes</li>
+<li>2NF: Yes, LHS (B, A, BC, AC) doesn't have any proper subset of candidate keys</li>
+<li>3NF: Yes, All LHS have super key, so no need to check prime attribute in RHS</li>
+<li>BCNF: Yes, All LHS have super key</li>
+</ul>
+<h2 id="denormalization">Denormalization</h2>
+<ul>
+<li>Adding redundant data to tables to optimize performance and avoid costly joins</li>
+<li>Does not mean reversing normalization but adding redundancy after normalization</li>
+<li>This can make inserts &amp; updates more expensive, but increases accessibility</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../functional_dependency" class="btn btn-neutral float-left" title="Functional Dependency"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../transactions_and_schedules" class="btn btn-neutral float-right" title="Transactions And Schedules">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../functional_dependency" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../transactions_and_schedules" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        });
+    </script>
+
+</body>
+</html>
